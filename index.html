@@ -307,65 +307,84 @@ function navigate() {
   window.scrollTo(0, 0);
 }
 
-// Animate from the tapped card's viewport bounds to the actual sticky header.
 const cards = document.querySelector('.cards');
-let endFlight;
-cards.addEventListener('click', event => {
-  const card = event.target.closest('a');
-  if (!card || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
-      event.shiftKey || event.altKey || !Element.prototype.animate ||
-      matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const screen = document.getElementById(card.hash.slice(1));
-  const header = screen?.querySelector('.banner');
-  if (!header) return;
-  event.preventDefault();
-  endFlight?.();
-  const start = card.getBoundingClientRect();
-  const photo = getComputedStyle(card).backgroundImage;
-  location.hash = card.hash;
+let activeFlight;
+let homeScroll = 0;
+
+function moveBetween(card, screen, returning) {
+  activeFlight?.stop();
+  const header = screen.querySelector('.banner');
+  const origin = returning ? header : card;
+  const destination = returning ? card : header;
+  const start = origin.getBoundingClientRect();
+  const layer = header.cloneNode(true);
+  const photo = card.style.backgroundImage;
+  if (!returning) homeScroll = window.scrollY;
+  const hash = returning ? '#home' : card.hash;
+  location.hash = hash;
   navigate();
-  const finish = header.getBoundingClientRect();
+  if (returning) {
+    window.scrollTo(0, homeScroll);
+    const bounds = card.getBoundingClientRect();
+    if (bounds.bottom > innerHeight || bounds.top < 0) card.scrollIntoView({block:'nearest'});
+  }
+  const finish = destination.getBoundingClientRect();
   const flight = document.createElement('div');
   flight.className = 'card-flight';
   flight.inert = true;
-  flight.setAttribute('aria-hidden', 'true');
+  flight.setAttribute('aria-hidden','true');
   flight.style.backgroundImage = photo;
   const title = document.createElement('span');
   title.className = 'flight-title';
   title.textContent = card.textContent;
-  const arriving = header.cloneNode(true);
-  flight.append(title, arriving);
+  flight.append(title, layer);
   document.body.append(flight);
-  header.style.visibility = 'hidden';
+  destination.style.visibility = 'hidden';
   const geometry = (rect, radius) => ({
     left: rect.left + 'px', top: rect.top + 'px', width: rect.width + 'px',
     height: rect.height + 'px', borderRadius: radius + 'px'
   });
-  const timing = {duration: 480, easing: 'cubic-bezier(.22,.75,.22,1)', fill: 'both'};
-  const movement = flight.animate([geometry(start, 4), geometry(finish, 0)], timing);
+  const timing = {duration:480, easing:'cubic-bezier(.22,.75,.22,1)', fill:'both'};
+  const movement = flight.animate([geometry(start, returning ? 0 : 4), geometry(finish, returning ? 4 : 0)], timing);
   const animations = [
     movement,
-    title.animate([{opacity:1},{opacity:0}], timing),
-    arriving.animate([{opacity:0},{opacity:0,offset:.28},{opacity:1}], timing),
-    screen.querySelector('.items').animate([{opacity:0},{opacity:1}], timing)
+    title.animate(returning ? [{opacity:0},{opacity:1}] : [{opacity:1},{opacity:0}], timing),
+    layer.animate(returning ? [{opacity:1},{opacity:0}] : [{opacity:0},{opacity:0,offset:.28},{opacity:1}], timing)
   ];
-  const cleanup = () => {
-    if (endFlight !== cleanup) return;
-    endFlight = undefined;
-    header.style.removeProperty('visibility');
+  if (!returning) animations.push(screen.querySelector('.items').animate([{opacity:0},{opacity:1}], timing));
+  const stop = () => {
+    if (activeFlight?.stop !== stop) return;
+    activeFlight = null;
+    destination.style.removeProperty('visibility');
     flight.remove();
-    if (screen.matches(':target') && document.activeElement === document.body) header.focus({preventScroll:true});
     animations.forEach(animation => animation.cancel());
+    if (location.hash === hash && document.activeElement === document.body) {
+      if (!returning) header.setAttribute('tabindex','-1');
+      destination.focus({preventScroll:true});
+    }
   };
-  endFlight = cleanup;
-  movement.finished.then(cleanup, cleanup);
-  header.setAttribute('tabindex', '-1');
+  activeFlight = {hash, stop};
+  movement.finished.then(stop, stop);
+}
 
+document.querySelector('main').addEventListener('click', event => {
+  const link = event.target.closest('a');
+  if (!link || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
+      event.shiftKey || event.altKey || !Element.prototype.animate ||
+      matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const returning = link.hash === '#home';
+  const screen = returning ? link.closest('.screen') : document.getElementById(link.hash.slice(1));
+  if (!screen?.classList.contains('screen')) return;
+  const category = screen.id.split('-')[0];
+  const card = returning ? [...cards.children].find(a => a.hash.startsWith('#' + category + '-')) : link;
+  if (!card || !cards.contains(card)) return;
+  event.preventDefault();
+  moveBetween(card, screen, returning);
 });
 window.addEventListener('hashchange', () => {
-  if (!document.querySelector('.screen:target .banner[style*="visibility: hidden"]')) endFlight?.();
+  if (activeFlight?.hash === location.hash) return;
+  activeFlight?.stop();
+  navigate();
 });
-
-window.addEventListener('hashchange', navigate);
 navigate();
 </script></body></html>
