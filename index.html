@@ -39,7 +39,12 @@ main:has(.screen:target) #home{display:none}
 .price{white-space:nowrap}
 .dish p{font:12px/1.27 Arial,sans-serif;color:#48433f;margin-top:4px}
 .icon{width:14px;height:14px;vertical-align:middle;margin-left:3px}
-.decor{display:block;float:right;width:50px;height:83px;object-fit:fill;transform:rotate(-90deg);margin:-71px 12px -12px;pointer-events:none}
+.items h2.fox-heading{position:relative;display:flex;align-items:center;min-height:50px;padding:4px 95px 4px 0}
+.items h2.fox-tail{padding-right:115px}
+.fox-art{position:absolute;right:-20px;top:50%;transform:translateY(-50%);width:83px;height:50px;display:grid;place-items:center;pointer-events:none;overflow:hidden}
+.fox-art img{position:absolute;left:50%;top:50%;width:50px;height:83px;transform:translate(-50%,-50%) rotate(-90deg)}
+.fox-tail .fox-art{width:108px}
+.fox-tail .fox-art img{height:108px;transform:translate(-50%,-50%) rotate(-90deg) scaleY(-1)}
 .end{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-weight:bold}
 .screen > .banner{position:sticky;top:0;z-index:2;background-color:#232426}
 </style></head><body><main><section id="home" lang="el"><header class="hero"><h1 class="brand"><img src="assets/898c3.svg" alt="40 tales fox"></h1><a class="review" href="https://www.google.com/search?sca_esv=128459c6520156d0&amp;sxsrf=AKL5yDiRUwLsnf4YoWfkAaMXSYayeQxvQA:1794191316645&amp;q=40+tails+fox+syros&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95cwpYQbSs-9J1swqOlRwCDQMx3VBLwFPXF8B4lKmRM5H0fSGZwxOQkhWwLrU3N8i02yQVhM0%3D&amp;uds=AE2AFgbotJsmmw7pc0xWS3zec3_8zreEk_7jxdbZ4Cp8qBAti8NHxkK29ml2sC-LHb3V_0Z4Xz_OMPKB4HK_93_oQoNAP88YI76bcuMYRmOeNQHjpFBEcIw&amp;sa=X&amp;ved=2ahUKEwijttnA6_mXAxUcRvEDHZYzM-MQ3PALegQIOxAE&amp;biw=1745&amp;bih=828&amp;dpr=1.1">★　Γράψε μια αξιολόγηση</a></header><div class="content"><nav class="cards" aria-label="Κατάλογοι"><a href="#dinner-gr" style="background-image:linear-gradient(#14141499,#14141499),url(assets/5152c.jpg)">Lunch &amp; Dinner</a>
@@ -52,8 +57,8 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>The Famous Greek Salad</h3><span class="price">€12</span></div><p>Syros cherry tomatoes, wild capers of the island, peppers, marinated onion, olives, cucumber, zucchini, Kalavrita feta cheese</p></article>
 <article class="dish"><div class="line"><h3>Green Salad with Chicken</h3><span class="price">€13.5</span></div><p>Grilled chicken fillet, Syros cherry tomatoes, pumpkin seeds, handmade citrus mayonnaise, parmesan flakes</p></article>
 <article class="dish"><div class="line"><h3>Beetroot Salad</h3><span class="price">€13</span></div><p>Beetroot, sour apple, handmade feta &amp; strawberry cream, walnuts, pomegranate seeds</p></article>
-<h2>Starters/Mains</h2>
-<img class="decor" src="assets/7c40e.png" alt="">
+<h2 class="fox-heading">Starters/Mains<span class="fox-art" aria-hidden="true"><img src="assets/7c40e.png" alt=""></span></h2>
+
 <article class="dish"><div class="line"><h3>Cycladic Cheeses platter</h3><span class="price">€23</span></div><p>Naxos Arseniko, Syros Amarantos, Ios Gruyere, Syros Anthotyro</p></article>
 <article class="dish"><div class="line"><h3>Charcuterie platter</h3><span class="price">€21</span></div><p>Smoked prosciutto, Lefkada salami, roast turkey fillet, pastrami, Cretan apaki</p></article>
 <article class="dish"><div class="line"><h3>Bruschetta with Smoked Salmon</h3><span class="price">€11.5</span></div><p>Avocado, finocchio, capers, lime</p></article>
@@ -74,9 +79,9 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Divine Beef Burger</h3><span class="price">€14.5</span></div><p>Tomato, pickled cucumber, arugula, cheddar, secret mayo, fries</p></article>
 <article class="dish"><div class="line"><h3>Vegan Burger<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Veggie and mushroom burger, tomato, local capers, fresh basil, vegan mayo with cucumber pickles, vegan cheese &amp; beetroot salad</p></article>
 <article class="dish"><div class="line"><h3>Vegan Moussaka<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Mushrooms, black lentils, soy mince, corn béchamel, tomato gazpacho</p></article>
-<h2>Desserts</h2>
+<h2 class="fox-heading fox-tail">Desserts<span class="fox-art" aria-hidden="true"><img src="assets/db70a.png" alt=""></span></h2>
 <article class="dish"><div class="line"><h3>Dark Chocolate Mousse</h3><span class="price">€12</span></div><p>Patras Tentura, white chocolate cream with Bergamot and Aegina peanut, mango sorbet, Hawaiian black salt</p></article>
-<img class="decor" src="assets/db70a.png" alt="">
+
 <article class="dish"><div class="line"><h3>Tiramisu</h3><span class="price">€11</span></div><p>Tsoureki, dark chocolate, caramelized almonds</p></article>
 <article class="dish"><div class="line"><h3>Tahini Ice Cream</h3><span class="price">€8,5</span></div><p>Lemon, hazelnuts, rose preserve, cream from halvadopita and mandolato</p></article><a class="end" href="#home">← Home</a></div></section>
 <section class="screen" id="brunch-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#brunch-gr" aria-current="page">GR</a><a href="#brunch-en" >ENG</a></div></nav><h1>Brunch</h1></header><div class="items"><article class="dish"><div class="line"><h3>Αυγά μάτια</h3><span class="price">€7.5</span></div><p>Με bacon &amp; φρυγανισμένο προζυμένιο ψωμί</p></article>
@@ -258,8 +263,8 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Η φημισμένη Ελληνική Σαλάτα</h3><span class="price">€12</span></div><p>Τοματίνια Σύρου, άγρια κάπαρη του νησιού, πιπεριές, μαριναρισμένο κρεμμύδι, ελιές, αγγούρι, κολοκύθι, φέτα Καλαβρύτων</p></article>
 <article class="dish"><div class="line"><h3>Πράσινη Σαλάτα με κοτόπουλο</h3><span class="price">€13.5</span></div><p>Ψητό φιλέτο κοτόπουλο, τοματίνια, κολοκυθόσπορος, χειροποίητη μαγιονέζα εσπεριδοειδών, flakes παρμεζάνας</p></article>
 <article class="dish"><div class="line"><h3>Παντζαροσαλάτα</h3><span class="price">€13</span></div><p>Παντζάρι, ξινόμηλο, χειροποίητη κρέμα φέτας &amp; φράουλας, καρύδια, ρόδι</p></article>
-<h2>Ορεκτικά/ Κυρίως</h2>
-<img class="decor" src="assets/7c40e.png" alt="">
+<h2 class="fox-heading">Ορεκτικά/ Κυρίως<span class="fox-art" aria-hidden="true"><img src="assets/7c40e.png" alt=""></span></h2>
+
 <article class="dish"><div class="line"><h3>Ποικιλία Κυκλαδίτικων Τυριών</h3><span class="price">€23</span></div><p>Αρσενικό Νάξου, Αμάραντος Σύρου, Γραβιέρα Ίου, Ανθότυρο Σύρου</p></article>
 <article class="dish"><div class="line"><h3>Ποικιλία Αλλαντικών</h3><span class="price">€21</span></div><p>Καπνιστό prosciutto, σαλάμι Λευκάδος, ψητό φιλέτο γαλοπούλας, παστράμι μόσχου, απάκι Κρήτης</p></article>
 <article class="dish"><div class="line"><h3>Μπρουσκέτα με Καπνιστό Σολομό</h3><span class="price">€11.5</span></div><p>Αβοκάντο, φινόκιο, κάπαρη, lime</p></article>
@@ -280,9 +285,9 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Divine Beef Burger</h3><span class="price">€23.5</span></div><p>Τομάτα, αγγουράκι τουρσί, ρόκα, cheddar, secret mayo, τηγανητές πατάτες</p></article>
 <article class="dish"><div class="line"><h3>Vegan Burger Λαχανικών<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Μπιφτέκι λαχανικών και μανιταριών, τομάτα, κάπαρη Σύρου, φρέσκος βασιλικός, vegan mayo με αγγουράκι τουρσί, τυρί vegan και παντζαροσαλάτα</p></article>
 <article class="dish"><div class="line"><h3>Vegan Μουσακάς<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Μανιτάρια, μαύρες φακές, κιμάς σόγιας, μπεσαμέλ Καλαμποκιού, γκασπάτσο ντομάτας</p></article>
-<h2>Επιδόρπια</h2>
+<h2 class="fox-heading fox-tail">Επιδόρπια<span class="fox-art" aria-hidden="true"><img src="assets/db70a.png" alt=""></span></h2>
 <article class="dish"><div class="line"><h3>Μους Μαύρης Σοκολάτας</h3><span class="price">€12</span></div><p>Πατρινή Τεντούρα, Κρέμα Λευκής Σοκολάτας με Περγαμόντο και φυστίκι Αιγίνης, sorbet μάνγκο, μαύρο αλάτι Χαβάης</p></article>
-<img class="decor" src="assets/db70a.png" alt="">
+
 <article class="dish"><div class="line"><h3>Τιραμισού</h3><span class="price">€11</span></div><p>Τσουρέκι, μαύρη σοκολάτα, καραμελωμένα αμύγδαλα</p></article>
 <article class="dish"><div class="line"><h3>Παγωτό από Ταχίνι</h3><span class="price">€8.5</span></div><p>Λεμόνι, φουντούκια, γλυκό τριαντάφυλλο, κρέμα από χαλβαδόπιτα και μαντολάτο</p></article><a class="end" href="#home">← Αρχική</a></div></section></main><script>
 function navigate() {
