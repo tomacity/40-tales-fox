@@ -35,9 +35,12 @@ main:has(.screen:target) #home{display:none}
 .items h2{font:italic 16px Georgia,serif;color:#85593e;padding:9px 0 2px}
 .dish{padding:9px 0;border-bottom:1px solid #bab4ad}
 .line{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font:14px Georgia,serif}
-.line h3{font:inherit}
+.line h3,.line h4{font:inherit;margin:0}
+.spirit-type{font:italic 16px Georgia,serif;color:#85593e;padding:9px 0 2px}
 .price{white-space:nowrap}
 .dish p{font:12px/1.27 Arial,sans-serif;color:#48433f;margin-top:4px}
+.cocktail p{max-width:317px}
+.cocktail em{color:#555c4b;font-family:"Edu VIC WA NT Beginner",cursive;font-style:normal}
 .icon{width:14px;height:14px;vertical-align:middle;margin-left:3px}
 .items h2.fox-heading{position:relative;display:flex;align-items:center;min-height:50px;padding:4px 95px 4px 0}
 .items h2.fox-tail{padding-right:115px}
@@ -56,7 +59,7 @@ main:has(.screen:target) #home{display:none}
 <a href="#coffee-gr" style="background-image:linear-gradient(#141414c0,#141414c0),url(assets/22b90.jpg)">Coffee &amp; Beverages</a>
 <a href="#cocktails-en" style="background-image:linear-gradient(#141414aa,#141414aa),url(assets/50356.jpg)">Cocktails &amp; Spirits</a>
 <a href="#wines-en" style="background-image:linear-gradient(#141414aa,#141414aa),url(assets/d66bc.jpg)">Wines &amp; Beers</a></nav><div class="actions"><a href="tel:+302281303113">Κράτηση</a><a href="mailto:info@40talesfox.gr">Email</a></div><footer class="contact"><a href="https://www.google.com/maps/search/?api=1&amp;query=40+Tales+Fox+Ermoupoli+Syros">Οδηγίες ↗　·　Ακτή Πέτρου Ράλλη 40Α</a><a class="social" href="https://www.instagram.com/40talesfox/">Instagram ↗</a></footer></div></section>
-<section class="screen" id="dinner-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#dinner-gr" >GR</a><a href="#dinner-en" aria-current="page">ENG</a></div></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
+<section class="screen" id="dinner-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#dinner-gr" >GR</a><a href="#dinner-en" aria-current="page">ENG</a></div></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Bread for 2 with sourdough</h3><span class="price">€2.5</span></div></article>
 <h2>Salads</h2>
 <article class="dish"><div class="line"><h3>The Famous Greek Salad</h3><span class="price">€12</span></div><p>Syros cherry tomatoes, wild capers of the island, peppers, marinated onion, olives, cucumber, zucchini, Kalavrita feta cheese</p></article>
 <article class="dish"><div class="line"><h3>Green Salad with Chicken</h3><span class="price">€13.5</span></div><p>Grilled chicken fillet, Syros cherry tomatoes, pumpkin seeds, handmade citrus mayonnaise, parmesan flakes</p></article>
@@ -117,7 +120,83 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Zombie</h3><span class="price">9.5</span></div><p>Dangerously potent voodoo magic in a glass</p></article>
 <article class="dish"><div class="line"><h3>Dry/Dirty Martini</h3><span class="price">9.5</span></div><p>Savory, icy elegance with a briny whisper</p></article>
 <h2>and many, MANY more...</h2>
-<h2>Signature</h2><a class="end" href="#home">← Home</a></div></section>
+<h2>Signature</h2>
+<article class="dish cocktail"><div class="line"><h3>Crimson Kiss</h3><span class="price">€13</span></div><p>Fruity / Tart / Floral<br>GIN, RED BERRIES PURÉE, LEMON, TRIPLE SEC, CRÈME DE VIOLETTE<br><em>A kiss you'll never want to end.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Basil Breeze</h3><span class="price">€13</span></div><p>Refreshing / Herbal / Balanced<br>GIN, CUCUMBER-BASIL CORDIAL, ELDERFLOWER, LEMON, AEGEAN TONIC<br><em>Like the breeze on a hot summer day, you'll always want more.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Walkin’ On The Sun</h3><span class="price">€14</span></div><p>REPOSADO TEQUILA, ELDERFLOWER, GRAPEFRUIT, LEMON, GINGER, BLACK PEPPER, ORANGE BITTERS<br><em>Gently spicy with a complex finish.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Metaxa Apricot Sour</h3><span class="price">€13</span></div><p>Fruity / Sour / Sweet<br>APRICOT-INFUSED METAXA, LEMON, SUGAR, BITTERS, EGG WHITE<br><em>Our sour-style cocktail with a summery twist.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Irreale</h3><span class="price">€12</span></div><p>Sweet / Rich / Smooth<br>DISARONNO AMARETTO, PINEAPPLE PURÉE, ORGEAT, LEMON<br><em>A luscious experience out of this world.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Velvet Bloom</h3><span class="price">€14</span></div><p>Tropical / Smooth / Spiced<br>CHAIRMAN'S SPICED RUM, VANILLA, LEMON, PINK GRAPEFRUIT, ORANGE BITTERS<br><em>Spiced seas, softened edges.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Bubble Trouble</h3><span class="price">€13</span></div><p>Vibrant / Fruity / Sweet<br>VODKA, MASTIHA, STRAWBERRY, BUBBLEGUM, LEMON<br><em>Trouble never tasted so sweet.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Theros</h3><span class="price">€13</span></div><p>Fizzy / Summery / Peachy<br>VODKA, LEMON, ORGEAT, PEACH, BUBBLES<br><em>An ideal company to make memories with.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Sunset Bliss</h3><span class="price">€13</span></div><p>Spirited / Luscious / Bright<br>BLENDED SCOTCH WHISKY, GREEN APPLE, APRICOT, LEMON<br><em>A delightful temptation for just the right occasion.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Smoking Summer</h3><span class="price">€16</span></div><p>Smoky / Mineral / Umami<br>MEZCAL (AGAVE ESPADÍN), DRY VERMOUTH, TOMATO, SPICES, LEMON<br><em>Not everyone's cup of tea, but we are not here for tea, are we?</em></p></article>
+<h2>Mocktails</h2>
+<article class="dish cocktail"><div class="line"><h3>Jungle Siesta</h3><span class="price">€11</span></div><p>Sweet / Spicy / Bright<br>VANILLA, CHILLI, LEMON, GINGER BEER<br><em>In the midst of it all, calmness can still be found.</em></p></article>
+<article class="dish cocktail"><div class="line"><h3>Strawberry Smash</h3><span class="price">€10</span></div><p>Fresh / Juicy / Balanced<br>FRESH STRAWBERRIES, ORANGE JUICE, LEMON, ORGEAT<br><em>A vibrant rush that comes with a playful afterthought.</em></p></article>
+<h2>Spirits</h2>
+<h3 class="spirit-type">Gin</h3>
+<article class="dish"><div class="line"><h4>Greenall's</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Beefeater</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Bombay Saphire</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Tanqueray</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Tanqueray 0.0</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Votanikon</h4><span class="price">€10</span></div></article>
+<article class="dish"><div class="line"><h4>Hendrick's</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Ophir</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Etsu</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Monkey 47</h4><span class="price">€15</span></div></article>
+<article class="dish"><div class="line"><h4>Elephant</h4><span class="price">€15</span></div></article>
+<h3 class="spirit-type">Rum</h3>
+<article class="dish"><div class="line"><h4>Barchelo Blaco</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Barchelo Anejo</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Barchelo Imperial</h4><span class="price">€10</span></div></article>
+<article class="dish"><div class="line"><h4>Bacardi White</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Havana Especial</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Sailor Jerry</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Diplomatico</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Papa's Pilar</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Chairman's Reserve</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Don Papa</h4><span class="price">€14</span></div></article>
+<article class="dish"><div class="line"><h4>Don Papa Baroko</h4><span class="price">€14</span></div></article>
+<article class="dish"><div class="line"><h4>Bumbu the Original</h4><span class="price">€14</span></div></article>
+<h3 class="spirit-type">Tequila</h3>
+<article class="dish"><div class="line"><h4>Rooster Blanco</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Rooster Reposado</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Mezcal</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Patron Silver</h4><span class="price">€14</span></div></article>
+<article class="dish"><div class="line"><h4>Patron Reposado</h4><span class="price">€14</span></div></article>
+<article class="dish"><div class="line"><h4>Clase Azul Reposado</h4><span class="price">€45</span></div></article>
+<h3 class="spirit-type">Vodka</h3>
+<article class="dish"><div class="line"><h4>Stolichnaya</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Smirnoff</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Moskovskaya</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Grey Goose</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Ciroc</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Belvedere</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Beluga Transatlantic</h4><span class="price">€14</span></div></article>
+<h3 class="spirit-type">Whiskey</h3>
+<article class="dish"><div class="line"><h4>Haig</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Famous Grouse</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Dewar's</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Cutty Shark</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Tullamore Dew</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Johnnie Walker Red</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Four Roses</h4><span class="price">€9</span></div></article>
+<article class="dish"><div class="line"><h4>Jack Daniel's</h4><span class="price">€10</span></div></article>
+<article class="dish"><div class="line"><h4>Buffalo Trac</h4><span class="price">€10</span></div></article>
+<article class="dish"><div class="line"><h4>Chivas</h4><span class="price">€10</span></div></article>
+<article class="dish"><div class="line"><h4>Dimple</h4><span class="price">€10</span></div></article>
+<article class="dish"><div class="line"><h4>Johnnie Walker Black</h4><span class="price">€10</span></div></article>
+<article class="dish"><div class="line"><h4>Nikka (from the barrel)</h4><span class="price">€14</span></div></article>
+<article class="dish"><div class="line"><h4>Suntory</h4><span class="price">€16</span></div></article>
+<article class="dish"><div class="line"><h4>Legavulin</h4><span class="price">€18</span></div></article>
+<h3 class="spirit-type">Brandy</h3>
+<article class="dish"><div class="line"><h4>Metaxa 5*</h4><span class="price">€8</span></div></article>
+<article class="dish"><div class="line"><h4>Metaxa 12*</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Bache XO</h4><span class="price">€12</span></div></article>
+<article class="dish"><div class="line"><h4>Bache VSOP</h4><span class="price">€14</span></div></article>
+<a class="end" href="#home">← Home</a></div></section>
 <section class="screen" id="wines-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/ad927.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><span>ENG</span></div></nav><h1>Wines &amp; Beers</h1></header><div class="items"><h2>Classics</h2>
 <article class="dish"><div class="line"><h3>Pornstar Martini</h3><span class="price">€7.5</span></div><p>Sweet vanilla and tart passion fruit bliss</p></article>
 <article class="dish"><div class="line"><h3>Mojito</h3><span class="price">€8.5</span></div><p>Crisp, minty refreshment for endless summer nights</p></article>
@@ -264,7 +343,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Tahini Healthy Bowl</h3><span class="price">€9.5</span></div><p>Banana, mango, agave syrup, lime juice, tahini. Toppings: kiwi, strawberry, org. granola, hemp seeds</p></article><a class="end" href="#home">← Home</a></div></section>
 <section class="screen" id="dinner-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#dinner-gr" aria-current="page">GR</a><a href="#dinner-en" >ENG</a></div></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
 <h2>Σαλάτες</h2>
-<article class="dish"><div class="line"><h3>Η φημισμένη Ελληνική Σαλάτα</h3><span class="price">€12</span></div><p>Τοματίνια Σύρου, άγρια κάπαρη του νησιού, πιπεριές, μαριναρισμένο κρεμμύδι, ελιές, αγγούρι, κολοκύθι, φέτα Καλαβρύτων</p></article>
+<article class="dish"><div class="line"><h3>Η φημισμένη Ελληνική Σαλάτα</h3><span class="price">€13.5</span></div><p>Τοματίνια Σύρου, άγρια κάπαρη του νησιού, πιπεριές, μαριναρισμένο κρεμμύδι, ελιές, αγγούρι, κολοκύθι, φέτα Καλαβρύτων</p></article>
 <article class="dish"><div class="line"><h3>Πράσινη Σαλάτα με κοτόπουλο</h3><span class="price">€13.5</span></div><p>Ψητό φιλέτο κοτόπουλο, τοματίνια, κολοκυθόσπορος, χειροποίητη μαγιονέζα εσπεριδοειδών, flakes παρμεζάνας</p></article>
 <article class="dish"><div class="line"><h3>Παντζαροσαλάτα</h3><span class="price">€13</span></div><p>Παντζάρι, ξινόμηλο, χειροποίητη κρέμα φέτας &amp; φράουλας, καρύδια, ρόδι</p></article>
 <h2 class="fox-heading">Ορεκτικά/ Κυρίως<span class="fox-art" aria-hidden="true"><img src="assets/7c40e.png" alt=""></span></h2>
