@@ -1,313 +1,301 @@
-<!doctype html><html lang="el"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>40 Tales Fox · Ερμούπολη</title><style>
-*{box-sizing:border-box}body{margin:0;background:#232426;color:#e0dbd4;font:16px Arial,sans-serif}main{max-width:640px;margin:auto;background:#e0dbd4;color:#232426;min-height:100vh}header{position:relative;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;height:clamp(280px,42svh,440px);padding:34px 20px 25px;color:white;background:linear-gradient(0deg,#000a,transparent 70%),linear-gradient(#0006,#0002),url(https://40talesfox.gr/wp-content/uploads/2023/04/40talesfox-slider-03.jpg) center/cover}header img{max-width:210px;width:48%;height:auto}header p{font:italic 23px Georgia,serif;margin:0}section{padding:25px clamp(18px,5vw,38px) 30px}h1{font:normal 30px Georgia,serif;margin:0 0 16px}a{color:inherit;text-decoration:none}nav{display:grid;gap:9px}.card{display:flex;justify-content:space-between;align-items:center;padding:15px 20px;min-height:76px;background-position:center;background-size:cover;color:white;font:28px Georgia,serif}.card b{font:22px Georgia}.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:18px 0}.actions a{padding:14px 5px;text-align:center;border:1px solid #3d3935;font-size:15px}.actions a:first-child{background:#232426;color:white}footer{border-top:1px solid #aaa298;padding:18px 0 0;line-height:1.7}footer a{text-decoration:underline;text-underline-offset:3px}footer p{margin:4px 0}a:focus-visible{outline:3px solid currentColor;outline-offset:2px}a:hover{filter:brightness(.9)}
-.panel{display:none}.panel:target{display:block}main:has(.panel:target) #home{display:none}.back{display:inline-block;padding:12px 0;margin-bottom:18px}.panel h1{font-size:40px}.panel h2{font:italic 24px Georgia,serif;margin:28px 0 4px}.panel article{display:grid;grid-template-columns:1fr auto;gap:4px 1rem;padding:14px 0;border-bottom:1px solid #bab4ad}.panel h3,.panel strong{font:normal 19px Georgia,serif;margin:0}.panel article p{grid-column:1/-1;line-height:1.5;color:#48433f;margin:0}
-.card{background-color:#3d3935;font-size:22px;gap:12px;min-height:55px}.card.photo{min-height:80px}.card[href="#menu-0"]{background-image:linear-gradient(90deg,#000a,#0004),url(https://40talesfox.gr/wp-content/uploads/2023/04/40talesfox-229a.jpg)}.card[href="#menu-5"]{background-image:linear-gradient(90deg,#000a,#0004),url(https://40talesfox.gr/wp-content/uploads/2023/04/40talesfox-slider-03.jpg)}.card[href="#menu-6"]{background-image:linear-gradient(90deg,#000a,#0004),url(https://40talesfox.gr/wp-content/uploads/2023/04/40talesfox-slider-02.jpg)}.panel strong{max-width:9em;text-align:right}.panel h1{font-size:clamp(28px,7vw,40px)}.cross{text-decoration:underline}@media(max-width:420px){.panel strong{max-width:6.5em}}</style><main><div id="home"><header><img src="data:image/png;base64,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" alt="40 Tales Fox"><p>All day resto-bar<br>Ερμούπολη, Σύρος</p></header><section><h1>Το μενού μας</h1><nav aria-label="Κατάλογοι"><a class="card photo" href="#menu-0">MENU (ENG) <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-1">MENU (GR) <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-2">ΚΡΑΣΙΑ / WINES <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-3">ΜΠΥΡΑ / BEER <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-4">SPIRITS <b aria-hidden="true">›</b></a>
-<a class="card photo" href="#menu-5">COCKTAILS <b aria-hidden="true">›</b></a>
-<a class="card photo" href="#menu-6">ΜΕΝΟΥ <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-7">Λίστα Κρασιών  ·  Wine List <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-8">Τσίπουρο  ·  Tsipouro <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-9">Ούζο  ·  Ouzo <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-10">Μπύρες  ·  Beers <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-11">Κρασί χύμα  ·  Wine <b aria-hidden="true">›</b></a>
-<a class="card " href="#menu-12">Αναψυκτικά &amp; λοιπα ποτά   · Soft Drinks &amp; more <b aria-hidden="true">›</b></a></nav><div class="actions"><a href="tel:+302281303113">Κράτηση τηλεφωνικά</a><a href="mailto:info@40talesfox.gr">Email</a></div><footer><p><a href="https://www.google.com/maps/search/?api=1&amp;query=40+Tales+Fox+Ermoupoli+Syros">Ακτή Πέτρου Ράλλη 40Α ↗</a></p><p><a href="https://www.instagram.com/40talesfox/">Instagram</a></p></footer></section></div><section id="menu-0" class="panel"><a class="back" href="#home">← Αρχική</a><h1>MENU (ENG)</h1>
-<article><h3>Bread for 2 with sourdough</h3><strong>2.5 €</strong></article>
-<h2>SALADS</h2><article><h3>The Famous Greek Salad</h3><strong>12 €</strong><p>Syros cherry tomatoes, wild capers of the island, peppers, marinated onion, olives, cucumber, zucchini, Kalavrita feta cheese</p></article>
-<article><h3>Green Salad with Chicken</h3><strong>13.5 €</strong><p>Grilled chicken fillet, Syros cherry tomatoes, pumpkin seeds, handmade citrus mayonnaise, parmesan flakes</p></article>
-<article><h3>Beetroot Salad</h3><strong>13 €</strong><p>Beetroot, sour apple, handmade feta &amp; strawberry cream, walnuts, pomegranate seeds</p></article>
-<h2>STARTERS / MAINS</h2><article><h3>Cycladic Cheeses platter</h3><strong>23 €</strong><p>Naxos Arseniko, Syros Amarantos, Ios Gruyere, Syros Anthotyro</p></article>
-<article><h3>Charcuterie platter</h3><strong>21 €</strong><p>Smoked prosciutto, Lefkada salami, roast turkey fillet, pastrami, Cretan apaki</p></article>
-<article><h3>Bruschetta with Smoked Salmon</h3><strong>11.5 €</strong><p>Avocado, finocchio, capers, lime</p></article>
-<article><h3>Smoked Prosciutto Bruschetta</h3><strong>10.5 €</strong><p>Eggplant Hummus, raisins, pine nuts</p></article>
-<article><h3>Grilled Feta cheese</h3><strong>12.5 €</strong><p>Phyllo, black sesame, ginger, tangerine - mastic chutney, pumpkin cream</p></article>
-<article><h3>Pinsa Prosciutto</h3><strong>13.5 €</strong><p>Smoked prosciutto, arugula, cherry tomatoes, fresh mozzarella, fresh tomato sauce</p></article>
-<article><h3>Pinsa Margarita</h3><strong>11 €</strong><p>Fresh mozzarella, tomato, anthotyro, basil</p></article>
-<article><h3>Pinsa Syros</h3><strong>13 €</strong><p>Local sausage, handmade luza (local cold cut), fresh mozzarella, smoked Vermio cheese, tomato, almonds</p></article>
-<article><h3>Hot Dog with grilled pork</h3><strong>11 €</strong><p>Cabbage, mustard, mayonnaise, ketchup, horseradish</p></article>
-<article><h3>Wild Mushroom Risotto (V)</h3><strong>15 €</strong><p>Greek truffle cream, hazelnut</p></article>
-<article><h3>Authentic Carbonara</h3><strong>14.5 €</strong><p>Guanciale, egg, parmesan, pecorino</p></article>
-<article><h3>Skiouficto with Pesto</h3><strong>13.5 €</strong><p>Handmade basil pesto, cherry tomatoes, roasted pine seeds, parmesan cheese</p></article>
-<article><h3>Fresh Sea-Bass Fillet</h3><strong>22.5 €</strong><p>Local parsley cream, mashed potatoes, buckwheat</p></article>
-<article><h3>Fresh Beef Fillet</h3><strong>33 €</strong><p>Teriyaki sauce with orange, rose geranium, mashed sweet potatoes</p></article>
-<article><h3>Pork Chops</h3><strong>14.5 €</strong><p>Citrus sauce, fries</p></article>
-<article><h3>Chicken Fillet</h3><strong>14.5 €</strong><p>Fresh potato gnocchi, basil pesto, roasted pecan</p></article>
-<article><h3>Tagliatelle with Lamb Carpaccio</h3><strong>23.5 €</strong><p>Lightly smoked lamb carpaccio, cashews, sweet and sour apricots, sauce made from Tinos kariki, retsina &amp; mastic</p></article>
-<article><h3>Divine Beef Burger</h3><strong>14.5 €</strong><p>Tomato, pickled cucumber, arugula, cheddar, secret mayo, fries</p></article>
-<article><h3>Vegan Burger (V)</h3><strong>14.5 €</strong><p>Veggie and mushroom burger, tomato, local capers, fresh basil, vegan mayo with cucumber pickles, vegan cheese &amp; beetroot salad</p></article>
-<article><h3>Vegan Moussaka (V)</h3><strong>16 €</strong><p>Mushrooms, black lentils, soy mince, corn béchamel, tomato gazpacho</p></article>
-<h2>DESSERTS</h2><article><h3>Dark Chocolate Mousse</h3><strong>12 €</strong><p>Patras Tentura, white chocolate cream with Bergamot and Aegina peanut, mango sorbet, Hawaiian black salt</p></article>
-<article><h3>Tiramisu</h3><strong>11 €</strong><p>Tsoureki, dark chocolate, caramelized almonds</p></article>
-<article><h3>Tahini Ice Cream</h3><strong>8.5 €</strong><p>Lemon, hazelnuts, rose preserve, cream from halvadopita and mandolato</p></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-1" class="panel"><a class="back" href="#home">← Αρχική</a><h1>MENU (GR)</h1>
-<article><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><strong>2.5 €</strong></article>
-<h2>ΣΑΛΑΤΕΣ</h2><article><h3>Η φημισμένη Ελληνική Σαλάτα</h3><strong>12 €</strong><p>Τοματίνια Σύρου, άγρια κάπαρη του νησιού, πιπεριές, μαριναρισμένο κρεμμύδι, ελιές, αγγούρι, κολοκύθι, φέτα Καλαβρύτων</p></article>
-<article><h3>Πράσινη Σαλάτα με κοτόπουλο</h3><strong>13.5 €</strong><p>Ψητό φιλέτο κοτόπουλο, τοματίνια, κολοκυθόσπορος, χειροποίητη μαγιονέζα εσπεριδοειδών, flakes παρμεζάνας</p></article>
-<article><h3>Παντζαροσαλάτα</h3><strong>13 €</strong><p>Παντζάρι, ξινόμηλο, χειροποίητη κρέμα φέτας &amp; φράουλας, καρύδια, ρόδι</p></article>
-<h2>ΟΡΕΚΤΙΚΑ / ΚΥΡΙΩΣ</h2><article><h3>Ποικιλία Κυκλαδίτικων Τυριών</h3><strong>23 €</strong><p>Αρσενικό Νάξου, Αμάραντος Σύρου, Γραβιέρα Ίου, Ανθότυρο Σύρου</p></article>
-<article><h3>Ποικιλία Αλλαντικών</h3><strong>21 €</strong><p>Καπνιστό prosciutto, σαλάμι Λευκάδος, ψητό φιλέτο γαλοπούλας, παστράμι μόσχου, απάκι Κρήτης</p></article>
-<article><h3>Μπρουσκέτα με Καπνιστό Σολομό</h3><strong>11.5 €</strong><p>Αβοκάντο, φινίκιο, κάπαρη, lime</p></article>
-<article><h3>Μπρουσκέτα με Καπνιστό Prosciutto</h3><strong>10.5 €</strong><p>Hummus μελιτζάνας, σταφίδες, κουκουνάρι</p></article>
-<article><h3>Ψητό Κρασοτύρι Φέτας</h3><strong>12.5 €</strong><p>Φύλλο κρούστας, μαυροσούσαμο, τζίντζερ, chutney μανταρίνι - μαστίχα, κρέμα κολοκύθας</p></article>
-<article><h3>Πίνσα Προσούτο</h3><strong>13.5 €</strong><p>Καπνιστό προσούτο, ρόκα, τοματίνια, φρέσκια mozzarella, φρέσκια σάλτσα τομάτας</p></article>
-<article><h3>Pinsa Μαργαρίτα</h3><strong>11 €</strong><p>Φρέσκια mozzarella, ντομάτα, ανθότυρο, βασιλικός</p></article>
-<article><h3>Pinsa Syros</h3><strong>13 €</strong><p>Συριανό λουκάνικο, χειροποίητη λούζα, φρέσκια mozzarella, καπνιστό Βερμίου, ντομάτα, αμύγδαλα</p></article>
-<article><h3>Hot Dog με ψητή Γουρουνοπούλα</h3><strong>11 €</strong><p>Λάχανο, μουστάρδα, μαγιονέζα, κέτσαπ, horseradish</p></article>
-<article><h3>Ριζότο Άγριων Μανιταριών (V)</h3><strong>15 €</strong><p>Κρέμα ελληνικής τρούφας, φουντούκι</p></article>
-<article><h3>Αυθεντική καρμπονάρα</h3><strong>14.5 €</strong><p>Γκουαντσάλε, αυγό, παρμεζάνα, πεκορίνο</p></article>
-<article><h3>Σκιουφιχτό με Πέστο</h3><strong>13.5 €</strong><p>Χειροποίητο πέστο βασιλικού, τοματίνια, ψητό κουκουνάρι, παρμεζάνα</p></article>
-<article><h3>Φρέσκο Λαβράκι Φιλέτο</h3><strong>22.5 €</strong><p>Κρέμα συριανής μαϊντανοσαλάτας, πουρές πατάτας γιαχνί, φαγόπυρο</p></article>
-<article><h3>Φρέσκο Μοσχαρίσιο Φιλέτο</h3><strong>33 €</strong><p>Σάλτσα Teriyaki με πορτοκάλι, αρμπαρόριζα, πουρές γλυκοπατάτας</p></article>
-<article><h3>Χοιρινό Καρέ</h3><strong>14.5 €</strong><p>Σάλτσα εσπεριδοειδών, τηγανιτές πατάτες</p></article>
-<article><h3>Φιλέτο Κοτόπουλο</h3><strong>14.5 €</strong><p>Φρέσκα gnocchi πατάτας, πέστο βασιλικού, καβουρδισμένο πεκάν</p></article>
-<article><h3>Ταλιατέλες με Καρπάτσιο Αρνάκι</h3><strong>23.5 €</strong><p>Ελαφρά καπνιστό καρπάτσιο από αρνάκι, κάσιους, γλυκόξινα βερίκοκα, σάλτσα από καρίκι Τήνου, ρετσίνα &amp; μαστίχα</p></article>
-<article><h3>Divine Beef Burger</h3><strong>14.5 €</strong><p>Τομάτα, αγγουράκι τουρσί, ρόκα, cheddar, secret mayo, τηγανιτές πατάτες</p></article>
-<article><h3>Vegan Burger Λαχανικών (V)</h3><strong>14.5 €</strong><p>Μπιφτέκι λαχανικών και μανιταριών, τομάτα, κάπαρη Σύρου, φρέσκος βασιλικός, vegan mayo με αγγουράκι τουρσί, τυρί vegan και παντζαροσαλάτα</p></article>
-<article><h3>Vegan Μουσακάς (V)</h3><strong>16 €</strong><p>Μανιτάρια, μαύρες φακές, κιμάς σόγιας, μπεσαμέλ Καλαμποκιού, γκασπάτσο ντομάτας</p></article>
-<h2>ΕΠΙΔΟΡΠΙΑ</h2><article><h3>Μους Μαύρης Σοκολάτας</h3><strong>12 €</strong><p>Πατρινή Τεντούρα, Κρέμα Λευκής Σοκολάτας με Περγαμόντο και φυστίκι Αιγίνης, sorbet μάνγκο, μαύρο αλάτι Χαβάης</p></article>
-<article><h3>Τιραμισού</h3><strong>11 €</strong><p>Τσουρέκι, μαύρη σοκολάτα, καραμελωμένα αμύγδαλα</p></article>
-<article><h3>Παγωτό από Ταχίνι</h3><strong>8.5 €</strong><p>Λεμόνι, φουντούκια, γλυκό τριαντάφυλλο, κρέμα από χαλβαδόπιτα και μανταρίνι</p></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-2" class="panel"><a class="back" href="#home">← Αρχική</a><h1>ΚΡΑΣΙΑ / WINES</h1>
-
-<h2>ΛΕΥΚΑ / WHITE</h2><article><h3>Έρωχος Λευκός</h3><strong>5 € (ποτήρι) / 22 € (φιάλη)</strong><p>Κτήμα Αργυρίου, Ασύρτικο, Ροδίτης, Sauv. Blanc</p></article>
-<article><h3>Μαλαγουζιά</h3><strong>6 € (ποτήρι) / 27.5 € (φιάλη)</strong><p>Κτήμα Αργυρίου, Μαλαγουζιά</p></article>
-<article><h3>Φάμπρικα (Σύρος)</h3><strong>28 €</strong><p>Κτήμα Χατζάκη, Κουντούρα, Μονεμβασιά</p></article>
-<article><h3>Σαν τα Μάραθα (Σύρος)</h3><strong>34 €</strong><p>Κτήμα Χατζάκη, Ασύρτικο</p></article>
-<article><h3>Viña Esmeralda</h3><strong>27 €</strong><p>Gewürztraminer, Muscat</p></article>
-<article><h3>Μπλέ Τρακτέρ</h3><strong>28.5 €</strong><p>Κτήμα Κυρ-Γιάννη, Chardonnay, Viognier, Ασύρτικο</p></article>
-<article><h3>Sauvignon Blanc</h3><strong>28.5 €</strong><p>Κτήμα Αργυρίου, Sauv. Blanc</p></article>
-<article><h3>Τέχνη Αλυπίας</h3><strong>37.5 €</strong><p>Κτήμα Αργυρίου, Sauv. Blanc, Ασύρτικο</p></article>
-<article><h3>Βιβλία Χώρα</h3><strong>39.5 €</strong><p>Κτήμα Βιβλία Χώρα, Ασύρτικο, Sauv. Blanc</p></article>
-<article><h3>Chateau Julia Chardonnay</h3><strong>41 €</strong><p>Κτήμα Λαζαρίδη, Chardonnay</p></article>
-<article><h3>Μαλαγουζιά</h3><strong>46 €</strong><p>Κτήμα Γεροβασιλείου, Μαλαγουζιά</p></article>
-<article><h3>Όβηλος</h3><strong>75 €</strong><p>Κτήμα Βιβλία Χώρα, Ασύρτικο, Σεμιγιόν (Semillon)</p></article>
-<article><h3>Τρία Αμπέλια</h3><strong>95 €</strong><p>Κτήμα Σιγάλα, Ασύρτικο</p></article>
-<h2>ΡΟΖΕ / ROSÉ</h2><article><h3>Άκρες</h3><strong>6 € (ποτήρι) / 24.5 € (φιάλη)</strong><p>Κτήμα Σκούρα, Αγιωργίτικο, Μοσχοφίλερο</p></article>
-<article><h3>Τρεις Μάγισσες</h3><strong>7 € (ποτήρι) / 31 € (φιάλη)</strong><p>Κτήμα Μπαραφάκα, Αγιωργίτικο, Μοσχοφίλερο, Syrah</p></article>
-<article><h3>Μπλέ Τρακτέρ</h3><strong>28.5 €</strong><p>Κτήμα Κυρ-Γιάννη, Merlot</p></article>
-<article><h3>Domain Costa Lazaridi Rosé</h3><strong>45 €</strong><p>Κτήμα Λαζαρίδη, Merlot, Αγιωργίτικο, Grenache</p></article>
-<article><h3>Ξινόμαυρο</h3><strong>47 €</strong><p>Κτήμα Γεροβασιλείου, Ξινόμαυρο</p></article>
-<h2>ΕΡΥΘΡΑ / RED</h2><article><h3>Έρωχος Ερυθρός</h3><strong>5 € (ποτήρι) / 22 € (φιάλη)</strong><p>Κτήμα Αργυρίου, Μαυρούδι, Merlot</p></article>
-<article><h3>Πόρτες Merlot</h3><strong>7 € (ποτήρι) / 31 € (φιάλη)</strong><p>Κτήμα Σκούρα, Merlot</p></article>
-<article><h3>Μπλέ Τρακτέρ</h3><strong>28.5 €</strong><p>Κτήμα Κυρ-Γιάννη, Cab. Sauvignon, Merlot, Syrah</p></article>
-<article><h3>Βιβλία Χώρα</h3><strong>48 €</strong><p>Κτήμα Βιβλία Χώρα, Cab. Sauvignon, Merlot, Αγιωργίτικο</p></article>
-<article><h3>Chateau Julia Merlot</h3><strong>50 €</strong><p>Κτήμα Λαζαρίδη, Merlot</p></article>
-<article><h3>Κτήμα Άλφα</h3><strong>71 €</strong><p>Κτήμα Άλφα, Syrah, Ξινόμαυρο, Merlot</p></article>
-<article><h3>Μαυροτράγανο</h3><strong>109 €</strong><p>Κτήμα Σιγάλα, Μαυροτράγανο</p></article>
-<article><h3>Σπιτική Λευκή Sangria</h3><strong>9 €</strong></article>
-<article><h3>Σπιτική Κόκκινη Sangria</h3><strong>6 €</strong></article>
-<h2>SPARKLING WINE</h2><article><h3>Prosecco Extra Dry</h3><strong>7 € (ποτήρι) / 35 € (φιάλη)</strong></article>
-<article><h3>Moscato D'Asti</h3><strong>7 € (ποτήρι) / 35 € (φιάλη)</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-3" class="panel"><a class="back" href="#home">← Αρχική</a><h1>ΜΠΥΡΑ / BEER</h1>
-<article><h3>Νύμφη Draft 250ml</h3><strong>3.5 €</strong></article>
-<article><h3>Νύμφη Draft 500ml</h3><strong>6 €</strong></article>
-<article><h3>Μάμος αφιλτράριστη / unfiltered</h3><strong>4.5 €</strong></article>
-<article><h3>Νήσος Βιολογική</h3><strong>5.5 €</strong></article>
-<article><h3>Νήσος 7 Μποφόρ</h3><strong>6.5 €</strong></article>
-<article><h3>Septem 8η Μέρα (IPA)</h3><strong>8 €</strong></article>
-<article><h3>Erdinger</h3><strong>6.5 €</strong></article>
-<article><h3>Guinness</h3><strong>7 €</strong></article>
-<article><h3>Sol</h3><strong>6 €</strong></article>
-<article><h3>Lagunitas IPA</h3><strong>8 €</strong></article>
-<article><h3>Heineken 0.0</h3><strong>4.5 €</strong></article>
-<article><h3>Μηλοκλέφτης</h3><strong>5 €</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-4" class="panel"><a class="back" href="#home">← Αρχική</a><h1>SPIRITS</h1>
-
-<h2>GIN</h2><article><h3>Greenall's</h3><strong>8 €</strong></article>
-<article><h3>Beefeater</h3><strong>8 €</strong></article>
-<article><h3>Bombay Saphire</h3><strong>9 €</strong></article>
-<article><h3>Tanqueray</h3><strong>9 €</strong></article>
-<article><h3>Tanqueray 0.0</h3><strong>9 €</strong></article>
-<article><h3>Votanikon</h3><strong>10 €</strong></article>
-<article><h3>Hendrick's</h3><strong>12 €</strong></article>
-<article><h3>Ophir</h3><strong>12 €</strong></article>
-<article><h3>Etsu</h3><strong>12 €</strong></article>
-<article><h3>Monkey 47</h3><strong>15 €</strong></article>
-<article><h3>Elephant</h3><strong>15 €</strong></article>
-<h2>RUM</h2><article><h3>Barchelo Blaco</h3><strong>8 €</strong></article>
-<article><h3>Barchelo Anejo</h3><strong>9 €</strong></article>
-<article><h3>Barchelo Imperial</h3><strong>10 €</strong></article>
-<article><h3>Bacardi White</h3><strong>8 €</strong></article>
-<article><h3>Havana Especial</h3><strong>9 €</strong></article>
-<article><h3>Sailor Jerry</h3><strong>9 €</strong></article>
-<article><h3>Diplomatico</h3><strong>12 €</strong></article>
-<article><h3>Papa's Pilar</h3><strong>12 €</strong></article>
-<article><h3>Chairman's Reserve</h3><strong>12 €</strong></article>
-<article><h3>Don Papa</h3><strong>14 €</strong></article>
-<article><h3>Don Papa Baroko</h3><strong>14 €</strong></article>
-<article><h3>Bumbu the Original</h3><strong>14 €</strong></article>
-<h2>TEQUILA</h2><article><h3>Rooster Blanco</h3><strong>9 €</strong></article>
-<article><h3>Rooster Reposado</h3><strong>9 €</strong></article>
-<article><h3>Mezcal</h3><strong>12 €</strong></article>
-<article><h3>Patron Silver</h3><strong>14 €</strong></article>
-<article><h3>Patron Reposado</h3><strong>14 €</strong></article>
-<article><h3>Clase Azul Reposado</h3><strong>45 €</strong></article>
-<h2>VODKA</h2><article><h3>Stolichnaya</h3><strong>8 €</strong></article>
-<article><h3>Smirnoff</h3><strong>8 €</strong></article>
-<article><h3>Moskovskaya</h3><strong>8 €</strong></article>
-<article><h3>Grey Goose</h3><strong>12 €</strong></article>
-<article><h3>Ciroc</h3><strong>12 €</strong></article>
-<article><h3>Belvedere</h3><strong>12 €</strong></article>
-<article><h3>Beluga Transatlantic</h3><strong>14 €</strong></article>
-<h2>WHISKEY</h2><article><h3>Haig</h3><strong>8 €</strong></article>
-<article><h3>Famous Grouse</h3><strong>8 €</strong></article>
-<article><h3>Dewar's</h3><strong>8 €</strong></article>
-<article><h3>Cutty Shark</h3><strong>8 €</strong></article>
-<article><h3>Tullamore Dew</h3><strong>8 €</strong></article>
-<article><h3>Johnnie Walker Red</h3><strong>8 €</strong></article>
-<article><h3>Four Roses</h3><strong>9 €</strong></article>
-<article><h3>Jack Daniel's</h3><strong>10 €</strong></article>
-<article><h3>Buffalo Trac</h3><strong>10 €</strong></article>
-<article><h3>Chivas</h3><strong>10 €</strong></article>
-<article><h3>Dimple</h3><strong>10 €</strong></article>
-<article><h3>Johnnie Walker Black</h3><strong>10 €</strong></article>
-<article><h3>Nikka (from the barrel)</h3><strong>14 €</strong></article>
-<article><h3>Suntory</h3><strong>16 €</strong></article>
-<article><h3>Legavulin</h3><strong>18 €</strong></article>
-<h2>BRANDY</h2><article><h3>Metaxa 5*</h3><strong>8 €</strong></article>
-<article><h3>Metaxa 12*</h3><strong>12 €</strong></article>
-<article><h3>Bache XO</h3><strong>12 €</strong></article>
-<article><h3>Bache VSOP</h3><strong>14 €</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-5" class="panel"><a class="back" href="#home">← Αρχική</a><h1>COCKTAILS</h1>
-<h2>CLASSICS</h2><article><h3>PORNSTAR MARTINI</h3><strong>11 €</strong><p>Sweet vanilla and tart passion fruit bliss.</p></article>
-<article><h3>MOJITO</h3><strong>10 €</strong><p>Crisp, minty refreshment for endless summer nights.</p></article>
-<article><h3>DAIQUIRI</h3><strong>10 €</strong><p>Perfectly balanced citrus snap of pure elegance.</p></article>
-<article><h3>CAIPIRINHA</h3><strong>10 €</strong><p>Vibrant, zesty soul of a Brazilian fiesta.</p></article>
-<article><h3>MOSCOW MULE</h3><strong>11 €</strong><p>Zesty lime and a spicy ginger bite.</p></article>
-<article><h3>OLD FASHIONED</h3><strong>11 €</strong><p>Bold, timeless sophistication with a bitter edge.</p></article>
-<article><h3>MARGARITA</h3><strong>11 €</strong><p>Salty, sour perfection with a tequila bite.</p></article>
-<article><h3>TOMMY'S MARGARITA</h3><strong>11 €</strong><p>Smooth agave sweetness meets sharp citrus tang.</p></article>
-<article><h3>MAI TAI</h3><strong>11 €</strong><p>An exotic escape packed with nutty rum.</p></article>
-<article><h3>SOUR COCKTAILS</h3><strong>11 €</strong><p>Silky, frothy balance of sweet and tart.</p></article>
-<article><h3>PIÑA COLADA</h3><strong>12 €</strong><p>Creamy coconut bliss under the island sun.</p></article>
-<article><h3>NEGRONI</h3><strong>13 €</strong><p>Fiercely bitter, botanical, and flawlessly Italian.</p></article>
-<article><h3>ZOMBIE</h3><strong>14 €</strong><p>Dangerously potent voodoo magic in a glass.</p></article>
-<article><h3>DRY/DIRTY MARTINI</h3><strong>14 €</strong><p>Savory, icy elegance with a briny whisper.</p></article><p>and many, MANY more...</p>
-<h2>SIGNATURE</h2><article><h3>CRIMSON KISS</h3><strong>13 €</strong><p>Fruity / Tart / Floral GIN, RED BERRIES PURÉE, LEMON, TRIPLE SEC, CRÈME DE VIOLETTE A kiss you'll never want to end.</p></article>
-<article><h3>BASIL BREEZE</h3><strong>13 €</strong><p>Refreshing / Herbal / Balanced GIN, CUCUMBER-BASIL CORDIAL, ELDERFLOWER, LEMON, AEGEAN TONIC Like the breeze on a hot summer day, you'll always want more.</p></article>
-<article><h3>WALKIN' ON THE SUN</h3><strong>14 €</strong><p>Tangy / Spiced / Warming REPOSADO TEQUILA, ELDERFLOWER, GRAPEFRUIT, LEMON, GINGER, BLACK PEPPER, ORANGE BITTERS Gently spicy with a complex finish.</p></article>
-<article><h3>METAXA APRICOT SOUR</h3><strong>13 €</strong><p>Fruity / Sour / Sweet APRICOT-INFUSED METAXA, LEMON, SUGAR, BITTERS, EGG WHITE Our sour-style cocktail with a summery twist.</p></article>
-<article><h3>IRREALE</h3><strong>12 €</strong><p>Sweet / Rich / Smooth DISARONNO AMARETTO, PINEAPPLE PURÉE, ORGEAT, LEMON A luscious experience out of this world.</p></article>
-<article><h3>VELVET BLOOM</h3><strong>14 €</strong><p>Tropical / Smooth / Spiced CHAIRMAN'S SPICED RUM, VANILLA, LEMON, PINK GRAPEFRUIT, ORANGE BITTERS Spiced seas, softened edges.</p></article>
-<article><h3>BUBBLE TROUBLE</h3><strong>13 €</strong><p>Vibrant / Fruity / Sweet VODKA, MASTIHA, STRAWBERRY, BUBBLEGUM, LEMON Trouble never tasted so sweet.</p></article>
-<article><h3>THEROS</h3><strong>13 €</strong><p>Fizzy / Summery / Peachy VODKA, LEMON, ORGEAT, PEACH, BUBBLES An ideal company to make memories with.</p></article>
-<article><h3>SUNSET BLISS</h3><strong>13 €</strong><p>Spirited / Luscious / Bright BLENDED SCOTCH WHISKY, GREEN APPLE, APRICOT, LEMON A delightful temptation for just the right occasion.</p></article>
-<article><h3>SMOKING SUMMER</h3><strong>16 €</strong><p>Smoky / Mineral / Umami MEZCAL (AGAVE ESPADÍN), DRY VERMOUTH, TOMATO, SPICES, LEMON Not everyone's cup of tea, but we are not here for tea, are we?</p></article>
-<h2>MOCKTAILS</h2><article><h3>JUNGLE SIESTA</h3><strong>11 €</strong><p>Sweet / Spicy / Bright VANILLA, CHILLI, LEMON, GINGER BEER In the midst of it all, calmness can still be found.</p></article>
-<article><h3>STRAWBERRY SMASH</h3><strong>10 €</strong><p>Fresh / Juicy / Balanced FRESH STRAWBERRIES, ORANGE JUICE, LEMON, ORGEAT A vibrant rush that comes with a playful afterthought.</p></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-6" class="panel"><a class="back" href="#home">← Αρχική</a><h1>ΜΕΝΟΥ</h1>
-
-<h2>Σαλάτες  ·  Salads</h2><p><a class="cross" href="#menu-1">ΣΑΛΑΤΕΣ στο MENU (GR) →</a></p>
-<h2>Ορεκτικά  ·  Starters</h2><article><h3>Τυροκαυτερή</h3><strong>6.00€</strong></article>
-<article><h3>Τζατζίκι</h3><strong>6.00€</strong></article>
-<article><h3>Ταραμοσαλάτα</h3><strong>7.00€</strong></article>
-<article><h3>Φάβα</h3><strong>7.00€</strong></article>
-<article><h3>Σαν Μιχάλη</h3><strong>7.00€</strong></article>
-<article><h3>Φέτα</h3><strong>6.00€</strong></article>
-<article><h3>Πατάτες τηγανητές στο χέρι</h3><strong>6.00€</strong></article>
-<article><h3>Πατάτες τηγανητές με κρέμα τυριών &amp; κιμά από Συριανό λουκάνικο</h3><strong>8.50€</strong></article>
-<article><h3>Αφράτοι λουκουμάδες τυριού</h3><strong>8.50€</strong></article>
-<article><h3>Κολοκυθάκια τηγανητά με αρωματισμένο γιαούρτι</h3><strong>7.00€</strong></article>
-<article><h3>Κρεμμυδόπιτα ξεσκέπαστη με μπέικον ¨της Μυρσήνης¨</h3><strong>9.00€</strong></article>
-<article><h3>Πιπεριές με τυριά &amp; μπέικον στον φούρνο</h3><strong>9.00€</strong></article>
-<h2>Θαλασσινά  ·  Seafood</h2><article><h3>Γαύρος μαρινάτος πάνω σε φρυγανισμένο ψωμάκι με ντομάτα &amp; κρέμα σκόρδου</h3><strong>8.00€</strong></article>
-<article><h3>*Γαρίδες με κρέμα &amp; lime</h3><strong>16.00€</strong></article>
-<article><h3>Γαύρος τηγανητός</h3><strong>10.00€</strong></article>
-<article><h3>*Μύδια σαγανάκι</h3><strong>14.00€</strong></article>
-<article><h3>Καλαμαράκι τηγανητό</h3><strong>12.00€</strong></article>
-<article><h3>*Χταπόδι καραμελωμένο πάνω σε φάβα</h3><strong>16.00€</strong></article>
-<article><h3>Γιουβετσάκι θαλασσινών</h3><strong>17.00€</strong></article>
-<article><h3>*Καλαμάρι ψητό με πέστο βασιλικού, ρόκα &amp; φέτα</h3><strong>16.00€</strong></article>
-<article><h3>Μακαρονάδα θαλασσινών</h3><strong>17.00€</strong></article>
-<article><h3>Ταλιατέλες με καπνιστό σολομό &amp; μελάνι σουπιάς</h3><strong>16.50€</strong></article>
-<article><h3>Γαριδομακαρονάδα με κολοκύθι &amp; φινόκιο</h3><strong>17.00€</strong></article>
-<article><h3>Αστακομακαρονάδα</h3><strong>95.00€</strong><p>Για 2 ή 4 άτομα</p></article>
-<article><h3>Σαρδέλες ψητές</h3><strong>11.50€</strong></article>
-<article><h3>ΜΠακαλιάρος τηγανητός με σκορδαλιά αρωματισμένη απο παντζάρι</h3><strong>12.50€</strong></article>
-<article><h3>Γούνα παριανή</h3><strong>16.00€</strong></article>
-<h2>Κρεατικά  ·  Meats</h2><article><h3>Πανσετάκια με σάλτσα μουστάρδας &amp; πιτούλες</h3><strong>11.00€</strong></article>
-<article><h3>Γιουβέτσι με τρυφερά κομματάκια αρνιού &amp; κρέμα φέτας</h3><strong>17.50€</strong></article>
-<article><h3>Καραμελωμένο συκωτάκι με μπαλσάμικο &amp; δενδρολίβανο</h3><strong>12.00€</strong></article>
-<article><h3>Χοιρινή τηγανιά</h3><strong>11.00€</strong></article>
-<article><h3>Μπιφτέκι δροσερό</h3><strong>12.50€</strong></article>
-<article><h3>Ψαρονέφρι με σάλτσα μανιταριών</h3><strong>13.50€</strong></article>
-<article><h3>Καλαμάκια κοτόπουλο με δροσερή σαλάτα</h3><strong>12.00€</strong></article>
-<article><h3>Μπριζολάκια χοιρινά</h3><strong>12.50€</strong></article>
-<h2>Ζεστά πιάτα  ·  Hot Dishes</h2><p>Ζυμαρικά, Μαγειρευτά, Δημιουργίες</p><article><h3>Μελιτζάνες πλακί με τριμμένη φέτα</h3><strong>9.50€</strong></article>
-<article><h3>Μανιτάρια με σπανάκι, κρέμα &amp; καπνιστό χοιρινό</h3><strong>10.00€</strong></article>
-<article><h3>Μανιτάρια με ψητό ταλαγάνι &amp; σάλτσα από μέλι και θυμάρι</h3><strong>10.00€</strong></article>
-<article><h3>Πατάτες με αυγά μάτια, φέτα &amp; σουτζούκι</h3><strong>10.00€</strong></article>
-<article><h3>Κεφτεδάκια κοκκινιστά με γιαούρτι</h3><strong>8.00€</strong></article>
-<article><h3>Κοτόπουλο με κρέμα μπέικον &amp; ροζ πιπέρι</h3><strong>10.50€</strong></article>
-<article><h3>Λιγκουίνι με κιμά</h3><strong>11.00€</strong></article>
-<article><h3>Σκιουφιχτά με λαχανικά &amp; φέτα</h3><strong>11.50€</strong></article>
-<article><h3>Μακαρονάδα με ρόκα, ντοματίνια, παρμεζάνα</h3><strong>11.00€</strong></article>
-<h2>Τα Γλυκά μασ  ·  Our sweets</h2><article><h3>Πορτοκαλόπιτα του σπιτιού</h3><strong>7.00€</strong></article>
-<article><h3>Cheesecake με μαρμελάδα της γιαγιάς</h3><strong>7.00€</strong></article>
-<article><h3>Συροπιαστή καρυδόπιτα με σοκολάτα</h3><strong>7.00€</strong></article><p>Ενημερώστε μας για τυχόν αλλεργίες ή δυσανεξία στη γλουτένη για την ασφαλέστερη εξυπηρέτησή σας.</p>
-<p>Το ψωμί μας είναι φρέσκο. Σε όλες τις σαλάτες χρησιμοποιούμε παρθένο ελαιόλαδο.</p>
-<p>Οι πατάτες είναι φρέσκιες και τηγανίζονται σε ηλιέλαιο.</p>
-<p>Με * χαρακτηρίζεται κατεψυγμένο προϊόν. Ώπου φέτα προστατευόμενη ονομασία προέλευσης (Π.Ο.Π.)</p>
-<p>Το κατάστημα υποχρεούται να διαθέτει δελτία, σε ειδική θέση δίπλα στην έξοδο, για την διατύπωση οποιασδήποτε διαμαρτυρίας.</p>
-<p>Αγορανομικός υπεύθυνος Παύλος Καράμπελας.</p><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-7" class="panel"><a class="back" href="#home">← Αρχική</a><h1>Λίστα Κρασιών  ·  Wine List</h1>
-
-<h2>ΛΕΥΚΑ  ·  WHITE</h2><article><h3>The Duck White</h3><strong>24.00€</strong><p>Κτήμα Φίλια Γη Περιοχή: Καρδίτσα Είδος: Ξηρός, Λευκός Ποικιλία: Ασύρτικο, Μαλαγουζιά, Μοσχάτο Μαύρο</p></article>
-<article><h3>Μαλαγουζιά · κτήμα Άλφα</h3><strong>29.00€</strong><p>Προστατευόμενη Γεωγραφική Ένδειξη Φλώρινας · P.G.I Florina Περιοχή:  Αμύνταιο Είδος: Ξηρός, Λευκός Ποικιλία: 100% Μαλαγουζιά</p></article>
-<article><h3>Θαλασσίτης</h3><strong>65.00€</strong><p>Σαντορίνη ΠΟΠ · PDO Santorini Περιοχή: Σαντορίνη Είδος: Ξηρός, Λευκός Ποικιλία: Ασύρτικο</p></article>
-<h2>ΡΟΖΕ  ·  ROSÉ</h2><article><h3>ΟυΣύρα Ροζέ · Οινοποιείο ΟυΣύρα</h3><strong>33.00€</strong><p>Περιοχή:  Σύρος Είδος: Ξηρός, Ροζέ Ποικιλία: Φωκιανό</p></article>
-<article><h3>Idylle D’ Achinos · La Tour Melas</h3><strong>35.00€</strong><p>Προστατευόμενη Γεωγραφική Ένδειξη Φλώρινας · P.G.I. Florina Περιοχή:  Φθιώτιδα Είδος: Ξηρός, Ροζέ Ποικιλία: Grenache Rouge, Syrah, Αγιωργίτικο</p></article>
-<article><h3>Whispering Angel · Domaine Sacha Lichine</h3><strong>50.00€</strong><p>AC Cotes de Provence Περιοχή:  Provence Είδος: Ξηρός, Ροζέ Ποικιλία: Cinsault, Grenache, Mourverde, Syrah</p></article>
-<h2>ΕΡΥΘΡΑ  ·  RED</h2><article><h3>“Τρεις Λόφοι“  · Κτήμα Κοκοτού</h3><strong>27.00€</strong><p>Περιοχή:  Νεμέα Είδος: Ξηρός, Ερυθρός Ποικιλία: 100% Αγιωργίτικο</p></article>
-<h2>Αφρώδεις Οίνοι  · Sparkling Wines</h2><article><h3>Montegrande Prosecco</h3><strong>29.00€</strong></article>
-<article><h3>Gemma Di Luna Moscato D’ asti</h3><strong>29.00€</strong></article>
-<article><h3>Moët &amp; Chandon Brut Imperial</h3><strong>110.00€</strong></article>
-<article><h3>Moët &amp; Chandon Ice Imperial</h3><strong>120.00€</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-8" class="panel"><a class="back" href="#home">← Αρχική</a><h1>Τσίπουρο  ·  Tsipouro</h1>
-<article><h3>Μακρυωνίτης 200ml</h3><strong>12.00€</strong></article>
-<article><h3>Δεκαράκι 200ml</h3><strong>11.00€</strong></article>
-<article><h3>Καλαϊτζή 200 ml</h3><strong>11.00€</strong></article>
-<article><h3>Γάτσιος 200ml</h3><strong>11.00€</strong></article>
-<article><h3>Γάτσιος με γλυκάνισο 200ml</h3><strong>11.00€</strong></article>
-<article><h3>Ηδωνικό 200ml</h3><strong>12.00€</strong></article>
-<article><h3>Μπαμπατζίμ 200ml</h3><strong>11.00€</strong></article>
-<article><h3>Αποστολάκη 200ml</h3><strong>11.00€</strong></article>
-<article><h3>Αγιονέρι Παλαιωμένο 200ml</h3><strong>12.00€</strong></article>
-<article><h3>Προϊόν απόσταξης μικρών αποσταγματοποιών / Τσίπουρο</h3><strong>9.00€</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-9" class="panel"><a class="back" href="#home">← Αρχική</a><h1>Ούζο  ·  Ouzo</h1>
-<article><h3>Μακρυωνίτης 200ml</h3><strong>10.00€</strong></article>
-<article><h3>Πλωμάρι 200ml</h3><strong>10.00€</strong></article>
-<article><h3>Βαρβαγιάννη μπλε 200 ml</h3><strong>10.00€</strong></article>
-<article><h3>Βαρβαγιάννη πράσινο 200ml</h3><strong>11.00€</strong></article>
-<article><h3>Ηδωνικό 200ml</h3><strong>11.00€</strong></article>
-<article><h3>Πιτσιλαδή 200ml</h3><strong>12.00€</strong></article>
-<article><h3>Απαλαρίνα 200ml</h3><strong>10.00€</strong></article>
-<article><h3>Μπαμπατζίμ 200ml</h3><strong>10.00€</strong></article>
-<article><h3>Μελτέμι  200ml</h3><strong>10.00€</strong></article>
-<article><h3>Μελτέμι gold (premium) 200ml</h3><strong>16.00€</strong></article>
-<article><h3>Ούζο 250 ml</h3><strong>9.00€</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-10" class="panel"><a class="back" href="#home">← Αρχική</a><h1>Μπύρες  ·  Beers</h1>
-<article><h3>Alfa 500ml</h3><strong>4.50€</strong></article>
-<article><h3>Alfa άνευ 500ml</h3><strong>4.50€</strong></article>
-<article><h3>Heineken 500ml</h3><strong>4.50€</strong></article>
-<article><h3>Fischer 500ml</h3><strong>4.50€</strong></article>
-<article><h3>Mamos 500ml</h3><strong>4.50€</strong></article>
-<article><h3>Syra beer (local) 500ml</h3><strong>5.00€</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-11" class="panel"><a class="back" href="#home">← Αρχική</a><h1>Κρασί χύμα  ·  Wine</h1>
-<article><h3>Κρασί λευκό 500ml</h3><strong>6.00€</strong></article>
-<article><h3>Κρασί ροζέ 500ml</h3><strong>6.00€</strong></article>
-<article><h3>Κρασί κόκκινο 500ml</h3><strong>6.00€</strong></article>
-<article><h3>Κρασί ημίγλυκο κόκκινο - λευκό 500ml</h3><strong>7.50€</strong></article>
-<article><h3>ΜΑΛΑΜΑ ρετσίνα 500ml</h3><strong>8.00€</strong></article><a class="back" href="#home">← Αρχική</a></section>
-<section id="menu-12" class="panel"><a class="back" href="#home">← Αρχική</a><h1>Αναψυκτικά &amp; λοιπα ποτά   · Soft Drinks &amp; more</h1>
-<article><h3>Coca-cola 250ml (zero, regular, zero sugar zero caffeine)</h3><strong>3.50€</strong></article>
-<article><h3>Fanta 250ml (orange, blue, lemon)</h3><strong>3.50€</strong></article>
-<article><h3>Sprite 250ml</h3><strong>3.50€</strong></article>
-<article><h3>Schweppes 250ml (soda water)</h3><strong>3.50€</strong></article>
-<article><h3>Ανθρακούχο νερό Aqua Carpatica 330ml -750ml / carbonated water</h3><strong>4.00 - 7.00 €</strong></article>
-<article><h3>Νερό φυσικό μεταλλικό AYRA 1L</h3><strong>2.00€</strong></article>
-<article><h3>Ποτά 50ml - 700ml</h3><strong>8.00 - 80.00€</strong></article>
-<article><h3>Ποτά σπέσιαλ 50ml - 700ml</h3><strong>10.00 - 100.00€</strong></article>
-<article><h3>Εσπρέσσο μονό</h3><strong>3.00€</strong></article><a class="back" href="#home">← Αρχική</a></section></main></html>
+<!doctype html>
+<html lang="el"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>40 Tales Fox · Ερμούπολη</title><style>
+*{box-sizing:border-box}
+html{background:#232426}
+body{margin:0;color:#232426;font:14px Arial,sans-serif}
+main{max-width:402px;margin:auto;min-height:100svh;background:#e0dbd4}
+a{color:inherit;text-decoration:none}
+a:focus-visible{outline:3px solid #aa6539;outline-offset:2px}
+h1,h2,h3,p{margin:0}
+.hero,.banner{background-size:cover;background-position:center;color:white}
+.hero{height:170px;background-image:linear-gradient(#171717aa,#171717aa),url(assets/956ae.jpg);display:flex;align-items:center;flex-direction:column;justify-content:space-between;padding:18px 20px 22px}
+.brand{display:grid;place-items:center;flex:1;margin-bottom:14px}
+.brand img{width:211px;height:auto}
+.review{display:grid;place-items:center;min-height:44px;width:216px;border-radius:5px;background:#f0ede5;color:#171717;font-weight:bold}
+.content{padding:24px 20px 20px}
+.cards{display:grid;gap:14px}
+.cards a{background-size:cover;background-position:center;min-height:58px;display:grid;place-items:center;border-radius:4px;color:white;font: bold 24px Georgia,serif;letter-spacing:.72px;text-align:center}
+.actions{margin-top:26px;display:flex;gap:14px;border-bottom:1px solid #bab4ad;padding-bottom:1px}
+.actions a{flex:1;border:1px solid;border-radius:4px;min-height:46px;display:grid;place-items:center;font-size:15px}
+.actions a:first-child{background:#1e1e1e;color:white}
+.contact{margin-top:14px}
+.contact a{display:flex;align-items:center;min-height:44px}
+.social{font-size:12px;letter-spacing:2px}
+.screen{display:none}
+.screen:target{display:block}
+main:has(.screen:target) #home{display:none}
+.banner{padding:12px 20px 8px;min-height:106px}
+.bar{display:flex;justify-content:space-between;align-items:center;font:bold 12px Arial,sans-serif}
+.bar>a,.langs a{min-height:40px;display:inline-grid;place-items:center}
+.langs{display:inline-flex;gap:2px}
+.langs a,.langs span{padding:4px 8px}
+.langs [aria-current]{border:1px solid #fff;border-radius:20px}
+.banner h1{font:26px Georgia,serif;margin:8px 0}
+.items{padding:0 20px 20px;position:relative}
+.items h2{font:italic 16px Georgia,serif;color:#85593e;padding:9px 0 2px}
+.dish{padding:9px 0;border-bottom:1px solid #bab4ad}
+.line{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font:14px Georgia,serif}
+.line h3{font:inherit}
+.price{white-space:nowrap}
+.dish p{font:12px/1.27 Arial,sans-serif;color:#48433f;margin-top:4px}
+.icon{width:14px;height:14px;vertical-align:middle;margin-left:3px}
+.decor{display:block;float:right;width:50px;height:83px;object-fit:fill;transform:rotate(-90deg);margin:-71px 12px -12px;pointer-events:none}
+.end{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-weight:bold}
+</style></head><body><main><section id="home" lang="el"><header class="hero"><h1 class="brand"><img src="assets/898c3.svg" alt="40 tales fox"></h1><a class="review" href="https://www.google.com/search?sca_esv=128459c6520156d0&amp;sxsrf=AKL5yDiRUwLsnf4YoWfkAaMXSYayeQxvQA:1794191316645&amp;q=40+tails+fox+syros&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95cwpYQbSs-9J1swqOlRwCDQMx3VBLwFPXF8B4lKmRM5H0fSGZwxOQkhWwLrU3N8i02yQVhM0%3D&amp;uds=AE2AFgbotJsmmw7pc0xWS3zec3_8zreEk_7jxdbZ4Cp8qBAti8NHxkK29ml2sC-LHb3V_0Z4Xz_OMPKB4HK_93_oQoNAP88YI76bcuMYRmOeNQHjpFBEcIw&amp;sa=X&amp;ved=2ahUKEwijttnA6_mXAxUcRvEDHZYzM-MQ3PALegQIOxAE&amp;biw=1745&amp;bih=828&amp;dpr=1.1">★　Γράψε μια αξιολόγηση</a></header><div class="content"><nav class="cards" aria-label="Κατάλογοι"><a href="#dinner-gr" style="background-image:linear-gradient(#14141499,#14141499),url(assets/5152c.jpg)">Lunch &amp; Dinner</a>
+<a href="#brunch-gr" style="background-image:linear-gradient(#141414af,#141414af),url(assets/0ff78.jpg)">Brunch</a>
+<a href="#coffee-gr" style="background-image:linear-gradient(#141414c0,#141414c0),url(assets/22b90.jpg)">Coffee &amp; Beverages</a>
+<a href="#cocktails-en" style="background-image:linear-gradient(#141414aa,#141414aa),url(assets/50356.jpg)">Cocktails &amp; Spirits</a>
+<a href="#wines-en" style="background-image:linear-gradient(#141414aa,#141414aa),url(assets/d66bc.jpg)">Wines &amp; Beers</a></nav><div class="actions"><a href="tel:+302281303113">Κράτηση</a><a href="mailto:info@40talesfox.gr">Email</a></div><footer class="contact"><a href="https://www.google.com/maps/search/?api=1&amp;query=40+Tales+Fox+Ermoupoli+Syros">Οδηγίες ↗　·　Ακτή Πέτρου Ράλλη 40Α</a><a class="social" href="https://www.instagram.com/40talesfox/">Instagram ↗</a></footer></div></section>
+<section class="screen" id="dinner-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#dinner-gr" >GR</a><a href="#dinner-en" aria-current="page">ENG</a></div></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
+<h2>Salads</h2>
+<article class="dish"><div class="line"><h3>The Famous Greek Salad</h3><span class="price">€12</span></div><p>Syros cherry tomatoes, wild capers of the island, peppers, marinated onion, olives, cucumber, zucchini, Kalavrita feta cheese</p></article>
+<article class="dish"><div class="line"><h3>Green Salad with Chicken</h3><span class="price">€13.5</span></div><p>Grilled chicken fillet, Syros cherry tomatoes, pumpkin seeds, handmade citrus mayonnaise, parmesan flakes</p></article>
+<article class="dish"><div class="line"><h3>Beetroot Salad</h3><span class="price">€13</span></div><p>Beetroot, sour apple, handmade feta &amp; strawberry cream, walnuts, pomegranate seeds</p></article>
+<h2>Starters/Mains</h2>
+<img class="decor" src="assets/7c40e.png" alt="">
+<article class="dish"><div class="line"><h3>Cycladic Cheeses platter</h3><span class="price">€23</span></div><p>Naxos Arseniko, Syros Amarantos, Ios Gruyere, Syros Anthotyro</p></article>
+<article class="dish"><div class="line"><h3>Charcuterie platter</h3><span class="price">€21</span></div><p>Smoked prosciutto, Lefkada salami, roast turkey fillet, pastrami, Cretan apaki</p></article>
+<article class="dish"><div class="line"><h3>Bruschetta with Smoked Salmon</h3><span class="price">€11.5</span></div><p>Avocado, finocchio, capers, lime</p></article>
+<article class="dish"><div class="line"><h3>Smoked Prosciutto Bruschetta</h3><span class="price">€10.5</span></div><p>Eggplant Hummus, raisins, pine nuts</p></article>
+<article class="dish"><div class="line"><h3>Grilled Feta cheese</h3><span class="price">€12.5</span></div><p>Phyllo, black sesame, ginger, tangerine - mastic chutney, pumpkin cream</p></article>
+<article class="dish"><div class="line"><h3>Pinsa Prosciutto</h3><span class="price">€13.5</span></div><p>Smoked prosciutto, arugula, cherry tomatoes, fresh mozzarella, fresh tomato sauce</p></article>
+<article class="dish"><div class="line"><h3>Pinsa Margarita</h3><span class="price">€11</span></div><p>Fresh mozzarella, tomato, anthotyro, basil</p></article>
+<article class="dish"><div class="line"><h3>Pinsa Syros</h3><span class="price">€13</span></div><p>Local sausage, handmade luza (local cold cut), fresh mozzarella, smoked Vermio cheese, tomato, almonds</p></article>
+<article class="dish"><div class="line"><h3>Hot Dog with grilled pork</h3><span class="price">€11</span></div><p>Cabbage, mustard, mayonnaise, ketchup, horseradish</p></article>
+<article class="dish"><div class="line"><h3>Wild Mushroom Risotto<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Greek truffle cream, hazelnut</p></article>
+<article class="dish"><div class="line"><h3>Authentic Carbonara</h3><span class="price">€14.5</span></div><p>Guanciale, egg, parmesan, pecorino</p></article>
+<article class="dish"><div class="line"><h3>Skiouficto with Pesto</h3><span class="price">€13.5</span></div><p>Handmade basil pesto, cherry tomatoes, roasted pine seeds, parmesan cheese</p></article>
+<article class="dish"><div class="line"><h3>Fresh Sea-Bass Fillet</h3><span class="price">€22.5</span></div><p>Local parsley cream, mashed potatoes, buckwheat</p></article>
+<article class="dish"><div class="line"><h3>Fresh Beef Fillet</h3><span class="price">€33</span></div><p>Teriyaki sauce with orange, rose geranium, mashed sweet potatoes</p></article>
+<article class="dish"><div class="line"><h3>Pork Chops</h3><span class="price">€14.5</span></div><p>Citrus sauce, fries</p></article>
+<article class="dish"><div class="line"><h3>Chicken Fillet</h3><span class="price">€14.5</span></div><p>Fresh potato gnocchi, basil pesto, roasted pecan</p></article>
+<article class="dish"><div class="line"><h3>Tagliatelle with Lamb Carpaccio</h3><span class="price">€23.5</span></div><p>Lightly smoked lamb carpaccio, cashews, sweet and sour apricots, sauce made from Tinos kariki, retsina &amp; mastic</p></article>
+<article class="dish"><div class="line"><h3>Divine Beef Burger</h3><span class="price">€14.5</span></div><p>Tomato, pickled cucumber, arugula, cheddar, secret mayo, fries</p></article>
+<article class="dish"><div class="line"><h3>Vegan Burger<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Veggie and mushroom burger, tomato, local capers, fresh basil, vegan mayo with cucumber pickles, vegan cheese &amp; beetroot salad</p></article>
+<article class="dish"><div class="line"><h3>Vegan Moussaka<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Mushrooms, black lentils, soy mince, corn béchamel, tomato gazpacho</p></article>
+<h2>Desserts</h2>
+<article class="dish"><div class="line"><h3>Dark Chocolate Mousse</h3><span class="price">€12</span></div><p>Patras Tentura, white chocolate cream with Bergamot and Aegina peanut, mango sorbet, Hawaiian black salt</p></article>
+<img class="decor" src="assets/db70a.png" alt="">
+<article class="dish"><div class="line"><h3>Tiramisu</h3><span class="price">€11</span></div><p>Tsoureki, dark chocolate, caramelized almonds</p></article>
+<article class="dish"><div class="line"><h3>Tahini Ice Cream</h3><span class="price">€8,5</span></div><p>Lemon, hazelnuts, rose preserve, cream from halvadopita and mandolato</p></article><a class="end" href="#home">← Home</a></div></section>
+<section class="screen" id="brunch-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#brunch-gr" aria-current="page">GR</a><a href="#brunch-en" >ENG</a></div></nav><h1>Brunch</h1></header><div class="items"><article class="dish"><div class="line"><h3>Αυγά μάτια</h3><span class="price">€7.5</span></div><p>Με bacon &amp; φρυγανισμένο προζυμένιο ψωμί</p></article>
+<article class="dish"><div class="line"><h3>Ομελέτα</h3><span class="price">€8.5</span></div><p>Με τυρί γκούντα, γαλοπούλα, μανιτάρια, τομάτα, baby σπανάκι, φρυγανισμένο προζυμένιο ψωμί</p></article>
+<article class="dish"><div class="line"><h3>Αυγά scrambled</h3><span class="price">€9</span></div><p>Με τυρί γκούντα &amp; bacon, φρυγανισμένο προζυμένιο ψωμί</p></article>
+<article class="dish"><div class="line"><h3>Αυγά σακσούκα</h3><span class="price">€8</span></div><p>Γροθοτύρι Σύρου, σάλτσα τομάτας, φρυγανισμένο προζυμένιο ψωμί</p></article>
+<article class="dish"><div class="line"><h3>Αυγά Benedict</h3><span class="price">€10.5</span></div><p>Αυγά ποσέ, λούζα Σύρου, μαγιονέζα, hollandaise, φρυγανισμένο προζυμένιο ψωμί</p></article>
+<article class="dish"><div class="line"><h3>Smoked salmon avocado toast</h3><span class="price">€13.5</span></div><p>Αυγά scrambled, γουακαμόλε, καπνιστός σολομός, φρυγανισμένο προζυμένιο ψωμί</p></article>
+<article class="dish"><div class="line"><h3>Το Σάντουιτς (Με αυγά +2€)</h3><span class="price">€7</span></div><p>Πορκέτα, coleslaw, μουστάρδα whole grain, αγγούρι τουρσί, τομάτα, γκούντα, σαλάτα</p></article>
+<article class="dish"><div class="line"><h3>Club sandwich</h3><span class="price">€8.5</span></div><p>Iceberg, τομάτα, γαλοπούλα, τυρί γκούντα, bacon, μαγιονέζα, πατάτες τηγανητές</p></article>
+<article class="dish"><div class="line"><h3>Pancakes αλμυρά</h3><span class="price">€9.5</span></div><p>Bacon, τυρί γκούντα, ζαμπόν, τυρί cheddar, αυγό</p></article>
+<article class="dish"><div class="line"><h3>Pancakes με σοκολάτα</h3><span class="price">8.5</span></div><p>Πραλίνα φουντουκιού, μπανάνα, μπισκότο</p></article>
+<article class="dish"><div class="line"><h3>Pancakes με μέλι</h3><span class="price">€8</span></div><p>Μέλι, πράσινο μήλο, κανέλα</p></article>
+<article class="dish"><div class="line"><h3>Γιαούρτι με φρούτα</h3><span class="price">€7.5</span></div><p>Μέλι, καρύδια, φρούτα εποχής</p></article>
+<article class="dish"><div class="line"><h3>Tahini Healthy Bowl</h3><span class="price">9.5</span></div><p>Μπανάνα, μάνγκο, σιρόπι αγαύης, χυμός λάιμ, ταχίνι. Επικάλυψη: ακτινίδιο, φράουλα, βιολ. γκρανόλα, σπόρους κάνναβης</p></article><a class="end" href="#home">← Αρχική</a></div></section>
+<section class="screen" id="cocktails-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/00cbb.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><span>ENG</span></div></nav><h1>Cocktails &amp; Spirits</h1></header><div class="items"><h2>Classics</h2>
+<article class="dish"><div class="line"><h3>Pornstar Martini</h3><span class="price">€7.5</span></div><p>Sweet vanilla and tart passion fruit bliss</p></article>
+<article class="dish"><div class="line"><h3>Mojito</h3><span class="price">€8.5</span></div><p>Crisp, minty refreshment for endless summer nights</p></article>
+<article class="dish"><div class="line"><h3>Daiquiri</h3><span class="price">€9</span></div><p>Perfectly balanced citrus snap of pure elegance.</p></article>
+<article class="dish"><div class="line"><h3>Caiprinha</h3><span class="price">€8</span></div><p>Vibrant, zesty soul of a Brazilian fiesta</p></article>
+<article class="dish"><div class="line"><h3>Moscow Mule</h3><span class="price">€10.5</span></div><p>Zesty lime and a spicy ginger bite</p></article>
+<article class="dish"><div class="line"><h3>Old Fashioned</h3><span class="price">€13.5</span></div><p>Bold, timeless sophistication with a bitter edge</p></article>
+<article class="dish"><div class="line"><h3>Margarita</h3><span class="price">€7</span></div><p>Salty, sour perfection with a tequila bite</p></article>
+<article class="dish"><div class="line"><h3>Tommy’s Margarita</h3><span class="price">€8.5</span></div><p>Smooth agave sweetness meets sharp citrus tang</p></article>
+<article class="dish"><div class="line"><h3>Mai Tai</h3><span class="price">€9.5</span></div><p>An exotic escape packed with nutty rum</p></article>
+<article class="dish"><div class="line"><h3>Sour Cocktails</h3><span class="price">8.5</span></div><p>Silky, frothy balance of sweet and tart</p></article>
+<article class="dish"><div class="line"><h3>Pina Colada</h3><span class="price">€8</span></div><p>Creamy coconut bliss under the island sun</p></article>
+<article class="dish"><div class="line"><h3>Negroni</h3><span class="price">€7.5</span></div><p>Fiercely bitter, botanical, and flawlessly Italian</p></article>
+<article class="dish"><div class="line"><h3>Zombie</h3><span class="price">9.5</span></div><p>Dangerously potent voodoo magic in a glass</p></article>
+<article class="dish"><div class="line"><h3>Dry/Dirty Martini</h3><span class="price">9.5</span></div><p>Savory, icy elegance with a briny whisper</p></article>
+<h2>and many, MANY more...</h2>
+<h2>Signature</h2><a class="end" href="#home">← Home</a></div></section>
+<section class="screen" id="wines-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/ad927.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><span>ENG</span></div></nav><h1>Wines &amp; Beers</h1></header><div class="items"><h2>Classics</h2>
+<article class="dish"><div class="line"><h3>Pornstar Martini</h3><span class="price">€7.5</span></div><p>Sweet vanilla and tart passion fruit bliss</p></article>
+<article class="dish"><div class="line"><h3>Mojito</h3><span class="price">€8.5</span></div><p>Crisp, minty refreshment for endless summer nights</p></article>
+<article class="dish"><div class="line"><h3>Daiquiri</h3><span class="price">€9</span></div><p>Perfectly balanced citrus snap of pure elegance.</p></article>
+<article class="dish"><div class="line"><h3>Caiprinha</h3><span class="price">€8</span></div><p>Vibrant, zesty soul of a Brazilian fiesta</p></article>
+<article class="dish"><div class="line"><h3>Moscow Mule</h3><span class="price">€10.5</span></div><p>Zesty lime and a spicy ginger bite</p></article>
+<article class="dish"><div class="line"><h3>Old Fashioned</h3><span class="price">€13.5</span></div><p>Bold, timeless sophistication with a bitter edge</p></article>
+<article class="dish"><div class="line"><h3>Margarita</h3><span class="price">€7</span></div><p>Salty, sour perfection with a tequila bite</p></article>
+<article class="dish"><div class="line"><h3>Tommy’s Margarita</h3><span class="price">€8.5</span></div><p>Smooth agave sweetness meets sharp citrus tang</p></article>
+<article class="dish"><div class="line"><h3>Mai Tai</h3><span class="price">€9.5</span></div><p>An exotic escape packed with nutty rum</p></article>
+<article class="dish"><div class="line"><h3>Sour Cocktails</h3><span class="price">8.5</span></div><p>Silky, frothy balance of sweet and tart</p></article>
+<article class="dish"><div class="line"><h3>Pina Colada</h3><span class="price">€8</span></div><p>Creamy coconut bliss under the island sun</p></article>
+<article class="dish"><div class="line"><h3>Negroni</h3><span class="price">€7.5</span></div><p>Fiercely bitter, botanical, and flawlessly Italian</p></article>
+<article class="dish"><div class="line"><h3>Zombie</h3><span class="price">9.5</span></div><p>Dangerously potent voodoo magic in a glass</p></article>
+<article class="dish"><div class="line"><h3>Dry/Dirty Martini</h3><span class="price">9.5</span></div><p>Savory, icy elegance with a briny whisper</p></article>
+<h2>and many, MANY more...</h2>
+<h2>Signature</h2><a class="end" href="#home">← Home</a></div></section>
+<section class="screen" id="coffee-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#coffee-gr" aria-current="page">GR</a><a href="#coffee-en" >ENG</a></div></nav><h1>Καφές &amp; Ροφήματα</h1></header><div class="items"><h2>Καφές</h2>
+<article class="dish"><div class="line"><h3>Ελληνικός (μονός)</h3><span class="price">€2.2</span></div></article>
+<article class="dish"><div class="line"><h3>Ελληνικός (διπλός)</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Nescafé στιγμιαίος (κρύος ή ζεστός)</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Φίλτρου ζεστός</h3><span class="price">€3.8</span></div></article>
+<article class="dish"><div class="line"><h3>Φίλτρου κρύος</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>Εσπρέσο (μονός)</h3><span class="price">€2.5</span></div></article>
+<article class="dish"><div class="line"><h3>Εσπρέσο (διπλός)</h3><span class="price">€3.7</span></div></article>
+<article class="dish"><div class="line"><h3>Καπουτσίνο (μονός)</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Καπουτσίνο (διπλός)</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>Φρέντο Εσπρέσο</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Φρέντο Καπουτσίνο</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Εσπρέσο Αμερικάνο (μονός)</h3><span class="price">€3.3</span></div></article>
+<article class="dish"><div class="line"><h3>Εσπρέσο Αμερικάνο (διπλός)</h3><span class="price">€3.7</span></div></article>
+<article class="dish"><div class="line"><h3>Καπουτσίνο Λάτε</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Φλατ Γουάιτ</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>* Γάλα αμυγδάλου, βρώμης, καρύδας, αρακά</h3><span class="price">+€0.3</span></div></article>
+<h2>Σοκολάτα</h2>
+<article class="dish"><div class="line"><h3>Σοκολάτα (ζεστή ή κρύα)</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>Σοκολάτα Φουντούκι</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>Σοκολάτα Καραμέλα</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>Σοκολάτα Φράουλα</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>Λευκή Σοκολάτα</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>* Σαντιγί</h3><span class="price">+€0.5</span></div></article>
+<h2>Ζεστό τσάι</h2>
+<article class="dish"><div class="line"><h3>Ινδικό Παραμύθι</h3><span class="price">€3.5</span></div><p>Πράσινο τσάι με καραμέλα, αμύγδαλο &amp; καρύδα</p></article>
+<article class="dish"><div class="line"><h3>Goji-Açaí</h3><span class="price">€3.5</span></div><p>Πράσινο τσάι με γκότζι, ιβίσκο &amp; φραμπουάζ</p></article>
+<article class="dish"><div class="line"><h3>Yogi Tea</h3><span class="price">€3.5</span></div><p>Βότανα με κανέλα, γαρύφαλλο &amp; πιπερόριζα</p></article>
+<article class="dish"><div class="line"><h3>Μυρωμένος Θάμνος</h3><span class="price">€3.5</span></div><p>Πράσινο τσάι με πορτοκάλι, γαρύφαλλο &amp; κάρδαμο</p></article>
+<article class="dish"><div class="line"><h3>Olympos Detox bio</h3><span class="price">€3.5</span></div><p>Βότανα με μάραθο, μελισσόχορτο &amp; τσάι του βουνού</p></article>
+<article class="dish"><div class="line"><h3>Πράσινο</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Λεμόνι</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Φρούτα του Δάσους</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Strong Breakfast</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Χαμομήλι</h3><span class="price">€3.5</span></div></article>
+<h2>Κρύο τσάι</h2>
+<article class="dish"><div class="line"><h3>Feeju Τσάι του Βουνού</h3><span class="price">€4.5</span></div><p>Τσάι του βουνού με ρόδι &amp; αγαύη</p></article>
+<article class="dish"><div class="line"><h3>Feeju Πράσινο Τσάι</h3><span class="price">€4.5</span></div><p>Πράσινο τσάι με λεμόνι &amp; λουίζα</p></article>
+<article class="dish"><div class="line"><h3>Feeju Τσάι Κεϋλάνης</h3><span class="price">€4.5</span></div><p>Μαύρο τσάι Κεϋλάνης με ροδάκινο</p></article>
+<article class="dish"><div class="line"><h3>Feeju Τσάι Μάτσα</h3><span class="price">€4.5</span></div><p>Βιολογικό τσάι Μάτσα με λεμόνι, αγαύη &amp; πιπερόριζα</p></article>
+<article class="dish"><div class="line"><h3>Πράσινο</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Λεμόνι</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Ροδάκινο</h3><span class="price">€3.5</span></div></article>
+<h2>Φυσικός χυμός</h2>
+<article class="dish"><div class="line"><h3>Πορτοκάλι</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>Πορτοκάλι, Μπανάνa, Μήλο ή Ροδάκινο</h3><span class="price">€5.5</span></div></article>
+<article class="dish"><div class="line"><h3>Ροζ Γκρέιπφρουτ, Πορτοκάλι, Καρότο</h3><span class="price">€6</span></div></article>
+<article class="dish"><div class="line"><h3>Μπανάνa, Μάνγκο, Πορτοκάλι</h3><span class="price">€6</span></div></article>
+<article class="dish"><div class="line"><h3>Καρότο, Πράσινο Μήλο, Πατζάρι</h3><span class="price">€7.5</span></div></article>
+<h2>Αναψυκτικά</h2>
+<article class="dish"><div class="line"><h3>B-Fresh :</h3><span class="price">€4.5</span></div><p>Λεμόνι με πιπερόριζα</p><p>Λεμόνι με μαστίχα Χίου</p><p>Ρόδι με πράσινο τσάι</p><p>Μήλο με περγαμόντο</p></article>
+<article class="dish"><div class="line"><h3>Three Cents:</h3><span class="price">€5</span></div><p>Pink Grapefruit Soda</p><p>Ginger Beer</p><p>Aegean Tonic Water</p></article>
+<article class="dish"><div class="line"><h3>Red Bull</h3><span class="price">€6</span></div></article>
+<article class="dish"><div class="line"><h3>San Benedetto sparkling</h3><span class="price">€8.5</span></div></article>
+<article class="dish"><div class="line"><h3>Φυσικό Μεταλλικό Νερό</h3><span class="price">€2.5</span></div></article>
+<article class="dish"><div class="line"><h3>Ανθρακούχο Νερό</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Αναψυκτικά</h3><span class="price">€3.5</span></div></article><a class="end" href="#home">← Αρχική</a></div></section>
+<section class="screen" id="coffee-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#coffee-gr" >GR</a><a href="#coffee-en" aria-current="page">ENG</a></div></nav><h1>Coffee &amp; Βeverages</h1></header><div class="items"><h2>Coffee</h2>
+<article class="dish"><div class="line"><h3>Greek coffee (single)</h3><span class="price">€2.2</span></div></article>
+<article class="dish"><div class="line"><h3>Greek coffee (double)</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Nescafé instant coffee (hot or cold)</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Filter coffee</h3><span class="price">€3.8</span></div></article>
+<article class="dish"><div class="line"><h3>Cold Brew</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>Espresso (single)</h3><span class="price">€2.5</span></div></article>
+<article class="dish"><div class="line"><h3>Espresso (double)</h3><span class="price">€3.7</span></div></article>
+<article class="dish"><div class="line"><h3>Cappuccino (single)</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Cappuccino (double)</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>Freddo Espresso</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Freddo Cappuccino</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Espresso Americano (single)</h3><span class="price">€3.3</span></div></article>
+<article class="dish"><div class="line"><h3>Espresso Americano (double)</h3><span class="price">€3.7</span></div></article>
+<article class="dish"><div class="line"><h3>Cappuccino Latte</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Flat White</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>* Almond, oat, coconut, pea Milk</h3><span class="price">+€0.3</span></div></article>
+<h2>Chocolate</h2>
+<article class="dish"><div class="line"><h3>Chocolate (hot or cold)</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>Hazelnut chocolate</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>Caramel chocolate</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>Strawberry chocolate</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>White chocolate</h3><span class="price">€4.3</span></div></article>
+<article class="dish"><div class="line"><h3>* Whipped Cream</h3><span class="price">+€0.5</span></div></article>
+<h2>Hot Tea</h2>
+<article class="dish"><div class="line"><h3>Indian Fairy Tale</h3><span class="price">€3.5</span></div><p>Green tea with caramel, almond &amp; coconut</p></article>
+<article class="dish"><div class="line"><h3>Goji-Açaí</h3><span class="price">€3.5</span></div><p>Green tea with goji berries, hibiscus &amp; raspberry</p></article>
+<article class="dish"><div class="line"><h3>Yogi Tea</h3><span class="price">€3.5</span></div><p>Herbs with cinnamon, clove &amp; ginger</p></article>
+<article class="dish"><div class="line"><h3>Scented Bush</h3><span class="price">€3.5</span></div><p>Green tea with orange, clove &amp; cardamom</p></article>
+<article class="dish"><div class="line"><h3>Olympos Detox bio</h3><span class="price">€3.5</span></div><p>Herbs with fennel, lemon balm &amp; mountain tea</p></article>
+<article class="dish"><div class="line"><h3>Green</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Lemon</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Forest Fruit</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Strong Breakfast</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Chamomile</h3><span class="price">€3.5</span></div></article>
+<h2>Iced Tea</h2>
+<article class="dish"><div class="line"><h3>Feeju Mountain Tea</h3><span class="price">€4.5</span></div><p>Mountain tea with pomegranate &amp; agave syrup</p></article>
+<article class="dish"><div class="line"><h3>Feeju Green Tea</h3><span class="price">€4.5</span></div><p>Green tea with lemon &amp; verbena</p></article>
+<article class="dish"><div class="line"><h3>Feeju Ceylon Tea</h3><span class="price">€4.5</span></div><p>Black Ceylon tea with pomegranate</p></article>
+<article class="dish"><div class="line"><h3>Feeju Matcha Tea</h3><span class="price">€4.5</span></div><p>Organic Matcha tea with lemon, agave syrup &amp; ginger</p></article>
+<article class="dish"><div class="line"><h3>Green</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Lemon</h3><span class="price">€3.5</span></div></article>
+<article class="dish"><div class="line"><h3>Peach</h3><span class="price">€3.5</span></div></article>
+<h2>Iced Tea</h2>
+<article class="dish"><div class="line"><h3>Orange</h3><span class="price">€4.5</span></div></article>
+<article class="dish"><div class="line"><h3>Orange, Banana, Apple or Peach</h3><span class="price">€5.5</span></div></article>
+<article class="dish"><div class="line"><h3>Pink Grapefruit, Orange, Carrot</h3><span class="price">€6</span></div></article>
+<article class="dish"><div class="line"><h3>Banana, Mango, Orange</h3><span class="price">€6</span></div></article>
+<article class="dish"><div class="line"><h3>Carrot, Green Apple, Beet</h3><span class="price">€7.5</span></div></article>
+<h2>Soft drinks</h2>
+<article class="dish"><div class="line"><h3>B-Fresh:</h3><span class="price">€4.5</span></div><p>Lemon with ginger</p><p>Lemon with Chios mastic</p><p>Pomegranate with green tea</p><p>Apple with bergamot</p></article>
+<article class="dish"><div class="line"><h3>Three Cents:</h3><span class="price">€5</span></div><p>Pink Grapefruit Soda</p><p>Ginger Beer</p><p>Aegean Tonic Water</p></article>
+<article class="dish"><div class="line"><h3>Red Bull</h3><span class="price">€6</span></div></article>
+<article class="dish"><div class="line"><h3>San Benedetto sparkling</h3><span class="price">€8.5</span></div></article>
+<article class="dish"><div class="line"><h3>Mineral water</h3><span class="price">€2.5</span></div></article>
+<article class="dish"><div class="line"><h3>Sparkling water</h3><span class="price">€4</span></div></article>
+<article class="dish"><div class="line"><h3>Soft drinks</h3><span class="price">€3.5</span></div></article><a class="end" href="#home">← Home</a></div></section>
+<section class="screen" id="brunch-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#brunch-gr" >GR</a><a href="#brunch-en" aria-current="page">ENG</a></div></nav><h1>Brunch</h1></header><div class="items"><article class="dish"><div class="line"><h3>Fried Eggs</h3><span class="price">€7.5</span></div><p>With bacon &amp; toasted sourdough bread</p></article>
+<article class="dish"><div class="line"><h3>Omelette</h3><span class="price">€8.5</span></div><p>With gouda cheese, turkey, mushrooms, tomatoes, baby spinach, toasted sourdough bread</p></article>
+<article class="dish"><div class="line"><h3>Scrambled Eggs</h3><span class="price">€9</span></div><p>With gouda cheese &amp; bacon, toasted sourdough bread</p></article>
+<article class="dish"><div class="line"><h3>Shakshuka Eggs</h3><span class="price">€8</span></div><p>Sour cheese from Syros, tomato sauce, toasted sourdough bread</p></article>
+<article class="dish"><div class="line"><h3>Benedict Eggs</h3><span class="price">€10.5</span></div><p>Poached eggs, syrup sauce, mayonnaise, hollandaise, toasted sourdough bread</p></article>
+<article class="dish"><div class="line"><h3>Smoked salmon avocado toast</h3><span class="price">€13.5</span></div><p>Scrambled eggs, guacamole, smoked salmon, toasted sourdough bread</p></article>
+<article class="dish"><div class="line"><h3>The Sandwich (With Eggs +2€)</h3><span class="price">€7</span></div><p>Porchetta, coleslaw, whole grain mustard, pickled cucumber, tomato, gouda, salad</p></article>
+<article class="dish"><div class="line"><h3>Club sandwich</h3><span class="price">€8.5</span></div><p>Iceberg, tomato, turkey, gouda cheese, bacon, mayonnaise, french fries</p></article>
+<article class="dish"><div class="line"><h3>Savoury Pancakes</h3><span class="price">€9.5</span></div><p>Bacon, gouda cheese, bacon, cheddar cheese, egg</p></article>
+<article class="dish"><div class="line"><h3>Pancakes with Chocolate</h3><span class="price">€8.5</span></div><p>Chocolate praline, banana, cookie</p></article>
+<article class="dish"><div class="line"><h3>Pancakes with Honey</h3><span class="price">€8</span></div><p>Honey, green apple, cinnamon</p></article>
+<article class="dish"><div class="line"><h3>Greek Yogurt with Fruits</h3><span class="price">€7.5</span></div><p>Honey, walnuts, seasonal fruits</p></article>
+<article class="dish"><div class="line"><h3>Tahini Healthy Bowl</h3><span class="price">€9.5</span></div><p>Banana, mango, agave syrup, lime juice, tahini. Toppings: kiwi, strawberry, org. granola, hemp seeds</p></article><a class="end" href="#home">← Home</a></div></section>
+<section class="screen" id="dinner-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#dinner-gr" aria-current="page">GR</a><a href="#dinner-en" >ENG</a></div></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
+<h2>Σαλάτες</h2>
+<article class="dish"><div class="line"><h3>Η φημισμένη Ελληνική Σαλάτα</h3><span class="price">€12</span></div><p>Τοματίνια Σύρου, άγρια κάπαρη του νησιού, πιπεριές, μαριναρισμένο κρεμμύδι, ελιές, αγγούρι, κολοκύθι, φέτα Καλαβρύτων</p></article>
+<article class="dish"><div class="line"><h3>Πράσινη Σαλάτα με κοτόπουλο</h3><span class="price">€13.5</span></div><p>Ψητό φιλέτο κοτόπουλο, τοματίνια, κολοκυθόσπορος, χειροποίητη μαγιονέζα εσπεριδοειδών, flakes παρμεζάνας</p></article>
+<article class="dish"><div class="line"><h3>Παντζαροσαλάτα</h3><span class="price">€13</span></div><p>Παντζάρι, ξινόμηλο, χειροποίητη κρέμα φέτας &amp; φράουλας, καρύδια, ρόδι</p></article>
+<h2>Ορεκτικά/ Κυρίως</h2>
+<img class="decor" src="assets/7c40e.png" alt="">
+<article class="dish"><div class="line"><h3>Ποικιλία Κυκλαδίτικων Τυριών</h3><span class="price">€23</span></div><p>Αρσενικό Νάξου, Αμάραντος Σύρου, Γραβιέρα Ίου, Ανθότυρο Σύρου</p></article>
+<article class="dish"><div class="line"><h3>Ποικιλία Αλλαντικών</h3><span class="price">€21</span></div><p>Καπνιστό prosciutto, σαλάμι Λευκάδος, ψητό φιλέτο γαλοπούλας, παστράμι μόσχου, απάκι Κρήτης</p></article>
+<article class="dish"><div class="line"><h3>Μπρουσκέτα με Καπνιστό Σολομό</h3><span class="price">€11.5</span></div><p>Αβοκάντο, φινόκιο, κάπαρη, lime</p></article>
+<article class="dish"><div class="line"><h3>Μπρουσκέτα με Καπνιστό Prosciutto</h3><span class="price">€10.5</span></div><p>Hummus μελιτζάνας, σταφίδες, κουκουνάρι</p></article>
+<article class="dish"><div class="line"><h3>Ψητό Κρασοτύρι Φέτας</h3><span class="price">€12.5</span></div><p>Φύλλο κρούστας, μαυροσούσαμο, τζίντζερ, chutney μανταρίνι - μαστίχα, κρέμα κολοκύθας</p></article>
+<article class="dish"><div class="line"><h3>Πίνσα Προσούτο</h3><span class="price">€13.5</span></div><p>Καπνιστό προσούτο, ρόκα, τοματίνια, φρέσκια mozzarella, φρέσκια σάλτσα τομάτας</p></article>
+<article class="dish"><div class="line"><h3>Πίνσα Μαργαρίτα</h3><span class="price">€11</span></div><p>Φρέσκια mozzarella, ντομάτα, ανθότυρο, βασιλικός</p></article>
+<article class="dish"><div class="line"><h3>Πίνσα Syros</h3><span class="price">€13</span></div><p>Συριανό λουκάνικο, χειροποίητη λούζα, φρέσκια mozzarella, καπνιστό Βερμίου, ντομάτα, αμύγδαλα</p></article>
+<article class="dish"><div class="line"><h3>Hot Dog με ψητή Γουρουνοπούλα</h3><span class="price">€11</span></div><p>Λάχανο, μουστάρδα, μαγιονέζα, κέτσαπ, horseradish</p></article>
+<article class="dish"><div class="line"><h3>Ριζότο Άγριων Μανιταριών<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Κρέμα Ελληνικής τρούφας, φουντούκι</p></article>
+<article class="dish"><div class="line"><h3>Αυθεντική καρμπονάρα</h3><span class="price">€14.5</span></div><p>Γκουαντσιάλε, αυγό, παρμεζάνα, πεκορίνο</p></article>
+<article class="dish"><div class="line"><h3>Σκιουφιχτό με Πέστο</h3><span class="price">€13.5</span></div><p>Χειροποίητο πέστο βασιλικού, τοματίνια, ψητό κουκουνάρι, παρμεζάνα</p></article>
+<article class="dish"><div class="line"><h3>Φρέσκο Λαβράκι Φιλέτο</h3><span class="price">€22.5</span></div><p>Κρέμα συριανής μαϊντανοσαλάτας, πουρές πατάτας γιαχνί, φαγόπυρο</p></article>
+<article class="dish"><div class="line"><h3>Φρέσκο Μοσχαρίσιο Φιλέτο</h3><span class="price">€33</span></div><p>Σάλτσα Teriyaki με πορτοκάλι, αρμπαρόριζα, πουρές γλυκοπατάτας</p></article>
+<article class="dish"><div class="line"><h3>Χοιρινό Καρέ</h3><span class="price">€14.5</span></div><p>Σάλτσα εσπεριδοειδών, τηγανητές πατάτες</p></article>
+<article class="dish"><div class="line"><h3>Φιλέτο Κοτόπουλο</h3><span class="price">€14.5</span></div><p>Φρέσκα gnocchi πατάτας, πέστο βασιλικού, καβουρδισμένο πεκάν</p></article>
+<article class="dish"><div class="line"><h3>Ταλιατέλες με Καρπάτσιο Αρνάκι</h3><span class="price">€23.5</span></div><p>Ελαφρά καπνιστό καρπάτσιο από αρνάκι, κάσιους, γλυκόξινα βερίκοκα, σάλτσα από καρίκι Τήνου, ρετσίνα &amp; μαστίχα</p></article>
+<article class="dish"><div class="line"><h3>Divine Beef Burger</h3><span class="price">€23.5</span></div><p>Τομάτα, αγγουράκι τουρσί, ρόκα, cheddar, secret mayo, τηγανητές πατάτες</p></article>
+<article class="dish"><div class="line"><h3>Vegan Burger Λαχανικών<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Μπιφτέκι λαχανικών και μανιταριών, τομάτα, κάπαρη Σύρου, φρέσκος βασιλικός, vegan mayo με αγγουράκι τουρσί, τυρί vegan και παντζαροσαλάτα</p></article>
+<article class="dish"><div class="line"><h3>Vegan Μουσακάς<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€15</span></div><p>Μανιτάρια, μαύρες φακές, κιμάς σόγιας, μπεσαμέλ Καλαμποκιού, γκασπάτσο ντομάτας</p></article>
+<h2>Επιδόρπια</h2>
+<article class="dish"><div class="line"><h3>Μους Μαύρης Σοκολάτας</h3><span class="price">€12</span></div><p>Πατρινή Τεντούρα, Κρέμα Λευκής Σοκολάτας με Περγαμόντο και φυστίκι Αιγίνης, sorbet μάνγκο, μαύρο αλάτι Χαβάης</p></article>
+<img class="decor" src="assets/db70a.png" alt="">
+<article class="dish"><div class="line"><h3>Τιραμισού</h3><span class="price">€11</span></div><p>Τσουρέκι, μαύρη σοκολάτα, καραμελωμένα αμύγδαλα</p></article>
+<article class="dish"><div class="line"><h3>Παγωτό από Ταχίνι</h3><span class="price">€8.5</span></div><p>Λεμόνι, φουντούκια, γλυκό τριαντάφυλλο, κρέμα από χαλβαδόπιτα και μαντολάτο</p></article><a class="end" href="#home">← Αρχική</a></div></section></main><script>
+function navigate() {
+  const screen = document.getElementById(location.hash.slice(1));
+  document.documentElement.lang = screen?.lang || 'el';
+  if (screen?.classList.contains('screen') && /^(brunch|dinner|coffee)-/.test(screen.id)) {
+    const language = screen.id.split('-')[1];
+    for (const card of document.querySelectorAll('.cards a')) {
+      const [category] = card.hash.slice(1).split('-');
+      if (['brunch','dinner','coffee'].includes(category)) card.hash = category + '-' + language;
+    }
+  }
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', navigate);
+navigate();
+</script></body></html>
