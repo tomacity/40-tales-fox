@@ -17,7 +17,7 @@ h1,h2,h3,p{margin:0}
 .content{padding:24px 20px 20px}
 .cards{display:grid;gap:14px}
 .cards a{background-size:cover;background-position:center;min-height:58px;padding:14px 0;display:grid;place-items:center;border-radius:4px;color:white;font:700 24px/30px Gelasio,Georgia,serif;letter-spacing:.72px;text-align:center}
-.cards a[href="#brunch-gr"]{background-position:center 34.37%;background-size:100% 377.08%}
+.cards a[href^="#brunch-"]{background-position:center 34.37%;background-size:100% 377.08%}
 .actions{margin-top:26px;display:flex;align-items:center;justify-content:center;gap:14px;min-height:48px}
 .actions a{flex:1;max-width:173px;border:1px solid #232426;border-radius:4px;min-height:46px;display:grid;place-items:center;font-size:15px;letter-spacing:.3px;color:#000}
 .actions a:first-child{background:#1e1e1e;border-color:#1e1e1e;color:white}
@@ -30,10 +30,11 @@ h1,h2,h3,p{margin:0}
 main:has(.screen:target) #home{display:none}
 .banner{padding:12px 20px 8px;min-height:106px}
 .bar{display:flex;justify-content:space-between;align-items:center;font:bold 12px Arial,sans-serif}
-.bar>a,.langs a{min-height:40px;display:inline-grid;place-items:center}
-.langs{display:inline-flex;gap:2px}
-.langs a,.langs span{padding:4px 8px}
-.langs [aria-current]{border:1px solid #fff;border-radius:20px}
+.bar>a{min-height:40px;display:inline-grid;place-items:center}
+.language-picker{position:absolute;top:6px;right:12px;display:flex;gap:2px}
+.language-picker button{min-height:32px;min-width:36px;padding:4px 6px;border:1px solid transparent;border-radius:16px;background:transparent;color:#fff;font:700 12px Arimo,Arial,sans-serif;cursor:pointer}
+.language-picker button[aria-pressed="true"]{border-color:currentColor;background:#1a1a1a80}
+.language-picker button:focus-visible{outline:2px solid #fff;outline-offset:1px}
 .banner h1{font:26px Georgia,serif;margin:8px 0}
 .items{padding:0 20px 20px;position:relative}
 .items h2{font:italic 16px Georgia,serif;color:#85593e;padding:9px 0 2px}
@@ -58,12 +59,12 @@ main:has(.screen:target) #home{display:none}
 .card-flight{position:fixed;z-index:10;pointer-events:none;overflow:hidden;isolation:isolate;background-size:cover;background-position:center;color:white;display:grid;place-items:center}
 .flight-title{font:700 24px/30px Gelasio,Georgia,serif;letter-spacing:.72px}
 .card-flight>.banner{position:absolute;inset:0;min-height:0}
-</style></head><body><main><section id="home" lang="el"><header class="hero"><h1 class="brand"><img src="assets/898c3.svg" alt="40 tales fox"></h1><a class="review" href="https://www.google.com/search?sca_esv=128459c6520156d0&amp;sxsrf=AKL5yDiRUwLsnf4YoWfkAaMXSYayeQxvQA:1794191316645&amp;q=40+tails+fox+syros&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95cwpYQbSs-9J1swqOlRwCDQMx3VBLwFPXF8B4lKmRM5H0fSGZwxOQkhWwLrU3N8i02yQVhM0%3D&amp;uds=AE2AFgbotJsmmw7pc0xWS3zec3_8zreEk_7jxdbZ4Cp8qBAti8NHxkK29ml2sC-LHb3V_0Z4Xz_OMPKB4HK_93_oQoNAP88YI76bcuMYRmOeNQHjpFBEcIw&amp;sa=X&amp;ved=2ahUKEwijttnA6_mXAxUcRvEDHZYzM-MQ3PALegQIOxAE&amp;biw=1745&amp;bih=828&amp;dpr=1.1"><img src="assets/home-review.svg" alt="" width="16" height="16">Γράψε μια αξιολόγηση</a></header><div class="content"><nav class="cards" aria-label="Κατάλογοι"><a href="#dinner-gr" style="background-image:linear-gradient(rgba(26,27,28,.57),rgba(26,27,28,.57)),url(assets/5152c.jpg)">Lunch &amp; Dinner</a>
+</style></head><body><main><section id="home" lang="el"><header class="hero"><div class="language-picker" role="group" aria-label="Γλώσσα / Language"><button type="button" data-language="gr" aria-label="Ελληνικά" aria-pressed="true">GR</button><button type="button" data-language="en" aria-label="English" aria-pressed="false">ENG</button></div><h1 class="brand"><img src="assets/898c3.svg" alt="40 tales fox"></h1><a class="review" href="https://www.google.com/search?sca_esv=128459c6520156d0&amp;sxsrf=AKL5yDiRUwLsnf4YoWfkAaMXSYayeQxvQA:1794191316645&amp;q=40+tails+fox+syros&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95cwpYQbSs-9J1swqOlRwCDQMx3VBLwFPXF8B4lKmRM5H0fSGZwxOQkhWwLrU3N8i02yQVhM0%3D&amp;uds=AE2AFgbotJsmmw7pc0xWS3zec3_8zreEk_7jxdbZ4Cp8qBAti8NHxkK29ml2sC-LHb3V_0Z4Xz_OMPKB4HK_93_oQoNAP88YI76bcuMYRmOeNQHjpFBEcIw&amp;sa=X&amp;ved=2ahUKEwijttnA6_mXAxUcRvEDHZYzM-MQ3PALegQIOxAE&amp;biw=1745&amp;bih=828&amp;dpr=1.1"><img src="assets/home-review.svg" alt="" width="16" height="16"><span class="review-label">Γράψε μια αξιολόγηση</span></a></header><div class="content"><nav class="cards" aria-label="Κατάλογοι"><a href="#dinner-gr" style="background-image:linear-gradient(rgba(26,27,28,.57),rgba(26,27,28,.57)),url(assets/5152c.jpg)">Lunch &amp; Dinner</a>
 <a href="#brunch-gr" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/0ff78.jpg)">Brunch</a>
 <a href="#coffee-gr" style="background-image:linear-gradient(rgba(21,22,23,.755),rgba(21,22,23,.755)),url(assets/22b90.jpg)">Coffee &amp; Beverages</a>
 <a href="#cocktails-en" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/50356.jpg)">Cocktails &amp; Spirits</a>
 <a href="#wines-en" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/d66bc.jpg)">Wines &amp; Beers</a></nav><div class="actions"><a href="tel:+302281303113">Κράτηση</a><a href="mailto:info@40talesfox.gr">Email</a></div><footer class="contact"><a href="https://www.google.com/maps/search/?api=1&amp;query=40+Tales+Fox+Ermoupoli+Syros"><img src="assets/home-location.svg" alt="" width="24" height="24">Ακτή Πέτρου Ράλλη 40Α</a><a class="social" href="https://www.instagram.com/40talesfox/"><img src="assets/home-instagram.svg" alt="" width="22" height="22">Instagram</a></footer></div></section>
-<section class="screen" id="dinner-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#dinner-gr" >GR</a><a href="#dinner-en" aria-current="page">ENG</a></div></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Bread for 2 with sourdough</h3><span class="price">€2.5</span></div></article>
+<section class="screen" id="dinner-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Bread for 2 with sourdough</h3><span class="price">€2.5</span></div></article>
 <h2>Salads</h2>
 <article class="dish"><div class="line"><h3>The Famous Greek Salad</h3><span class="price">€12</span></div><p>Syros cherry tomatoes, wild capers of the island, peppers, marinated onion, olives, cucumber, zucchini, Kalavrita feta cheese</p></article>
 <article class="dish"><div class="line"><h3>Green Salad with Chicken</h3><span class="price">€13.5</span></div><p>Grilled chicken fillet, Syros cherry tomatoes, pumpkin seeds, handmade citrus mayonnaise, parmesan flakes</p></article>
@@ -95,7 +96,7 @@ main:has(.screen:target) #home{display:none}
 
 <article class="dish"><div class="line"><h3>Tiramisu</h3><span class="price">€11</span></div><p>Tsoureki, dark chocolate, caramelized almonds</p></article>
 <article class="dish"><div class="line"><h3>Tahini Ice Cream</h3><span class="price">€8,5</span></div><p>Lemon, hazelnuts, rose preserve, cream from halvadopita and mandolato</p></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="brunch-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#brunch-gr" aria-current="page">GR</a><a href="#brunch-en" >ENG</a></div></nav><h1>Brunch</h1></header><div class="items"><p style="padding:9px 0">Σερβίρεται 08:30–13:30</p><article class="dish"><div class="line"><h3>Αυγά μάτια</h3><span class="price">€7.5</span></div><p>Με bacon &amp; φρυγανισμένο προζυμένιο ψωμί</p></article>
+<section class="screen" id="brunch-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Brunch</h1></header><div class="items"><p style="padding:9px 0">Σερβίρεται 08:30–13:30</p><article class="dish"><div class="line"><h3>Αυγά μάτια</h3><span class="price">€7.5</span></div><p>Με bacon &amp; φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Ομελέτα</h3><span class="price">€8.5</span></div><p>Με τυρί γκούντα, γαλοπούλα, μανιτάρια, τομάτα, baby σπανάκι, φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Αυγά scrambled</h3><span class="price">€9</span></div><p>Με τυρί γκούντα &amp; bacon, φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Αυγά σακσούκα</h3><span class="price">€8</span></div><p>Γροθοτύρι Σύρου, σάλτσα τομάτας, φρυγανισμένο προζυμένιο ψωμί</p></article>
@@ -108,7 +109,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Pancakes με μέλι</h3><span class="price">€8</span></div><p>Μέλι, πράσινο μήλο, κανέλα</p></article>
 <article class="dish"><div class="line"><h3>Γιαούρτι με φρούτα</h3><span class="price">€7.5</span></div><p>Μέλι, καρύδια, φρούτα εποχής</p></article>
 <article class="dish"><div class="line"><h3>Tahini Healthy Bowl</h3><span class="price">€9.5</span></div><p>Μπανάνα, μάνγκο, σιρόπι αγαύης, χυμός λάιμ, ταχίνι. Επικάλυψη: ακτινίδιο, φράουλα, βιολ. γκρανόλα, σπόρους κάνναβης</p></article><a class="end" href="#home">← Αρχική</a></div></section>
-<section class="screen" id="cocktails-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/00cbb.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><span>ENG</span></div></nav><h1>Cocktails &amp; Spirits</h1></header><div class="items"><h2>Classics</h2>
+<section class="screen" id="cocktails-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/00cbb.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Cocktails &amp; Spirits</h1></header><div class="items"><h2>Classics</h2>
 <article class="dish"><div class="line"><h3>Pornstar Martini</h3><span class="price">€10</span></div><p>Sweet vanilla and tart passion fruit bliss</p></article>
 <article class="dish"><div class="line"><h3>Mojito</h3><span class="price">€10</span></div><p>Crisp, minty refreshment for endless summer nights</p></article>
 <article class="dish"><div class="line"><h3>Daiquiri</h3><span class="price">€10</span></div><p>Perfectly balanced citrus snap of pure elegance.</p></article>
@@ -201,7 +202,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h4>Bache XO</h4><span class="price">€12</span></div></article>
 <article class="dish"><div class="line"><h4>Bache VSOP</h4><span class="price">€14</span></div></article>
 <a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="wines-en" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/ad927.jpg)"><nav class="bar"><a href="#home">← Home</a></nav><h1>Wines &amp; Beers</h1></header><div class="items"><h2>Λευκά</h2>
+<section class="screen" id="wines-en" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/ad927.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Wines &amp; Beers</h1></header><div class="items"><h2>Λευκά</h2>
 <article class="dish"><div class="line"><h3>Έρωχος Λευκός</h3><span class="price">€5 / €22</span></div><p>(Κτήμα Αργυρίου, Ασύρτικο, Ροδίτης, Sauv. Blanc)</p></article>
 <article class="dish"><div class="line"><h3>Μαλαγουζιά</h3><span class="price">€6 / €27.5</span></div><p>(Κτήμα Αργυρίου, Μαλαγουζιά)</p></article>
 <article class="dish"><div class="line"><h3>Φάμπρικα (Σύρος)</h3><span class="price">€28</span></div><p>(Κτήμα Χατζάκη, Κούντουρα, Μονεμβασιά)</p></article>
@@ -250,7 +251,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Alfa</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>Heineken 0.0</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>Μηλοκλέφτης</h3><span class="price">€5</span></div></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="coffee-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#coffee-gr" aria-current="page">GR</a><a href="#coffee-en" >ENG</a></div></nav><h1>Καφές &amp; Ροφήματα</h1></header><div class="items"><h2>Καφές</h2>
+<section class="screen" id="coffee-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Καφές &amp; Ροφήματα</h1></header><div class="items"><h2>Καφές</h2>
 <article class="dish"><div class="line"><h3>Ελληνικός (μονός)</h3><span class="price">€2.2</span></div></article>
 <article class="dish"><div class="line"><h3>Ελληνικός (διπλός)</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Nescafé στιγμιαίος (κρύος ή ζεστός)</h3><span class="price">€3.5</span></div></article>
@@ -307,7 +308,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Φυσικό Μεταλλικό Νερό</h3><span class="price">€2.5</span></div></article>
 <article class="dish"><div class="line"><h3>Ανθρακούχο Νερό</h3><span class="price">€4</span></div></article>
 <article class="dish"><div class="line"><h3>Αναψυκτικά</h3><span class="price">€3.5</span></div></article><a class="end" href="#home">← Αρχική</a></div></section>
-<section class="screen" id="coffee-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#coffee-gr" >GR</a><a href="#coffee-en" aria-current="page">ENG</a></div></nav><h1>Coffee &amp; Beverages</h1></header><div class="items"><h2>Coffee</h2>
+<section class="screen" id="coffee-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Coffee &amp; Beverages</h1></header><div class="items"><h2>Coffee</h2>
 <article class="dish"><div class="line"><h3>Greek coffee (single)</h3><span class="price">€2.2</span></div></article>
 <article class="dish"><div class="line"><h3>Greek coffee (double)</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Nescafé instant coffee (hot or cold)</h3><span class="price">€3.5</span></div></article>
@@ -364,7 +365,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Mineral water</h3><span class="price">€2.5</span></div></article>
 <article class="dish"><div class="line"><h3>Sparkling water</h3><span class="price">€4</span></div></article>
 <article class="dish"><div class="line"><h3>Soft drinks</h3><span class="price">€3.5</span></div></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="brunch-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Home</a><div class="langs"><a href="#brunch-gr" >GR</a><a href="#brunch-en" aria-current="page">ENG</a></div></nav><h1>Brunch</h1></header><div class="items"><p style="padding:9px 0">Served 08:30–13:30</p><article class="dish"><div class="line"><h3>Fried Eggs</h3><span class="price">€7.5</span></div><p>With bacon &amp; toasted sourdough bread</p></article>
+<section class="screen" id="brunch-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Brunch</h1></header><div class="items"><p style="padding:9px 0">Served 08:30–13:30</p><article class="dish"><div class="line"><h3>Fried Eggs</h3><span class="price">€7.5</span></div><p>With bacon &amp; toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>Omelette</h3><span class="price">€8.5</span></div><p>With gouda cheese, turkey, mushrooms, tomatoes, baby spinach, toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>Scrambled Eggs</h3><span class="price">€9</span></div><p>With gouda cheese &amp; bacon, toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>Shakshuka Eggs</h3><span class="price">€8</span></div><p>Sour cheese from Syros, tomato sauce, toasted sourdough bread</p></article>
@@ -377,7 +378,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Pancakes with Honey</h3><span class="price">€8</span></div><p>Honey, green apple, cinnamon</p></article>
 <article class="dish"><div class="line"><h3>Greek Yogurt with Fruits</h3><span class="price">€7.5</span></div><p>Honey, walnuts, seasonal fruits</p></article>
 <article class="dish"><div class="line"><h3>Tahini Healthy Bowl</h3><span class="price">€9.5</span></div><p>Banana, mango, agave syrup, lime juice, tahini. Toppings: kiwi, strawberry, org. granola, hemp seeds</p></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="dinner-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><div class="langs"><a href="#dinner-gr" aria-current="page">GR</a><a href="#dinner-en" >ENG</a></div></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
+<section class="screen" id="dinner-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
 <h2>Σαλάτες</h2>
 <article class="dish"><div class="line"><h3>Η φημισμένη Ελληνική Σαλάτα</h3><span class="price">€12</span></div><p>Τοματίνια Σύρου, άγρια κάπαρη του νησιού, πιπεριές, μαριναρισμένο κρεμμύδι, ελιές, αγγούρι, κολοκύθι, φέτα Καλαβρύτων</p></article>
 <article class="dish"><div class="line"><h3>Πράσινη Σαλάτα με κοτόπουλο</h3><span class="price">€13.5</span></div><p>Ψητό φιλέτο κοτόπουλο, τοματίνια, κολοκυθόσπορος, χειροποίητη μαγιονέζα εσπεριδοειδών, flakes παρμεζάνας</p></article>
@@ -409,20 +410,55 @@ main:has(.screen:target) #home{display:none}
 
 <article class="dish"><div class="line"><h3>Τιραμισού</h3><span class="price">€11</span></div><p>Τσουρέκι, μαύρη σοκολάτα, καραμελωμένα αμύγδαλα</p></article>
 <article class="dish"><div class="line"><h3>Παγωτό από Ταχίνι</h3><span class="price">€8.5</span></div><p>Λεμόνι, φουντούκια, γλυκό τριαντάφυλλο, κρέμα από χαλβαδόπιτα και μαντολάτο</p></article><a class="end" href="#home">← Αρχική</a></div></section></main><script>
-function navigate() {
-  const screen = document.getElementById(location.hash.slice(1));
-  document.documentElement.lang = screen?.lang || 'el';
-  if (screen?.classList.contains('screen') && /^(brunch|dinner|coffee)-/.test(screen.id)) {
-    const language = screen.id.split('-')[1];
-    for (const card of document.querySelectorAll('.cards a')) {
-      const [category] = card.hash.slice(1).split('-');
-      if (['brunch','dinner','coffee'].includes(category)) card.hash = category + '-' + language;
+const cards = document.querySelector('.cards');
+const picker = document.querySelector('.language-picker');
+const bilingual = ['brunch', 'dinner', 'coffee'];
+let language = 'gr';
+try {
+  if (localStorage.getItem('menu-language') === 'en') language = 'en';
+} catch { /* Storage may be unavailable in private browsing. */ }
+
+function applyLanguage(next) {
+  language = next;
+  const english = language === 'en';
+  const home = document.getElementById('home');
+  home.lang = english ? 'en' : 'el';
+  home.querySelector('.review-label').textContent = english ? 'Write a review' : 'Γράψε μια αξιολόγηση';
+  home.querySelector('.actions a').textContent = english ? 'Reserve' : 'Κράτηση';
+  cards.setAttribute('aria-label', english ? 'Menus' : 'Κατάλογοι');
+  for (const button of picker.querySelectorAll('button')) {
+    button.setAttribute('aria-pressed', String(button.dataset.language === language));
+  }
+  for (const card of cards.querySelectorAll('a')) {
+    const category = card.hash.slice(1).split('-')[0];
+    if (bilingual.includes(category)) card.hash = category + '-' + language;
+  }
+  for (const screen of document.querySelectorAll('.screen')) {
+    screen.querySelector('.menu-language').textContent = english ? 'ENG' : 'GR';
+    for (const link of screen.querySelectorAll('a[href="#home"]')) {
+      link.textContent = english ? '← Home' : '← Αρχική';
+      link.lang = home.lang;
     }
   }
+  try { localStorage.setItem('menu-language', language); } catch { /* Keep the selection in memory. */ }
+}
+
+picker.addEventListener('click', event => {
+  const button = event.target.closest('button');
+  if (button) {
+    applyLanguage(button.dataset.language);
+    document.documentElement.lang = document.getElementById('home').lang;
+  }
+});
+
+function navigate() {
+  const screen = document.getElementById(location.hash.slice(1));
+  const [category, routeLanguage] = (screen?.id || '').split('-');
+  applyLanguage(bilingual.includes(category) ? routeLanguage : language);
+  document.documentElement.lang = screen?.lang || document.getElementById('home').lang;
   window.scrollTo(0, 0);
 }
 
-const cards = document.querySelector('.cards');
 let activeFlight;
 let homeScroll = 0;
 
