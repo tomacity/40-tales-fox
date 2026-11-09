@@ -47,6 +47,10 @@ main:has(.screen:target) #home{display:none}
 .fox-tail .fox-art img{height:108px;transform:translate(-50%,-50%) rotate(-90deg) scaleY(-1)}
 .end{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-weight:bold}
 .screen > .banner{position:sticky;top:0;z-index:2;background-color:#232426}
+/* The selected card moves independently of the scrolling menu. */
+.card-flight{position:fixed;z-index:10;pointer-events:none;overflow:hidden;isolation:isolate;background-size:cover;background-position:center;color:white;display:grid;place-items:center}
+.flight-title{font:bold 24px Georgia,serif;letter-spacing:.72px}
+.card-flight>.banner{position:absolute;inset:0;min-height:0}
 </style></head><body><main><section id="home" lang="el"><header class="hero"><h1 class="brand"><img src="assets/898c3.svg" alt="40 tales fox"></h1><a class="review" href="https://www.google.com/search?sca_esv=128459c6520156d0&amp;sxsrf=AKL5yDiRUwLsnf4YoWfkAaMXSYayeQxvQA:1794191316645&amp;q=40+tails+fox+syros&amp;si=AE1YtOqiKPb2pdLXAi8quZ9vbH4aVq_aX8-3H9iFBLpRNK95cwpYQbSs-9J1swqOlRwCDQMx3VBLwFPXF8B4lKmRM5H0fSGZwxOQkhWwLrU3N8i02yQVhM0%3D&amp;uds=AE2AFgbotJsmmw7pc0xWS3zec3_8zreEk_7jxdbZ4Cp8qBAti8NHxkK29ml2sC-LHb3V_0Z4Xz_OMPKB4HK_93_oQoNAP88YI76bcuMYRmOeNQHjpFBEcIw&amp;sa=X&amp;ved=2ahUKEwijttnA6_mXAxUcRvEDHZYzM-MQ3PALegQIOxAE&amp;biw=1745&amp;bih=828&amp;dpr=1.1">★　Γράψε μια αξιολόγηση</a></header><div class="content"><nav class="cards" aria-label="Κατάλογοι"><a href="#dinner-gr" style="background-image:linear-gradient(#14141499,#14141499),url(assets/5152c.jpg)">Lunch &amp; Dinner</a>
 <a href="#brunch-gr" style="background-image:linear-gradient(#141414af,#141414af),url(assets/0ff78.jpg)">Brunch</a>
 <a href="#coffee-gr" style="background-image:linear-gradient(#141414c0,#141414c0),url(assets/22b90.jpg)">Coffee &amp; Beverages</a>
@@ -302,6 +306,66 @@ function navigate() {
   }
   window.scrollTo(0, 0);
 }
+
+// Animate from the tapped card's viewport bounds to the actual sticky header.
+const cards = document.querySelector('.cards');
+let endFlight;
+cards.addEventListener('click', event => {
+  const card = event.target.closest('a');
+  if (!card || event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
+      event.shiftKey || event.altKey || !Element.prototype.animate ||
+      matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const screen = document.getElementById(card.hash.slice(1));
+  const header = screen?.querySelector('.banner');
+  if (!header) return;
+  event.preventDefault();
+  endFlight?.();
+  const start = card.getBoundingClientRect();
+  const photo = getComputedStyle(card).backgroundImage;
+  location.hash = card.hash;
+  navigate();
+  const finish = header.getBoundingClientRect();
+  const flight = document.createElement('div');
+  flight.className = 'card-flight';
+  flight.inert = true;
+  flight.setAttribute('aria-hidden', 'true');
+  flight.style.backgroundImage = photo;
+  const title = document.createElement('span');
+  title.className = 'flight-title';
+  title.textContent = card.textContent;
+  const arriving = header.cloneNode(true);
+  flight.append(title, arriving);
+  document.body.append(flight);
+  header.style.visibility = 'hidden';
+  const geometry = (rect, radius) => ({
+    left: rect.left + 'px', top: rect.top + 'px', width: rect.width + 'px',
+    height: rect.height + 'px', borderRadius: radius + 'px'
+  });
+  const timing = {duration: 480, easing: 'cubic-bezier(.22,.75,.22,1)', fill: 'both'};
+  const movement = flight.animate([geometry(start, 4), geometry(finish, 0)], timing);
+  const animations = [
+    movement,
+    title.animate([{opacity:1},{opacity:0}], timing),
+    arriving.animate([{opacity:0},{opacity:0,offset:.28},{opacity:1}], timing),
+    screen.querySelector('.items').animate([{opacity:0},{opacity:1}], timing)
+  ];
+  const cleanup = () => {
+    if (endFlight !== cleanup) return;
+    endFlight = undefined;
+    header.style.removeProperty('visibility');
+    flight.remove();
+    if (screen.matches(':target') && document.activeElement === document.body) header.focus({preventScroll:true});
+    animations.forEach(animation => animation.cancel());
+  };
+  endFlight = cleanup;
+  movement.finished.then(cleanup, cleanup);
+  header.setAttribute('tabindex', '-1');
+
+});
+window.addEventListener('hashchange', () => {
+  if (!document.querySelector('.screen:target .banner[style*="visibility: hidden"]')) endFlight?.();
+});
+
 window.addEventListener('hashchange', navigate);
 navigate();
 </script></body></html>
