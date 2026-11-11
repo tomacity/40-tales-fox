@@ -56,7 +56,12 @@ main:has(.screen:target) #home{display:none}
 .fox-tail .fox-art{width:108px}
 .fox-tail .fox-art img{height:108px;transform:translate(-50%,-50%) rotate(-90deg) scaleY(-1)}
 .end{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-weight:bold}
-.screen > .banner{position:sticky;top:0;z-index:2;background-color:#232426}
+.menu-top{position:sticky;top:0;z-index:2}
+.menu-top .banner{background-color:#232426}
+.category-bar{display:flex;gap:6px;overflow-x:auto;padding:5px 12px;background:#e0dbd4;border-bottom:1px solid #bab4ad;scrollbar-width:thin}
+.category-bar button{flex:none;min-height:36px;padding:4px 12px;border:1px solid transparent;border-radius:18px;background:transparent;color:#48433f;font:600 13px Arimo,Arial,sans-serif;cursor:pointer}
+.category-bar button[aria-current]{background:#302e2b;color:#fff}
+.category-bar button:focus-visible{outline:2px solid #85593e;outline-offset:-2px}
 /* The selected card moves independently of the scrolling menu. */
 .card-flight{position:fixed;z-index:10;pointer-events:none;overflow:hidden;isolation:isolate;background-size:cover;background-position:center;color:white;display:grid;place-items:center}
 .flight-title{font:700 24px/30px Gelasio,Georgia,serif;letter-spacing:.72px}
@@ -66,12 +71,12 @@ main:has(.screen:target) #home{display:none}
 <a href="#coffee-gr" style="background-image:linear-gradient(rgba(21,22,23,.755),rgba(21,22,23,.755)),url(assets/22b90.jpg)">Coffee &amp; Beverages</a>
 <a href="#cocktails-en" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/50356.jpg)">Cocktails &amp; Spirits</a>
 <a href="#wines-en" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/d66bc.jpg)">Wines &amp; Beers</a></nav><div class="actions"><a href="tel:+302281303113">Κράτηση</a><a href="mailto:info@40talesfox.gr">Email</a></div><footer class="contact"><a href="https://www.google.com/maps/search/?api=1&amp;query=40+Tales+Fox+Ermoupoli+Syros"><img src="assets/home-location.svg" alt="" width="24" height="24">Ακτή Πέτρου Ράλλη 40Α</a><a class="social" href="https://www.instagram.com/40talesfox/"><img src="assets/home-instagram.svg" alt="" width="22" height="22">Instagram</a></footer></div></section>
-<section class="screen" id="dinner-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Bread for 2 with sourdough</h3><span class="price">€2.5</span></div></article>
-<h2>Salads</h2>
+<section class="screen" id="dinner-en" lang="en"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Lunch &amp; Dinner</h1></header><nav class="category-bar" aria-label="Menu categories"><button type="button" aria-controls="dinner-en-group-1" aria-current="location">Bread</button><button type="button" aria-controls="dinner-en-group-2">Salads</button><button type="button" aria-controls="dinner-en-group-3">Starters/Mains</button><button type="button" aria-controls="dinner-en-group-4">Desserts</button></nav></div><div class="items"><article class="dish" id="dinner-en-group-1"><div class="line"><h3>Bread for 2 with sourdough</h3><span class="price">€2.5</span></div></article>
+<h2 id="dinner-en-group-2">Salads</h2>
 <article class="dish"><div class="line"><h3>The Famous Greek Salad</h3><span class="price">€12</span></div><p>Syros cherry tomatoes, wild capers of the island, peppers, marinated onion, olives, cucumber, zucchini, Kalavrita feta cheese</p></article>
 <article class="dish"><div class="line"><h3>Green Salad with Chicken</h3><span class="price">€13.5</span></div><p>Grilled chicken fillet, Syros cherry tomatoes, pumpkin seeds, handmade citrus mayonnaise, parmesan flakes</p></article>
 <article class="dish"><div class="line"><h3>Beetroot Salad</h3><span class="price">€13</span></div><p>Beetroot, sour apple, handmade feta &amp; strawberry cream, walnuts, pomegranate seeds</p></article>
-<h2 class="fox-heading">Starters/Mains<span class="fox-art" aria-hidden="true"><img src="assets/7c40e.png" alt=""></span></h2>
+<h2 class="fox-heading" id="dinner-en-group-3">Starters/Mains<span class="fox-art" aria-hidden="true"><img src="assets/7c40e.png" alt=""></span></h2>
 
 <article class="dish"><div class="line"><h3>Cycladic Cheeses platter</h3><span class="price">€23</span></div><p>Naxos Arseniko, Syros Amarantos, Ios Gruyere, Syros Anthotyro</p></article>
 <article class="dish"><div class="line"><h3>Charcuterie platter</h3><span class="price">€21</span></div><p>Smoked prosciutto, Lefkada salami, roast turkey fillet, pastrami, Cretan apaki</p></article>
@@ -93,25 +98,25 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Divine Beef Burger</h3><span class="price">€14.5</span></div><p>Tomato, pickled cucumber, arugula, cheddar, secret mayo, fries</p></article>
 <article class="dish"><div class="line"><h3>Vegan Burger<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€14.5</span></div><p>Veggie and mushroom burger, tomato, local capers, fresh basil, vegan mayo with cucumber pickles, vegan cheese &amp; beetroot salad</p></article>
 <article class="dish"><div class="line"><h3>Vegan Moussaka<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€16</span></div><p>Mushrooms, black lentils, soy mince, corn béchamel, tomato gazpacho</p></article>
-<h2 class="fox-heading fox-tail">Desserts<span class="fox-art" aria-hidden="true"><img src="assets/db70a.png" alt=""></span></h2>
+<h2 class="fox-heading fox-tail" id="dinner-en-group-4">Desserts<span class="fox-art" aria-hidden="true"><img src="assets/db70a.png" alt=""></span></h2>
 <article class="dish"><div class="line"><h3>Dark Chocolate Mousse</h3><span class="price">€12</span></div><p>Patras Tentura, white chocolate cream with Bergamot and Aegina pistachio, mango sorbet, Hawaiian black salt</p></article>
 
 <article class="dish"><div class="line"><h3>Tiramisu</h3><span class="price">€11</span></div><p>Tsoureki, dark chocolate, caramelized almonds</p></article>
 <article class="dish"><div class="line"><h3>Tahini Ice Cream</h3><span class="price">€8,5</span></div><p>Lemon, hazelnuts, rose preserve, cream from halvadopita and mandolato</p></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="brunch-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Brunch</h1></header><div class="items"><p style="padding:9px 0">Σερβίρεται 08:30–13:30</p><article class="dish"><div class="line"><h3>Αυγά μάτια</h3><span class="price">€7.5</span></div><p>Με bacon &amp; φρυγανισμένο προζυμένιο ψωμί</p></article>
+<section class="screen" id="brunch-gr" lang="el"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Brunch</h1></header><nav class="category-bar" aria-label="Κατηγορίες μενού"><button type="button" aria-controls="brunch-gr-group-1" aria-current="location">Αυγά</button><button type="button" aria-controls="brunch-gr-group-2">Τοστ &amp; σάντουιτς</button><button type="button" aria-controls="brunch-gr-group-3">Pancakes</button><button type="button" aria-controls="brunch-gr-group-4">Γιαούρτι &amp; bowls</button></nav></div><div class="items"><p style="padding:9px 0">Σερβίρεται 08:30–13:30</p><article class="dish" id="brunch-gr-group-1"><div class="line"><h3>Αυγά μάτια</h3><span class="price">€7.5</span></div><p>Με bacon &amp; φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Ομελέτα</h3><span class="price">€8.5</span></div><p>Με τυρί γκούντα, γαλοπούλα, μανιτάρια, τομάτα, baby σπανάκι, φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Αυγά scrambled</h3><span class="price">€9</span></div><p>Με τυρί γκούντα &amp; bacon, φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Αυγά σακσούκα</h3><span class="price">€8</span></div><p>Γροθοτύρι Σύρου, σάλτσα τομάτας, φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Αυγά Benedict</h3><span class="price">€10.5</span></div><p>Αυγά ποσέ, λούζα Σύρου, μαγιονέζα, hollandaise, φρυγανισμένο προζυμένιο ψωμί</p></article>
-<article class="dish"><div class="line"><h3>Smoked salmon avocado toast</h3><span class="price">€13.5</span></div><p>Αυγά scrambled, γουακαμόλε, καπνιστός σολομός, φρυγανισμένο προζυμένιο ψωμί</p></article>
+<article class="dish" id="brunch-gr-group-2"><div class="line"><h3>Smoked salmon avocado toast</h3><span class="price">€13.5</span></div><p>Αυγά scrambled, γουακαμόλε, καπνιστός σολομός, φρυγανισμένο προζυμένιο ψωμί</p></article>
 <article class="dish"><div class="line"><h3>Το Σάντουιτς (Με αυγά +2€)</h3><span class="price">€7</span></div><p>Πορκέτα, coleslaw, μουστάρδα whole grain, αγγούρι τουρσί, τομάτα, γκούντα, σαλάτα</p></article>
 <article class="dish"><div class="line"><h3>Club sandwich</h3><span class="price">€8.5</span></div><p>Iceberg, τομάτα, γαλοπούλα, τυρί γκούντα, bacon, μαγιονέζα, πατάτες τηγανητές</p></article>
-<article class="dish"><div class="line"><h3>Pancakes αλμυρά</h3><span class="price">€9.5</span></div><p>Bacon, τυρί γκούντα, ζαμπόν, τυρί cheddar, αυγό</p></article>
+<article class="dish" id="brunch-gr-group-3"><div class="line"><h3>Pancakes αλμυρά</h3><span class="price">€9.5</span></div><p>Bacon, τυρί γκούντα, ζαμπόν, τυρί cheddar, αυγό</p></article>
 <article class="dish"><div class="line"><h3>Pancakes με σοκολάτα</h3><span class="price">€8.5</span></div><p>Πραλίνα φουντουκιού, μπανάνα, μπισκότο</p></article>
 <article class="dish"><div class="line"><h3>Pancakes με μέλι</h3><span class="price">€8</span></div><p>Μέλι, πράσινο μήλο, κανέλα</p></article>
-<article class="dish"><div class="line"><h3>Γιαούρτι με φρούτα</h3><span class="price">€7.5</span></div><p>Μέλι, καρύδια, φρούτα εποχής</p></article>
+<article class="dish" id="brunch-gr-group-4"><div class="line"><h3>Γιαούρτι με φρούτα</h3><span class="price">€7.5</span></div><p>Μέλι, καρύδια, φρούτα εποχής</p></article>
 <article class="dish"><div class="line"><h3>Tahini Healthy Bowl</h3><span class="price">€9.5</span></div><p>Μπανάνα, μάνγκο, σιρόπι αγαύης, χυμός λάιμ, ταχίνι. Επικάλυψη: ακτινίδιο, φράουλα, βιολ. γκρανόλα, σπόρους κάνναβης</p></article><a class="end" href="#home">← Αρχική</a></div></section>
-<section class="screen" id="cocktails-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/00cbb.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Cocktails &amp; Spirits</h1></header><div class="items"><h2>Classics</h2>
+<section class="screen" id="cocktails-en" lang="en"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/00cbb.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Cocktails &amp; Spirits</h1></header><nav class="category-bar" aria-label="Menu categories"><button type="button" aria-controls="cocktails-en-group-1" aria-current="location">Classics</button><button type="button" aria-controls="cocktails-en-group-2">Signature</button><button type="button" aria-controls="cocktails-en-group-3">Mocktails</button><button type="button" aria-controls="cocktails-en-group-4">Gin</button><button type="button" aria-controls="cocktails-en-group-5">Rum</button><button type="button" aria-controls="cocktails-en-group-6">Tequila</button><button type="button" aria-controls="cocktails-en-group-7">Vodka</button><button type="button" aria-controls="cocktails-en-group-8">Whiskey</button><button type="button" aria-controls="cocktails-en-group-9">Brandy</button></nav></div><div class="items"><h2 id="cocktails-en-group-1">Classics</h2>
 <article class="dish"><div class="line"><h3>Pornstar Martini</h3><span class="price">€10</span></div><p>Sweet vanilla and tart passion fruit bliss</p></article>
 <article class="dish"><div class="line"><h3>Mojito</h3><span class="price">€10</span></div><p>Crisp, minty refreshment for endless summer nights</p></article>
 <article class="dish"><div class="line"><h3>Daiquiri</h3><span class="price">€10</span></div><p>Perfectly balanced citrus snap of pure elegance.</p></article>
@@ -127,7 +132,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Zombie</h3><span class="price">€14</span></div><p>Dangerously potent voodoo magic in a glass</p></article>
 <article class="dish"><div class="line"><h3>Martini Dry/Dirty</h3><span class="price">€14</span></div><p>Savory, icy elegance with a briny whisper</p></article>
 <h2 class="classics-end">and many, MANY more...</h2>
-<h2>Signature</h2>
+<h2 id="cocktails-en-group-2">Signature</h2>
 <article class="dish cocktail"><div class="line"><h3>Crimson Kiss</h3><span class="price">€13</span></div><p>Fruity / Tart / Floral<br>GIN, RED BERRIES PURÉE, LEMON, TRIPLE SEC, CRÈME DE VIOLETTE<br><em>A kiss you'll never want to end.</em></p></article>
 <article class="dish cocktail"><div class="line"><h3>Basil Breeze</h3><span class="price">€13</span></div><p>Refreshing / Herbal / Balanced<br>GIN, CUCUMBER-BASIL CORDIAL, ELDERFLOWER, LEMON, AEGEAN TONIC<br><em>Like the breeze on a hot summer day, you'll always want more.</em></p></article>
 <article class="dish cocktail"><div class="line"><h3>Walkin’ On The Sun</h3><span class="price">€14</span></div><p>REPOSADO TEQUILA, ELDERFLOWER, GRAPEFRUIT, LEMON, GINGER, BLACK PEPPER, ORANGE BITTERS<br><em>Gently spicy with a complex finish.</em></p></article>
@@ -138,11 +143,11 @@ main:has(.screen:target) #home{display:none}
 <article class="dish cocktail"><div class="line"><h3>Theros</h3><span class="price">€13</span></div><p>Fizzy / Summery / Peachy<br>VODKA, LEMON, ORGEAT, PEACH, BUBBLES<br><em>An ideal company to make memories with.</em></p></article>
 <article class="dish cocktail"><div class="line"><h3>Sunset Bliss</h3><span class="price">€13</span></div><p>Spirited / Luscious / Bright<br>BLENDED SCOTCH WHISKY, GREEN APPLE, APRICOT, LEMON<br><em>A delightful temptation for just the right occasion.</em></p></article>
 <article class="dish cocktail"><div class="line"><h3>Smoking Summer</h3><span class="price">€16</span></div><p>Smoky / Mineral / Umami<br>MEZCAL (AGAVE ESPADÍN), DRY VERMOUTH, TOMATO, SPICES, LEMON<br><em>Not everyone's cup of tea, but we are not here for tea, are we?</em></p></article>
-<h2>Mocktails</h2>
+<h2 id="cocktails-en-group-3">Mocktails</h2>
 <article class="dish cocktail"><div class="line"><h3>Jungle Siesta</h3><span class="price">€11</span></div><p>Sweet / Spicy / Bright<br>VANILLA, CHILLI, LEMON, GINGER BEER<br><em>In the midst of it all, calmness can still be found.</em></p></article>
 <article class="dish cocktail"><div class="line"><h3>Strawberry Smash</h3><span class="price">€10</span></div><p>Fresh / Juicy / Balanced<br>FRESH STRAWBERRIES, ORANGE JUICE, LEMON, ORGEAT<br><em>A vibrant rush that comes with a playful afterthought.</em></p></article>
 <h2>Spirits</h2>
-<h3 class="spirit-type">Gin</h3>
+<h3 class="spirit-type" id="cocktails-en-group-4">Gin</h3>
 <article class="dish"><div class="line"><h4>Greenall's</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Beefeater</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Bombay Sapphire</h4><span class="price">€9</span></div></article>
@@ -154,7 +159,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h4>Etsu</h4><span class="price">€12</span></div></article>
 <article class="dish"><div class="line"><h4>Monkey 47</h4><span class="price">€15</span></div></article>
 <article class="dish"><div class="line"><h4>Elephant</h4><span class="price">€15</span></div></article>
-<h3 class="spirit-type">Rum</h3>
+<h3 class="spirit-type" id="cocktails-en-group-5">Rum</h3>
 <article class="dish"><div class="line"><h4>Barceló Blanco</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Barceló Añejo</h4><span class="price">€9</span></div></article>
 <article class="dish"><div class="line"><h4>Barceló Imperial</h4><span class="price">€10</span></div></article>
@@ -167,14 +172,14 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h4>Don Papa</h4><span class="price">€14</span></div></article>
 <article class="dish"><div class="line"><h4>Don Papa Baroko</h4><span class="price">€14</span></div></article>
 <article class="dish"><div class="line"><h4>Bumbu the Original</h4><span class="price">€14</span></div></article>
-<h3 class="spirit-type">Tequila</h3>
+<h3 class="spirit-type" id="cocktails-en-group-6">Tequila</h3>
 <article class="dish"><div class="line"><h4>Rooster Blanco</h4><span class="price">€9</span></div></article>
 <article class="dish"><div class="line"><h4>Rooster Reposado</h4><span class="price">€9</span></div></article>
 <article class="dish"><div class="line"><h4>Mezcal</h4><span class="price">€12</span></div></article>
 <article class="dish"><div class="line"><h4>Patron Silver</h4><span class="price">€14</span></div></article>
 <article class="dish"><div class="line"><h4>Patron Reposado</h4><span class="price">€14</span></div></article>
 <article class="dish"><div class="line"><h4>Clase Azul Reposado</h4><span class="price">€45</span></div></article>
-<h3 class="spirit-type">Vodka</h3>
+<h3 class="spirit-type" id="cocktails-en-group-7">Vodka</h3>
 <article class="dish"><div class="line"><h4>Stolichnaya</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Smirnoff</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Moskovskaya</h4><span class="price">€8</span></div></article>
@@ -182,7 +187,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h4>Ciroc</h4><span class="price">€12</span></div></article>
 <article class="dish"><div class="line"><h4>Belvedere</h4><span class="price">€12</span></div></article>
 <article class="dish"><div class="line"><h4>Beluga Transatlantic</h4><span class="price">€14</span></div></article>
-<h3 class="spirit-type">Whiskey</h3>
+<h3 class="spirit-type" id="cocktails-en-group-8">Whiskey</h3>
 <article class="dish"><div class="line"><h4>Haig</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Famous Grouse</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Dewar's</h4><span class="price">€8</span></div></article>
@@ -198,13 +203,13 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h4>Nikka (from the barrel)</h4><span class="price">€14</span></div></article>
 <article class="dish"><div class="line"><h4>Suntory</h4><span class="price">€16</span></div></article>
 <article class="dish"><div class="line"><h4>Lagavulin</h4><span class="price">€18</span></div></article>
-<h3 class="spirit-type">Brandy</h3>
+<h3 class="spirit-type" id="cocktails-en-group-9">Brandy</h3>
 <article class="dish"><div class="line"><h4>Metaxa 5*</h4><span class="price">€8</span></div></article>
 <article class="dish"><div class="line"><h4>Metaxa 12*</h4><span class="price">€12</span></div></article>
 <article class="dish"><div class="line"><h4>Bache XO</h4><span class="price">€12</span></div></article>
 <article class="dish"><div class="line"><h4>Bache VSOP</h4><span class="price">€14</span></div></article>
 <a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="wines-en" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/ad927.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Wines &amp; Beers</h1></header><div class="items"><h2>Λευκά</h2>
+<section class="screen" id="wines-en" lang="el"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/ad927.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Wines &amp; Beers</h1></header><nav class="category-bar" aria-label="Κατηγορίες μενού"><button type="button" aria-controls="wines-en-group-1" aria-current="location">Λευκά</button><button type="button" aria-controls="wines-en-group-2">Ροζέ</button><button type="button" aria-controls="wines-en-group-3">Ερυθρά</button><button type="button" aria-controls="wines-en-group-4">Sangria</button><button type="button" aria-controls="wines-en-group-5">Sparkling wine</button><button type="button" aria-controls="wines-en-group-6">Μπύρα</button></nav></div><div class="items"><h2 id="wines-en-group-1">Λευκά</h2>
 <article class="dish"><div class="line"><h3>Έρωχος Λευκός</h3><span class="price">€5 / €22</span></div><p>(Κτήμα Αργυρίου, Ασύρτικο, Ροδίτης, Sauv. Blanc)</p></article>
 <article class="dish"><div class="line"><h3>Μαλαγουζιά</h3><span class="price">€6 / €27.5</span></div><p>(Κτήμα Αργυρίου, Μαλαγουζιά)</p></article>
 <article class="dish"><div class="line"><h3>Φάμπρικα (Σύρος)</h3><span class="price">€28</span></div><p>(Κτήμα Χατζάκη, Κούντουρα, Μονεμβασιά)</p></article>
@@ -218,7 +223,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Μαλαγουζιά</h3><span class="price">€46</span></div><p>(Κτήμα Γεροβασιλείου, Μαλαγουζιά)</p></article>
 <article class="dish"><div class="line"><h3>Όβηλος</h3><span class="price">€75</span></div><p>(Κτήμα Βιβλία Χώρα, Ασύρτικο, Ροδίτης, Sauv. Blanc)</p></article>
 <article class="dish"><div class="line"><h3>Τρία Αμπέλια</h3><span class="price">€95</span></div><p>(Κτήμα Σιγάλα, Ασύρτικο)</p></article>
-<h2>Ροζέ</h2>
+<h2 id="wines-en-group-2">Ροζέ</h2>
 <article class="dish"><div class="line"><h3>Άκρες</h3><span class="price">€6 / €24.5</span></div><p>(Κτήμα Σκούρα, Αγιωργίτικο, Μοσχοφίλερο)</p></article>
 <article class="dish"><div class="line"><h3>Τρεις Μάγισσες</h3><span class="price">€7 / €31</span></div><p>(Κτήμα Μπαραφάκα, Αγιωργίτικο, Μοσχοφίλερο, Syrah)</p></article>
 <article class="dish"><div class="line"><h3>Μπλέ Τρακτέρ</h3><span class="price">€28.5</span></div><p>(Κτήμα Κυρ-Γιάννη, Merlot)</p></article>
@@ -226,7 +231,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Idylle d'Achinos</h3><span class="price">€45</span></div><p>(Κτήμα Μελά, Syrah, Αγιωργίτικο, Grenache)</p></article>
 <article class="dish"><div class="line"><h3>Ξινόμαυρο</h3><span class="price">€47</span></div><p>(Κτήμα Γεροβασιλείου, Ξινόμαυρο)</p></article>
 <article class="dish"><div class="line"><h3>Ουσύρα Ροζέ (Σύρος) bio</h3><span class="price">€42</span></div><p>(Κτήμα Ουσύρα, Φωκιανό)</p></article>
-<h2>Ερυθρά</h2>
+<h2 id="wines-en-group-3">Ερυθρά</h2>
 <article class="dish"><div class="line"><h3>Έρωχος Ερυθρός</h3><span class="price">€5 / €22</span></div><p>(Κτήμα Αργυρίου, Μαυρούδι, Merlot)</p></article>
 <article class="dish"><div class="line"><h3>Πόρτες Merlot</h3><span class="price">€7 / €31</span></div><p>(Κτήμα Σκούρα, Merlot)</p></article>
 <article class="dish"><div class="line"><h3>Μπλέ Τρακτέρ</h3><span class="price">€28.5</span></div><p>(Κτήμα Κυρ-Γιάννη, Cab. Sauvignon, Merlot, Syrah)</p></article>
@@ -234,12 +239,12 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Chateau Julia Merlot</h3><span class="price">€50</span></div><p>(Κτήμα Λαζαρίδη, Merlot)</p></article>
 <article class="dish"><div class="line"><h3>Κτήμα Άλφα</h3><span class="price">€71</span></div><p>(Κτήμα Άλφα, Syrah, Ξινόμαυρο, Merlot)</p></article>
 <article class="dish"><div class="line"><h3>Μαυροτράγανο</h3><span class="price">€109</span></div><p>(Κτήμα Σιγάλα, Μαυροτράγανο)</p></article>
-<article class="dish"><div class="line"><h3>Σπιτική Λευκή Sangria</h3><span class="price">€9</span></div></article>
+<article class="dish" id="wines-en-group-4"><div class="line"><h3>Σπιτική Λευκή Sangria</h3><span class="price">€9</span></div></article>
 <article class="dish"><div class="line"><h3>Σπιτική Κόκκινη Sangria</h3><span class="price">€6</span></div></article>
-<h2>Sparkling wine</h2>
+<h2 id="wines-en-group-5">Sparkling wine</h2>
 <article class="dish"><div class="line"><h3>Prosecco Extra Dry</h3><span class="price">€7 / €35</span></div></article>
 <article class="dish"><div class="line"><h3>Moscato D'Asti</h3><span class="price">€7 / €35</span></div></article>
-<h2>Μπύρα</h2>
+<h2 id="wines-en-group-6">Μπύρα</h2>
 <article class="dish"><div class="line"><h3>Νύμφη Draft 250ml</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Νύμφη Draft 500ml</h3><span class="price">€6</span></div></article>
 <article class="dish"><div class="line"><h3>Μάμος αφιλτράριστη / unfiltered</h3><span class="price">€4.5</span></div></article>
@@ -253,7 +258,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Alfa</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>Heineken 0.0</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>Μηλοκλέφτης</h3><span class="price">€5</span></div></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="coffee-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Καφές &amp; Ροφήματα</h1></header><div class="items"><h2>Καφές</h2>
+<section class="screen" id="coffee-gr" lang="el"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Καφές &amp; Ροφήματα</h1></header><nav class="category-bar" aria-label="Κατηγορίες μενού"><button type="button" aria-controls="coffee-gr-group-1" aria-current="location">Καφές</button><button type="button" aria-controls="coffee-gr-group-2">Σοκολάτα</button><button type="button" aria-controls="coffee-gr-group-3">Ζεστό τσάι</button><button type="button" aria-controls="coffee-gr-group-4">Κρύο τσάι</button><button type="button" aria-controls="coffee-gr-group-5">Φυσικός χυμός</button><button type="button" aria-controls="coffee-gr-group-6">Αναψυκτικά</button></nav></div><div class="items"><h2 id="coffee-gr-group-1">Καφές</h2>
 <article class="dish"><div class="line"><h3>Ελληνικός (μονός)</h3><span class="price">€2.2</span></div></article>
 <article class="dish"><div class="line"><h3>Ελληνικός (διπλός)</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Nescafé στιγμιαίος (κρύος ή ζεστός)</h3><span class="price">€3.5</span></div></article>
@@ -270,14 +275,14 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Καπουτσίνο Λάτε</h3><span class="price">€4</span></div></article>
 <article class="dish"><div class="line"><h3>Φλατ Γουάιτ</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>* Γάλα αμυγδάλου, βρώμης, καρύδας, αρακά</h3><span class="price">+€0.3</span></div></article>
-<h2>Σοκολάτα</h2>
+<h2 id="coffee-gr-group-2">Σοκολάτα</h2>
 <article class="dish"><div class="line"><h3>Σοκολάτα (ζεστή ή κρύα)</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>Σοκολάτα Φουντούκι</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>Σοκολάτα Καραμέλα</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>Σοκολάτα Φράουλα</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>Λευκή Σοκολάτα</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>* Σαντιγί</h3><span class="price">+€0.5</span></div></article>
-<h2>Ζεστό τσάι</h2>
+<h2 id="coffee-gr-group-3">Ζεστό τσάι</h2>
 <article class="dish"><div class="line"><h3>Ινδικό Παραμύθι</h3><span class="price">€3.5</span></div><p>Πράσινο τσάι με καραμέλα, αμύγδαλο &amp; καρύδα</p></article>
 <article class="dish"><div class="line"><h3>Goji-Açaí</h3><span class="price">€3.5</span></div><p>Πράσινο τσάι με γκότζι, ιβίσκο &amp; φραμπουάζ</p></article>
 <article class="dish"><div class="line"><h3>Yogi Tea</h3><span class="price">€3.5</span></div><p>Βότανα με κανέλα, γαρύφαλλο &amp; πιπερόριζα</p></article>
@@ -288,7 +293,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Φρούτα του Δάσους</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Strong Breakfast</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Χαμομήλι</h3><span class="price">€3.5</span></div></article>
-<h2>Κρύο τσάι</h2>
+<h2 id="coffee-gr-group-4">Κρύο τσάι</h2>
 <article class="dish"><div class="line"><h3>Feeju Τσάι του Βουνού</h3><span class="price">€4.5</span></div><p>Τσάι του βουνού με ρόδι &amp; αγαύη</p></article>
 <article class="dish"><div class="line"><h3>Feeju Πράσινο Τσάι</h3><span class="price">€4.5</span></div><p>Πράσινο τσάι με λεμόνι &amp; λουίζα</p></article>
 <article class="dish"><div class="line"><h3>Feeju Τσάι Κεϋλάνης</h3><span class="price">€4.5</span></div><p>Μαύρο τσάι Κεϋλάνης με ροδάκινο</p></article>
@@ -296,13 +301,13 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Πράσινο</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Λεμόνι</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Ροδάκινο</h3><span class="price">€3.5</span></div></article>
-<h2>Φυσικός χυμός</h2>
+<h2 id="coffee-gr-group-5">Φυσικός χυμός</h2>
 <article class="dish"><div class="line"><h3>Πορτοκάλι</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>Πορτοκάλι, Μπανάνα, Μήλο ή Ροδάκινο</h3><span class="price">€5.5</span></div></article>
 <article class="dish"><div class="line"><h3>Ροζ Γκρέιπφρουτ, Πορτοκάλι, Καρότο</h3><span class="price">€6</span></div></article>
 <article class="dish"><div class="line"><h3>Μπανάνα, Μάνγκο, Πορτοκάλι</h3><span class="price">€6</span></div></article>
 <article class="dish"><div class="line"><h3>Καρότο, Πράσινο Μήλο, Παντζάρι</h3><span class="price">€7.5</span></div></article>
-<h2>Αναψυκτικά</h2>
+<h2 id="coffee-gr-group-6">Αναψυκτικά</h2>
 <article class="dish"><div class="line"><h3>B-Fresh :</h3><span class="price">€4.5</span></div><p>Λεμόνι με πιπερόριζα</p><p>Λεμόνι με μαστίχα Χίου</p><p>Ρόδι με πράσινο τσάι</p><p>Μήλο με περγαμόντο</p></article>
 <article class="dish"><div class="line"><h3>Three Cents:</h3><span class="price">€5</span></div><p>Pink Grapefruit Soda</p><p>Ginger Beer</p><p>Aegean Tonic Water</p></article>
 <article class="dish"><div class="line"><h3>Red Bull</h3><span class="price">€6</span></div></article>
@@ -310,7 +315,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Φυσικό Μεταλλικό Νερό</h3><span class="price">€2.5</span></div></article>
 <article class="dish"><div class="line"><h3>Ανθρακούχο Νερό</h3><span class="price">€4</span></div></article>
 <article class="dish"><div class="line"><h3>Αναψυκτικά</h3><span class="price">€3.5</span></div></article><a class="end" href="#home">← Αρχική</a></div></section>
-<section class="screen" id="coffee-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Coffee &amp; Beverages</h1></header><div class="items"><h2>Coffee</h2>
+<section class="screen" id="coffee-en" lang="en"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/77480.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Coffee &amp; Beverages</h1></header><nav class="category-bar" aria-label="Menu categories"><button type="button" aria-controls="coffee-en-group-1" aria-current="location">Coffee</button><button type="button" aria-controls="coffee-en-group-2">Chocolate</button><button type="button" aria-controls="coffee-en-group-3">Hot Tea</button><button type="button" aria-controls="coffee-en-group-4">Iced Tea</button><button type="button" aria-controls="coffee-en-group-5">Fresh Juices</button><button type="button" aria-controls="coffee-en-group-6">Soft drinks</button></nav></div><div class="items"><h2 id="coffee-en-group-1">Coffee</h2>
 <article class="dish"><div class="line"><h3>Greek coffee (single)</h3><span class="price">€2.2</span></div></article>
 <article class="dish"><div class="line"><h3>Greek coffee (double)</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Nescafé instant coffee (hot or cold)</h3><span class="price">€3.5</span></div></article>
@@ -327,14 +332,14 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Cappuccino Latte</h3><span class="price">€4</span></div></article>
 <article class="dish"><div class="line"><h3>Flat White</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>* Almond, oat, coconut, pea Milk</h3><span class="price">+€0.3</span></div></article>
-<h2>Chocolate</h2>
+<h2 id="coffee-en-group-2">Chocolate</h2>
 <article class="dish"><div class="line"><h3>Chocolate (hot or cold)</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>Hazelnut chocolate</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>Caramel chocolate</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>Strawberry chocolate</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>White chocolate</h3><span class="price">€4.3</span></div></article>
 <article class="dish"><div class="line"><h3>* Whipped Cream</h3><span class="price">+€0.5</span></div></article>
-<h2>Hot Tea</h2>
+<h2 id="coffee-en-group-3">Hot Tea</h2>
 <article class="dish"><div class="line"><h3>Indian Fairy Tale</h3><span class="price">€3.5</span></div><p>Green tea with caramel, almond &amp; coconut</p></article>
 <article class="dish"><div class="line"><h3>Goji-Açaí</h3><span class="price">€3.5</span></div><p>Green tea with goji berries, hibiscus &amp; raspberry</p></article>
 <article class="dish"><div class="line"><h3>Yogi Tea</h3><span class="price">€3.5</span></div><p>Herbs with cinnamon, clove &amp; ginger</p></article>
@@ -345,7 +350,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Forest Fruit</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Strong Breakfast</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Chamomile</h3><span class="price">€3.5</span></div></article>
-<h2>Iced Tea</h2>
+<h2 id="coffee-en-group-4">Iced Tea</h2>
 <article class="dish"><div class="line"><h3>Feeju Mountain Tea</h3><span class="price">€4.5</span></div><p>Mountain tea with pomegranate &amp; agave syrup</p></article>
 <article class="dish"><div class="line"><h3>Feeju Green Tea</h3><span class="price">€4.5</span></div><p>Green tea with lemon &amp; verbena</p></article>
 <article class="dish"><div class="line"><h3>Feeju Ceylon Tea</h3><span class="price">€4.5</span></div><p>Black Ceylon tea with peach</p></article>
@@ -353,13 +358,13 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Green</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Lemon</h3><span class="price">€3.5</span></div></article>
 <article class="dish"><div class="line"><h3>Peach</h3><span class="price">€3.5</span></div></article>
-<h2>Fresh Juices</h2>
+<h2 id="coffee-en-group-5">Fresh Juices</h2>
 <article class="dish"><div class="line"><h3>Orange</h3><span class="price">€4.5</span></div></article>
 <article class="dish"><div class="line"><h3>Orange, Banana, Apple or Peach</h3><span class="price">€5.5</span></div></article>
 <article class="dish"><div class="line"><h3>Pink Grapefruit, Orange, Carrot</h3><span class="price">€6</span></div></article>
 <article class="dish"><div class="line"><h3>Banana, Mango, Orange</h3><span class="price">€6</span></div></article>
 <article class="dish"><div class="line"><h3>Carrot, Green Apple, Beet</h3><span class="price">€7.5</span></div></article>
-<h2>Soft drinks</h2>
+<h2 id="coffee-en-group-6">Soft drinks</h2>
 <article class="dish"><div class="line"><h3>B-Fresh:</h3><span class="price">€4.5</span></div><p>Lemon with ginger</p><p>Lemon with Chios mastic</p><p>Pomegranate with green tea</p><p>Apple with bergamot</p></article>
 <article class="dish"><div class="line"><h3>Three Cents:</h3><span class="price">€5</span></div><p>Pink Grapefruit Soda</p><p>Ginger Beer</p><p>Aegean Tonic Water</p></article>
 <article class="dish"><div class="line"><h3>Red Bull</h3><span class="price">€6</span></div></article>
@@ -367,25 +372,25 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Mineral water</h3><span class="price">€2.5</span></div></article>
 <article class="dish"><div class="line"><h3>Sparkling water</h3><span class="price">€4</span></div></article>
 <article class="dish"><div class="line"><h3>Soft drinks</h3><span class="price">€3.5</span></div></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="brunch-en" lang="en"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Brunch</h1></header><div class="items"><p style="padding:9px 0">Served 08:30–13:30</p><article class="dish"><div class="line"><h3>Fried Eggs</h3><span class="price">€7.5</span></div><p>With bacon &amp; toasted sourdough bread</p></article>
+<section class="screen" id="brunch-en" lang="en"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/a69b7.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Brunch</h1></header><nav class="category-bar" aria-label="Menu categories"><button type="button" aria-controls="brunch-en-group-1" aria-current="location">Eggs</button><button type="button" aria-controls="brunch-en-group-2">Toast &amp; sandwiches</button><button type="button" aria-controls="brunch-en-group-3">Pancakes</button><button type="button" aria-controls="brunch-en-group-4">Yogurt &amp; bowls</button></nav></div><div class="items"><p style="padding:9px 0">Served 08:30–13:30</p><article class="dish" id="brunch-en-group-1"><div class="line"><h3>Fried Eggs</h3><span class="price">€7.5</span></div><p>With bacon &amp; toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>Omelette</h3><span class="price">€8.5</span></div><p>With gouda cheese, turkey, mushrooms, tomatoes, baby spinach, toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>Scrambled Eggs</h3><span class="price">€9</span></div><p>With gouda cheese &amp; bacon, toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>Shakshuka Eggs</h3><span class="price">€8</span></div><p>Sour cheese from Syros, tomato sauce, toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>Benedict Eggs</h3><span class="price">€10.5</span></div><p>Poached eggs, Syros louza (cured pork), mayonnaise, hollandaise, toasted sourdough bread</p></article>
-<article class="dish"><div class="line"><h3>Smoked salmon avocado toast</h3><span class="price">€13.5</span></div><p>Scrambled eggs, guacamole, smoked salmon, toasted sourdough bread</p></article>
+<article class="dish" id="brunch-en-group-2"><div class="line"><h3>Smoked salmon avocado toast</h3><span class="price">€13.5</span></div><p>Scrambled eggs, guacamole, smoked salmon, toasted sourdough bread</p></article>
 <article class="dish"><div class="line"><h3>The Sandwich (With Eggs +2€)</h3><span class="price">€7</span></div><p>Porchetta, coleslaw, whole grain mustard, pickled cucumber, tomato, gouda, salad</p></article>
 <article class="dish"><div class="line"><h3>Club sandwich</h3><span class="price">€8.5</span></div><p>Iceberg, tomato, turkey, gouda cheese, bacon, mayonnaise, french fries</p></article>
-<article class="dish"><div class="line"><h3>Savoury Pancakes</h3><span class="price">€9.5</span></div><p>Bacon, gouda cheese, ham, cheddar cheese, egg</p></article>
+<article class="dish" id="brunch-en-group-3"><div class="line"><h3>Savoury Pancakes</h3><span class="price">€9.5</span></div><p>Bacon, gouda cheese, ham, cheddar cheese, egg</p></article>
 <article class="dish"><div class="line"><h3>Pancakes with Chocolate</h3><span class="price">€8.5</span></div><p>Hazelnut praline, banana, cookie</p></article>
 <article class="dish"><div class="line"><h3>Pancakes with Honey</h3><span class="price">€8</span></div><p>Honey, green apple, cinnamon</p></article>
-<article class="dish"><div class="line"><h3>Greek Yogurt with Fruits</h3><span class="price">€7.5</span></div><p>Honey, walnuts, seasonal fruits</p></article>
+<article class="dish" id="brunch-en-group-4"><div class="line"><h3>Greek Yogurt with Fruits</h3><span class="price">€7.5</span></div><p>Honey, walnuts, seasonal fruits</p></article>
 <article class="dish"><div class="line"><h3>Tahini Healthy Bowl</h3><span class="price">€9.5</span></div><p>Banana, mango, agave syrup, lime juice, tahini. Toppings: kiwi, strawberry, org. granola, hemp seeds</p></article><a class="end" href="#home">← Home</a></div></section>
-<section class="screen" id="dinner-gr" lang="el"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Lunch &amp; Dinner</h1></header><div class="items"><article class="dish"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
-<h2>Σαλάτες</h2>
+<section class="screen" id="dinner-gr" lang="el"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Αρχική</a><span class="menu-language">GR</span></nav><h1>Lunch &amp; Dinner</h1></header><nav class="category-bar" aria-label="Κατηγορίες μενού"><button type="button" aria-controls="dinner-gr-group-1" aria-current="location">Ψωμί</button><button type="button" aria-controls="dinner-gr-group-2">Σαλάτες</button><button type="button" aria-controls="dinner-gr-group-3">Ορεκτικά/ Κυρίως</button><button type="button" aria-controls="dinner-gr-group-4">Επιδόρπια</button></nav></div><div class="items"><article class="dish" id="dinner-gr-group-1"><div class="line"><h3>Ζυμωτό Ψωμί για 2 με προζύμι</h3><span class="price">€2.5</span></div></article>
+<h2 id="dinner-gr-group-2">Σαλάτες</h2>
 <article class="dish"><div class="line"><h3>Η φημισμένη Ελληνική Σαλάτα</h3><span class="price">€12</span></div><p>Τοματίνια Σύρου, άγρια κάπαρη του νησιού, πιπεριές, μαριναρισμένο κρεμμύδι, ελιές, αγγούρι, κολοκύθι, φέτα Καλαβρύτων</p></article>
 <article class="dish"><div class="line"><h3>Πράσινη Σαλάτα με κοτόπουλο</h3><span class="price">€13.5</span></div><p>Ψητό φιλέτο κοτόπουλο, τοματίνια, κολοκυθόσπορος, χειροποίητη μαγιονέζα εσπεριδοειδών, flakes παρμεζάνας</p></article>
 <article class="dish"><div class="line"><h3>Παντζαροσαλάτα</h3><span class="price">€13</span></div><p>Παντζάρι, ξινόμηλο, χειροποίητη κρέμα φέτας &amp; φράουλας, καρύδια, ρόδι</p></article>
-<h2 class="fox-heading">Ορεκτικά/ Κυρίως<span class="fox-art" aria-hidden="true"><img src="assets/7c40e.png" alt=""></span></h2>
+<h2 class="fox-heading" id="dinner-gr-group-3">Ορεκτικά/ Κυρίως<span class="fox-art" aria-hidden="true"><img src="assets/7c40e.png" alt=""></span></h2>
 
 <article class="dish"><div class="line"><h3>Ποικιλία Κυκλαδίτικων Τυριών</h3><span class="price">€23</span></div><p>Αρσενικό Νάξου, Αμάραντος Σύρου, Γραβιέρα Ίου, Ανθότυρο Σύρου</p></article>
 <article class="dish"><div class="line"><h3>Ποικιλία Αλλαντικών</h3><span class="price">€21</span></div><p>Καπνιστό prosciutto, σαλάμι Λευκάδος, ψητό φιλέτο γαλοπούλας, παστράμι μόσχου, απάκι Κρήτης</p></article>
@@ -407,7 +412,7 @@ main:has(.screen:target) #home{display:none}
 <article class="dish"><div class="line"><h3>Divine Beef Burger</h3><span class="price">€14.5</span></div><p>Τομάτα, αγγουράκι τουρσί, ρόκα, cheddar, secret mayo, τηγανητές πατάτες</p></article>
 <article class="dish"><div class="line"><h3>Vegan Burger Λαχανικών<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€14.5</span></div><p>Μπιφτέκι λαχανικών και μανιταριών, τομάτα, κάπαρη Σύρου, φρέσκος βασιλικός, vegan mayo με αγγουράκι τουρσί, τυρί vegan και παντζαροσαλάτα</p></article>
 <article class="dish"><div class="line"><h3>Vegan Μουσακάς<img class="icon" alt="" src="assets/4f826.png"></h3><span class="price">€16</span></div><p>Μανιτάρια, μαύρες φακές, κιμάς σόγιας, μπεσαμέλ Καλαμποκιού, γκασπάτσο ντομάτας</p></article>
-<h2 class="fox-heading fox-tail">Επιδόρπια<span class="fox-art" aria-hidden="true"><img src="assets/db70a.png" alt=""></span></h2>
+<h2 class="fox-heading fox-tail" id="dinner-gr-group-4">Επιδόρπια<span class="fox-art" aria-hidden="true"><img src="assets/db70a.png" alt=""></span></h2>
 <article class="dish"><div class="line"><h3>Μους Μαύρης Σοκολάτας</h3><span class="price">€12</span></div><p>Πατρινή Τεντούρα, Κρέμα Λευκής Σοκολάτας με Περγαμόντο και φιστίκι Αιγίνης, sorbet μάνγκο, μαύρο αλάτι Χαβάης</p></article>
 
 <article class="dish"><div class="line"><h3>Τιραμισού</h3><span class="price">€11</span></div><p>Τσουρέκι, μαύρη σοκολάτα, καραμελωμένα αμύγδαλα</p></article>
@@ -453,12 +458,73 @@ picker.addEventListener('click', event => {
   }
 });
 
+let currentMenu = null;
+let selectedButton = null;
+let scrollFrame = 0;
+let pinnedAtBottom = null;
+
+function highlightCategory(button) {
+  if (!button || selectedButton === button) return;
+  selectedButton?.removeAttribute('aria-current');
+  selectedButton = button;
+  button.setAttribute('aria-current', 'location');
+  const bar = button.parentElement;
+  const bounds = bar.getBoundingClientRect();
+  const item = button.getBoundingClientRect();
+  if (item.left < bounds.left || item.right > bounds.right) {
+    bar.scrollLeft += item.left - bounds.left - (bar.clientWidth - item.width) / 2;
+  }
+}
+
+function updateCategory() {
+  scrollFrame = 0;
+  if (!currentMenu) return;
+  const { buttons, targets, top } = currentMenu;
+  const bottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+  if (!bottom) pinnedAtBottom = null;
+  const edge = top.getBoundingClientRect().bottom + 2;
+  let index = targets.findLastIndex(target => target.getBoundingClientRect().top <= edge);
+  if (bottom) index = pinnedAtBottom ?? buttons.length - 1;
+  highlightCategory(buttons[Math.max(0, index)]);
+}
+
+function queueCategoryUpdate() {
+  if (currentMenu && !scrollFrame) scrollFrame = requestAnimationFrame(updateCategory);
+}
+window.addEventListener('scroll', queueCategoryUpdate, {passive:true});
+window.addEventListener('resize', queueCategoryUpdate);
+
+document.querySelectorAll('.category-bar').forEach(bar => {
+  bar.addEventListener('click', event => {
+    const button = event.target.closest('button');
+    if (!button || !currentMenu) return;
+    const index = currentMenu.buttons.indexOf(button);
+    if (index < 0) return;
+    const target = currentMenu.targets[index];
+    const offset = target.getBoundingClientRect().top - currentMenu.top.getBoundingClientRect().bottom;
+    window.scrollBy(0, offset);
+    pinnedAtBottom = index;
+    highlightCategory(button);
+  });
+});
+
 function navigate() {
   const screen = document.getElementById(location.hash.slice(1));
   const [category, routeLanguage] = (screen?.id || '').split('-');
   applyLanguage(bilingual.includes(category) ? routeLanguage : language);
   document.documentElement.lang = screen?.lang || document.getElementById('home').lang;
+  currentMenu = null;
+  selectedButton = null;
+  pinnedAtBottom = null;
   window.scrollTo(0, 0);
+  const bar = screen?.querySelector('.category-bar');
+  if (bar) {
+    const buttons = Array.from(bar.querySelectorAll('button'));
+    bar.querySelector('[aria-current]')?.removeAttribute('aria-current');
+    currentMenu = {buttons, targets: buttons.map(b => document.getElementById(b.getAttribute('aria-controls'))), top: bar.parentElement};
+    bar.scrollLeft = 0;
+    highlightCategory(buttons[0]);
+  }
 }
 
 let activeFlight;
