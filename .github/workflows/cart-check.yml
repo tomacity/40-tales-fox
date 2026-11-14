@@ -1,0 +1,21 @@
+name: Cart smoke test
+on:
+  push:
+    paths:
+      - 'cart*'
+      - 'backend.sql'
+      - 'tests/**'
+      - '.github/workflows/cart-check.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  cart:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tests/cart-api-smoke.mjs
