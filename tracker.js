@@ -19,6 +19,8 @@
   const entry = new URL(location.href);
   const sourceHint = (entry.searchParams.get('source') || entry.searchParams.get('utm_source') || '').toLowerCase();
   const source = ['nfc', 'qr'].includes(sourceHint) ? sourceHint : 'direct';
+  const tokenHint = entry.searchParams.get('card') || '';
+  const cardToken = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tokenHint) ? tokenHint : null;
   const cleanUrl = value => { try { const u = new URL(value); return u.origin + u.pathname; } catch { return null; } };
   const ua = navigator.userAgent || '';
   const device = /iPad|Tablet/i.test(ua) ? 'tablet' : /Mobi|Android|iPhone/i.test(ua) ? 'mobile' : 'desktop';
@@ -33,6 +35,7 @@
     session.at = Date.now();
     try { if (!optedOut) sessionStorage.setItem(SESSION_KEY, JSON.stringify(session)); } catch {}
     const metadata = { source, language: document.getElementById('home')?.lang || 'el' };
+    if (cardToken) metadata.card_token = cardToken;
     for (const key of allowedMetadata) {
       const v = details[key];
       if (typeof v === 'string') metadata[key] = v.slice(0, 180);
