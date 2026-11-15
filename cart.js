@@ -26,6 +26,13 @@ const party=new URL(location.href).searchParams.get('party');
 let pendingParty=/^[0-9a-f-]{36}$/i.test(party||'')?party:null;
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state));}catch{}};
 const rows=()=>state.group?(groupData?.items||[]):state.personal;
+function cartEvent(action, details={}) {
+ try {
+  window.ZistoAnalytics?.track('button_click', {component:'selection_cart',action,
+   mode:state.group?'group':'personal',item_count:rows().reduce((sum,row)=>sum+row.quantity,0),
+   distinct_items:rows().length,...details});
+ } catch { /* Analytics never affect selections. */ }
+}
 const node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
 const button=(text,fn,cls)=>{const b=node('button',text,cls);b.type='button';b.addEventListener('click',fn);return b;};
 const dialog=node('dialog',undefined,'selection-dialog');dialog.id='selection-dialog';
@@ -85,7 +92,7 @@ function renderDock(){
 function open(){
  editing=false;
  returnFocus=document.activeElement;
- if(!dialog.open)dialog.showModal();
+ if(!dialog.open){dialog.showModal();cartEvent('cart_open');}
  status.textContent='';status.classList.remove('is-error');
  render();
 }
@@ -113,6 +120,9 @@ async function change(row,delta){
    }
    state.expires=Date.now()+LIFE;save();
   }
+  cartEvent(delta>0?'cart_add':'cart_remove',{product_id:row.product,
+   product_name:PRODUCTS[row.product].names.gr||PRODUCTS[row.product].names.en,
+   unit_price_cents:PRODUCTS[row.product].cents,quantity_delta:delta,shared:!!row.shared});
  });
 }
 function labelInput(text,type='text'){
@@ -145,7 +155,7 @@ function renderJoin(){
  foot.append(button(t('Συμμετοχή','Join'),()=>run(async()=>{
   const data=await api('join',{session:pendingParty,name:field.input.value.trim()||t('Επισκέπτης','Guest')});
   state.group={session:data.session,expires:data.expires};groupData=data;pendingParty=null;
-  state.expires=Date.now()+LIFE;save();removeParty();invite=false;
+  state.expires=Date.now()+LIFE;save();removeParty();invite=false;cartEvent('group_join');
  }),'selection-primary'));
  foot.append(button(t('Συνέχεια χωρίς συμμετοχή','Continue without joining'),()=>{pendingParty=null;removeParty();render();}));
 }
@@ -200,18 +210,18 @@ function render(){
  if(waiter){
   foot.append(button(t('Επιστροφή στις επιλογές','Back to selections'),()=>{waiter=false;render();},'selection-primary'));
  }else{
-  if(rows().length)foot.append(button(t('Προβολή στον σερβιτόρο','Show your waiter'),()=>{waiter=true;invite=false;render();},'selection-primary'));
+  if(rows().length)foot.append(button(t('Προβολή στον σερβιτόρο','Show your waiter'),()=>{waiter=true;invite=false;cartEvent('cart_waiter_view');render();},'selection-primary'));
   if(state.group){
    foot.append(button(invite?t('Κλείσιμο πρόσκλησης','Hide invitation'):t('Πρόσκληση παρέας · QR','Invite friends · QR'),()=>{invite=!invite;render();}));
    foot.append(button(t('Αποχώρηση από την παρέα','Leave the group'),()=>confirmView(t('Να αποχωρήσετε; Οι επιλογές σας θα παραμείνουν στην παρέα.','Leave? Your items will remain in the group.'),()=>{
-    state.group=null;groupData=null;invite=false;save();render();
+    cartEvent('group_leave');state.group=null;groupData=null;invite=false;save();render();
    }),'selection-subtle'));
    if(groupData?.owner)foot.append(button(t('Κλείσιμο παρέας για όλους','Close group for everyone'),()=>confirmView(t('Να κλείσει η παρέα; Ο σύνδεσμος θα σταματήσει να λειτουργεί για όλους.','Close this group? The invitation will stop working for everyone.'),()=>run(async()=>{
-    await api('close');state.group=null;groupData=null;invite=false;save();
+    await api('close');cartEvent('group_close');state.group=null;groupData=null;invite=false;save();
    })),'selection-subtle'));
   }else{
    foot.append(button(t('Δημιουργία παρέας · QR','Create group · QR'),createView));
-   if(rows().length)foot.append(button(t('Άδειασμα λίστας','Clear list'),()=>confirmView(t('Να αδειάσει η προσωπική σας λίστα;','Clear your personal list?'),()=>{state.personal=[];save();render();}),'selection-subtle'));
+   if(rows().length)foot.append(button(t('Άδειασμα λίστας','Clear list'),()=>confirmView(t('Να αδειάσει η προσωπική σας λίστα;','Clear your personal list?'),()=>{cartEvent('cart_clear');state.personal=[];save();render();}),'selection-subtle'));
   }
  }
  content.scrollTop=scroll;
@@ -227,7 +237,7 @@ function createView(){
  const field=labelInput(t('Το όνομά σας (προαιρετικό)','Your name (optional)'));content.append(field.label);foot.replaceChildren();
  foot.append(button(t('Δημιουργία και εμφάνιση QR','Create and show QR'),()=>run(async()=>{
   const data=await api('create',{name:field.input.value.trim()||t('Επισκέπτης','Guest'),initial:state.personal});
-  state.group={session:data.session,expires:data.expires};groupData=data;state.personal=[];state.expires=Date.now()+LIFE;save();invite=true;
+  state.group={session:data.session,expires:data.expires};groupData=data;state.personal=[];state.expires=Date.now()+LIFE;save();invite=true;cartEvent('group_create');
  }),'selection-primary'),button(t('Πίσω','Back'),()=>{editing=false;render();}));
  field.input.focus();
 }

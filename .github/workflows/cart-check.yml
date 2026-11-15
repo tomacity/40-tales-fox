@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 'cart*'
+      - 'tracker.js'
       - 'backend.sql'
       - 'tests/**'
       - '.github/workflows/cart-check.yml'
@@ -18,4 +19,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - run: node tests/analytics.test.cjs
       - run: node tests/cart-api-smoke.mjs
+
