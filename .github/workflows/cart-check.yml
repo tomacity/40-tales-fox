@@ -20,5 +20,6 @@ jobs:
         with:
           node-version: '22'
       - run: node tests/analytics.test.cjs
+      - run: node tests/tracking-smoke.mjs
       - run: node tests/cart-api-smoke.mjs
 

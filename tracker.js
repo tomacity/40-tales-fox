@@ -2,7 +2,7 @@
 (() => {
   'use strict';
   if (window.ZistoAnalytics) return;
-  const ENDPOINT = 'https://zisto.app/api/track';
+  const ENDPOINT = 'https://www.zisto.app/api/track';
   const PROJECT_KEY = 'd007b558-b9d8-487f-b64e-6b9b76b01810';
   const SESSION_KEY = 'fox-analytics-session-v1';
   const VISITOR_KEY = 'fox-analytics-visitor-v1';
