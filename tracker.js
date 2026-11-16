@@ -66,7 +66,8 @@
   document.addEventListener('click', event => {
     const target = event.target.closest('a,button');
     if (!target) return;
-    if (target.matches('.review')) track('review_open', { destination: 'Google Reviews' });
+    if (target.matches('.landing-menu')) track('menu_open', { menu: 'home' });
+    else if (target.matches('.review, .landing-review')) track('review_open', { destination: 'Google Reviews' });
     else if (target.dataset.language) track('button_click', { action: 'language_change', language: target.dataset.language });
     else if (target.closest('.category-bar')) track('button_click', { action: 'menu_category_view', category: target.textContent.trim() });
     else if (target.tagName === 'A') {
