@@ -21,9 +21,6 @@ h1,h2,h3,p{margin:0}
 .cards{display:grid;gap:14px}
 .cards a{background-size:cover;background-position:center;min-height:58px;padding:14px 0;display:grid;place-items:center;border-radius:4px;color:white;font:700 24px/30px Gelasio,Georgia,serif;letter-spacing:.72px;text-align:center}
 .cards a[href^="#brunch-"]{background-position:center 34.37%;background-size:100% 377.08%}
-.actions{margin-top:26px;display:flex;align-items:center;justify-content:center;gap:14px;min-height:48px}
-.actions a{flex:1;max-width:173px;border:1px solid #232426;border-radius:4px;min-height:46px;display:grid;place-items:center;font-size:15px;letter-spacing:.3px;color:#000}
-.actions a:first-child{background:#1e1e1e;border-color:#1e1e1e;color:white}
 .contact{margin-top:40px;border-top:1px solid #bab4ad;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
 .contact a{display:flex;gap:2px;align-items:center;min-height:44px;color:#000;letter-spacing:.14px}
 .contact .social{letter-spacing:2px}
@@ -101,7 +98,7 @@ body:not(:has(#home:target,.screen:target)) .selection-dock{display:none}
 <a href="#brunch-gr" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/0ff78.jpg)">Brunch</a>
 <a href="#coffee-gr" style="background-image:linear-gradient(rgba(21,22,23,.755),rgba(21,22,23,.755)),url(assets/22b90.jpg)">Coffee &amp; Beverages</a>
 <a href="#cocktails-en" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/50356.jpg)">Cocktails &amp; Spirits</a>
-<a href="#wines-en" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/d66bc.jpg)">Wines &amp; Beers</a></nav><div class="actions"><a href="tel:+302281303113">Κράτηση</a><a href="mailto:info@40talesfox.gr">Email</a></div><footer class="contact"><a href="https://www.google.com/maps/search/?api=1&amp;query=40+Tales+Fox+Ermoupoli+Syros"><img src="assets/home-location.svg" alt="" width="24" height="24">Ακτή Πέτρου Ράλλη 40Α</a><a class="social" href="https://www.instagram.com/40talesfox/"><img src="assets/home-instagram.svg" alt="" width="22" height="22">Instagram</a></footer></div></section>
+<a href="#wines-en" style="background-image:linear-gradient(rgba(28,29,30,.699),rgba(28,29,30,.699)),url(assets/d66bc.jpg)">Wines &amp; Beers</a></nav><footer class="contact"><a href="https://www.google.com/maps/search/?api=1&amp;query=40+Tales+Fox+Ermoupoli+Syros"><img src="assets/home-location.svg" alt="" width="24" height="24">Ακτή Πέτρου Ράλλη 40Α</a><a class="social" href="https://www.instagram.com/40talesfox/"><img src="assets/home-instagram.svg" alt="" width="22" height="22">Instagram</a></footer></div></section>
 <section class="screen" id="dinner-en" lang="en"><div class="menu-top"><header class="banner" style="background-image:linear-gradient(#171717ac,#171717ac),url(assets/20e9d.jpg)"><nav class="bar"><a href="#home">← Home</a><span class="menu-language">ENG</span></nav><h1>Lunch &amp; Dinner</h1></header><nav class="category-bar" aria-label="Menu categories"><button type="button" aria-controls="dinner-en-group-1" aria-current="location">Bread</button><button type="button" aria-controls="dinner-en-group-2">Salads</button><button type="button" aria-controls="dinner-en-group-3">Starters/Mains</button><button type="button" aria-controls="dinner-en-group-4">Desserts</button></nav></div><div class="items"><article class="dish" id="dinner-en-group-1"><div class="line"><h3>Bread for 2 with sourdough</h3><span class="price">€2.5</span></div></article>
 <h2 id="dinner-en-group-2">Salads</h2>
 <article class="dish"><div class="line"><h3>The Famous Greek Salad</h3><span class="price">€12</span></div><p>Syros cherry tomatoes, wild capers of the island, peppers, marinated onion, olives, cucumber, zucchini, Kalavrita feta cheese</p></article>
@@ -465,7 +462,6 @@ function applyLanguage(next) {
   document.querySelector('.landing-menu span').textContent = english ? 'View the menu' : 'Δείτε το μενού';
   document.querySelector('.landing-review > span:last-child').textContent = english ? 'Leave a review' : 'Αφήστε αξιολόγηση';
 
-  home.querySelector('.actions a').textContent = english ? 'Reserve' : 'Κράτηση';
   cards.setAttribute('aria-label', english ? 'Menus' : 'Κατάλογοι');
   for (const button of picker.querySelectorAll('button')) {
     button.setAttribute('aria-pressed', String(button.dataset.language === language));
