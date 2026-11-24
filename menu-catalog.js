@@ -40,13 +40,28 @@
    }
   }
  }
+ async function loadMenu(){
+  const response=await fetch(api,{cache:'no-store',signal:AbortSignal.timeout(8000)});
+  if(!response.ok)throw Error('menu');
+  const data=await response.json();
+  if(!Array.isArray(data?.catalog?.products)||!Array.isArray(data.catalog.categories))throw Error('menu');
+  return {...data,catalog:{...data.catalog,products:data.catalog.products.filter(product=>product.hidden!==true)}};
+ }
  window.ZistoMenuReady=(async()=>{
-  const key='zisto-menu:'+projectKey;let data;
-  try{const r=await fetch(api,{cache:'no-store',signal:AbortSignal.timeout(8000)});if(!r.ok)throw Error('menu');data=await r.json();try{localStorage.setItem(key,JSON.stringify(data));}catch{}}
-  catch{try{data=JSON.parse(localStorage.getItem(key));}catch{}}
-  if(!Array.isArray(data?.catalog?.products)||!Array.isArray(data.catalog.categories))return;
-  const catalog=data.catalog;window.ZistoMenu=catalog;
-  if(kind==='myrsini')myrsini(catalog);else fox(catalog);
-  return catalog;
+  try{
+   const {catalog,revision}=await loadMenu();
+   window.ZistoMenu=catalog;
+   if(kind==='myrsini')myrsini(catalog);else fox(catalog);
+   window.ZistoMenuIsCurrent=async()=>(await loadMenu()).revision===revision;
+   return catalog;
+  }catch{
+   for(const screen of document.querySelectorAll('.screen')){
+    const items=screen.querySelector('.items');
+    if(items)items.replaceChildren(el('p',screen.id.endsWith('-en')?'The menu is temporarily unavailable. Reload to try again.':'Το μενού δεν είναι προσωρινά διαθέσιμο. Ανανεώστε τη σελίδα.'));
+    screen.querySelector('.category-bar')?.replaceChildren();
+   }
+  }finally{
+   document.documentElement.classList.remove('menu-loading');
+  }
  })();
 })();

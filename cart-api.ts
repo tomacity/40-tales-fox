@@ -17,7 +17,7 @@ Deno.serve(async(req)=>{
   if(!menuResponse.ok)return respond({error:'unavailable'},503);
   const [menu]=await menuResponse.json();
   if(!menu)return respond({error:'unavailable'},503);
-  const products=Object.fromEntries(menu.catalog.products.flatMap(product=>product.prices.map(v=>[v.id,v])));
+  const products=Object.fromEntries(menu.catalog.products.filter(product=>product.hidden!==true).flatMap(product=>product.prices.map(v=>[v.id,v])));
   if(!['create','join','read','change','close'].includes(p.action)||!uuid.test(p.token||'')||
    (p.action!=='create'&&!uuid.test(p.session||''))) return respond({error:'invalid_request'},400);
   if(p.action==='change'&&((p.delta===1&&!Object.hasOwn(products,p.product))||typeof p.product!=='string'||p.product.length>100||![1,-1].includes(p.delta)||(p.member&&!uuid.test(p.member)))) return respond({error:'invalid_request'},400);
@@ -36,6 +36,6 @@ Deno.serve(async(req)=>{
    const error=known.find(x=>data.message===x)||'unavailable';
    return respond({error},error==='expired'?410:error==='forbidden'?403:error==='rate_limit'?429:400);
   }
-  return respond(data);
+  return respond({...data,items:data.items.filter(item=>Object.hasOwn(products,item.product))});
  }catch{return respond({error:'unavailable'},503);}
 });
